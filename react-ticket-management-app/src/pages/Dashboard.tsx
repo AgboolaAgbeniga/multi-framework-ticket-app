@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { StatCard } from '../components/dashboard/StatCard';
@@ -7,6 +7,7 @@ import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { getSession } from '../lib/auth';
 import { apiGetStats } from '../lib/mockApi';
+import { toast } from 'sonner';
 import { Ticket, Clock, CheckCircle, FolderOpen, ArrowRight } from 'lucide-react';
 
 export function Dashboard() {
@@ -31,11 +32,15 @@ export function Dashboard() {
         const res = await apiGetStats();
         if (res.ok && res.data) {
           setStats(res.data);
+        } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
+          toast.error('Your session has expired — please log in again.');
+          navigate('/auth/login');
         } else {
-          // fallback to zeroed stats already set
+          // show a helpful error for failed stats load
+          toast.error('Failed to load tickets. Please retry.');
         }
       } catch (e) {
-        // ignore and keep defaults
+        toast.error('Failed to load tickets. Please retry.');
       }
     })();
   }, [navigate]);
@@ -45,6 +50,19 @@ export function Dashboard() {
   if (!session) {
     return null;
   }
+
+  // Build a natural-language summary of status counts for the Status Overview
+  const statusSummary = (() => {
+    if (stats.total === 0) return '';
+    const parts: string[] = [];
+    if (stats.open > 0) parts.push(`${stats.open} open ${stats.open === 1 ? 'ticket' : 'tickets'}`);
+    if (stats.inProgress > 0) parts.push(`${stats.inProgress} in progress`);
+    if (stats.closed > 0) parts.push(`${stats.closed} resolved ${stats.closed === 1 ? 'ticket' : 'tickets'}`);
+    if (parts.length === 0) return '';
+    if (parts.length === 1) return parts[0];
+    if (parts.length === 2) return `${parts[0]} and ${parts[1]}`;
+    return `${parts.slice(0, -1).join(', ')}, and ${parts[parts.length - 1]}`;
+  })();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -98,69 +116,34 @@ export function Dashboard() {
           </div>
 
           {/* Quick Actions */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="p-6 md:col-span-2 bg-linear-to-br from-indigo-500 to-purple-600 text-white">
-              <h3 className="mb-2 text-white">Quick Actions</h3>
-              <p className="text-white/90 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="p-6 bg-linear-to-br from-indigo-500 to-purple-600 text-white">
+              <h3 className="text-white font-bold">Quick Actions</h3>
+              <p className="text-white/90 mb-4 text-sm">
                 Get started by creating a new ticket or manage your existing ones.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <Button 
-                  variant="secondary"
-                  onClick={() => navigate('/tickets?new=true')}
-                >
-                  <Ticket className="w-4 h-4 mr-2" />
-                  New Ticket
-                </Button>
-                <Button 
-                  variant="secondary"
-                  onClick={() => navigate('/tickets')}
-                >
-                  <FolderOpen className="w-4 h-4 mr-2" />
-                  View All Tickets
-                </Button>
-                {stats.open > 0 && (
+              <div className="flex flex-wrap">
+                
+                {stats.total > 0 && (
                   <Button
                     variant="secondary"
                     onClick={() => navigate('/tickets?status=open')}
+                    className='w-full'
                   >
                     <Clock className="w-4 h-4 mr-2" />
-                    View {stats.open} Open Tickets
+                    View {stats.total} Open Tickets
                   </Button>
                 )}
               </div>
             </Card>
 
             <Card className="p-6 bg-linear-to-br from-slate-50 to-slate-100/80">
-              <h3 className="mb-2">Status Overview</h3>
-              <p className="text-slate-600 mb-4">
-                You have:
-              </p>
-              <ul className="space-y-2 mb-4 text-sm">
-                {stats.open > 0 && (
-                  <li className="flex items-center gap-2 text-green-700">
-                    <FolderOpen className="w-4 h-4" />
-                    {stats.open} open tickets
-                  </li>
-                )}
-                {stats.inProgress > 0 && (
-                  <li className="flex items-center gap-2 text-amber-700">
-                    <Clock className="w-4 h-4" />
-                    {stats.inProgress} in progress
-                  </li>
-                )}
-                {stats.closed > 0 && (
-                  <li className="flex items-center gap-2 text-slate-700">
-                    <CheckCircle className="w-4 h-4" />
-                    {stats.closed} resolved tickets
-                  </li>
-                )}
-                {stats.total === 0 && (
-                  <li className="text-slate-600">
-                    No tickets yet. Create your first one!
-                  </li>
-                )}
-              </ul>
+              <h3 className="font-bold">Status Overview</h3>
+              {stats.total === 0 ? (
+                <p className="text-slate-600 mb-4 text-sm">No tickets yet. Create your first one!</p>
+              ) : (
+                <p className="text-slate-600 mb-4 text-sm">You have {statusSummary}.</p>
+              )}
               {(stats.open > 0 || stats.inProgress > 0) && (
                 <Button 
                   variant="outline" 

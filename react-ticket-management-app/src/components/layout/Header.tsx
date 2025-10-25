@@ -3,6 +3,7 @@ import { Button } from '../ui/button';
 import { getSession, logout } from '../../lib/auth';
 import { LogOut, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import logoUrl from '../../../../assets/logo.png';
 
 export function Header() {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ export function Header() {
 
   const handleLogout = () => {
     logout();
+    // After logout always redirect to the landing page
     navigate('/');
   };
 
@@ -19,11 +21,11 @@ export function Header() {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <button 
+            <button
               onClick={() => navigate('/')}
               className="hover:opacity-80 transition-opacity"
             >
-              <span className="text-indigo-600">TicketFlow</span>
+              <img src={logoUrl} alt="TicketFlex Logo" className="h-8 w-auto" />
             </button>
           </div>
 

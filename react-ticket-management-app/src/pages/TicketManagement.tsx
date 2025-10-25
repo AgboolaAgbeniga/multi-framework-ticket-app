@@ -57,7 +57,12 @@ export function TicketManagement() {
     try {
       apiGetTickets().then((res) => {
         if (res.ok && Array.isArray(res.data)) setTickets(res.data as unknown as Ticket[]);
-        else toast.error('Failed to load tickets. Please retry.');
+        else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
+          toast.error('Your session has expired — please log in again.');
+          navigate('/auth/login');
+        } else {
+          toast.error('Failed to load tickets. Please retry.');
+        }
       });
     } catch {
       toast.error('Failed to load tickets. Please retry.');
@@ -80,7 +85,12 @@ export function TicketManagement() {
           setIsFormOpen(false);
           toast.success('Ticket created successfully!');
         } else {
-          toast.error('Failed to create ticket. Please try again.');
+          if (res.error === 'Unauthorized' || res.error === 'Token expired') {
+            toast.error('Your session has expired — please log in again.');
+            navigate('/auth/login');
+          } else {
+            toast.error('Failed to create ticket. Please try again.');
+          }
         }
       });
     } catch {
@@ -105,7 +115,12 @@ export function TicketManagement() {
           setSelectedTicket(null);
           toast.success('Ticket updated successfully!');
         } else {
-          toast.error('Failed to update ticket. Please try again.');
+          if (res.error === 'Unauthorized' || res.error === 'Token expired') {
+            toast.error('Your session has expired — please log in again.');
+            navigate('/auth/login');
+          } else {
+            toast.error('Failed to update ticket. Please try again.');
+          }
         }
       });
     } catch {
@@ -133,7 +148,12 @@ export function TicketManagement() {
           loadTickets();
           toast.success('Ticket deleted successfully!');
         } else {
-          toast.error('Failed to delete ticket.');
+          if (res.error === 'Unauthorized' || res.error === 'Token expired') {
+            toast.error('Your session has expired — please log in again.');
+            navigate('/auth/login');
+          } else {
+            toast.error('Failed to delete ticket. Please try again.');
+          }
         }
       });
     } catch {

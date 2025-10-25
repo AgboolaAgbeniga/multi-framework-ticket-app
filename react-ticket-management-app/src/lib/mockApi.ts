@@ -13,7 +13,7 @@ interface ApiResponse<T> {
 function getStoredToken(): AuthToken | null {
   const stored = localStorage.getItem(TOKEN_KEY);
   if (!stored) return null;
-  
+
   try {
     const token = JSON.parse(stored) as AuthToken;
     if (new Date(token.expiresAt) < new Date()) {

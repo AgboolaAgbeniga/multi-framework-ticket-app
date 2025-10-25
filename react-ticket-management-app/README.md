@@ -1,149 +1,380 @@
-# React + TypeScript + Vite
+# TicketFlex - Multi-Framework Ticket Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive ticket management application built with multiple frontend frameworks, featuring a modern React implementation with TypeScript, Vite, and a complete UI component library.
 
-Currently, two official plugins are available:
+## 🚀 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+TicketFlex is a full-featured ticket management system designed for modern teams to efficiently track, manage, and resolve customer support issues. The application provides a clean, intuitive interface for creating, updating, and monitoring tickets with real-time status tracking.
 
-## React Compiler
+### Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **🔐 Authentication System**: Secure login/signup with session management
+- **📊 Dashboard Analytics**: Real-time statistics and ticket overview
+- **🎫 Ticket Management**: Full CRUD operations for tickets
+- **📱 Responsive Design**: Mobile-first approach with Tailwind CSS
+- **🎨 Modern UI**: Shadcn/ui components with Radix UI primitives
+- **⚡ Fast Development**: Vite build system with HMR
+- **🛠️ Type Safety**: Full TypeScript implementation
+- **📦 Modular Architecture**: Well-organized component structure
 
-## Expanding the ESLint configuration
+## 🏗️ Architecture
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Technology Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    # TicketFlow (Ticket Management)
+**Frontend Framework:**
+- React 19.1.1 with TypeScript
+- Vite 7.1.7 for build tooling
+- React Router DOM for navigation
 
-    This project is a small ticket management demo app built with React + TypeScript + Vite. It includes a lightweight local JSON API (json-server) for quick development and simulates token-based authentication stored in localStorage.
+**UI & Styling:**
+- Tailwind CSS 4.1.16 for styling
+- Shadcn/ui component library
+- Radix UI primitives for accessibility
+- Lucide React for icons
 
-    This README covers setup, running the dev environment (Vite + json-server), the demo login, and troubleshooting steps.
+**State & Data Management:**
+- JSON Server for mock API
+- Local storage for session management
+- React hooks for state management
 
-    ## Prerequisites
+**Development Tools:**
+- ESLint for code quality
+- TypeScript for type checking
+- Concurrently for running multiple dev servers
 
-    - Node.js (v18+ recommended)
-    - npm (bundled with Node)
+### Project Structure
 
-    ## Install
+```
+react-ticket-management-app/
+├── public/                 # Static assets
+│   ├── ico.png            # Favicon
+│   └── vite.svg           # Vite logo
+├── src/
+│   ├── assets/            # Imported assets (logos, icons)
+│   ├── components/        # Reusable UI components
+│   │   ├── layout/        # Layout components (Header, Footer)
+│   │   ├── ui/           # Shadcn/ui components
+│   │   ├── dashboard/    # Dashboard-specific components
+│   │   └── tickets/      # Ticket-related components
+│   ├── lib/              # Utility functions and services
+│   │   ├── auth.ts       # Authentication logic
+│   │   ├── mockApi.ts    # API service layer
+│   │   ├── types.ts      # TypeScript type definitions
+│   │   └── utils/        # Helper functions
+│   ├── pages/            # Page components
+│   │   ├── Landing.tsx   # Landing/Home page
+│   │   ├── Login.tsx     # Authentication page
+│   │   ├── Signup.tsx    # Registration page
+│   │   ├── Dashboard.tsx # Main dashboard
+│   │   └── TicketManagement.tsx # Ticket CRUD interface
+│   ├── App.tsx           # Main application component
+│   └── main.tsx          # Application entry point
+├── db.json               # Mock database (JSON Server)
+├── package.json          # Dependencies and scripts
+├── vite.config.ts        # Vite configuration
+└── README.md             # This documentation
+```
 
-    Install dependencies:
+## 📋 Prerequisites
 
-    ```bash
-    npm install
-    ```
+- **Node.js**: v18+ recommended
+- **npm**: Bundled with Node.js
+- **Git**: For version control
 
-    If you encounter peer-dependency issues while installing dev tools, run with the legacy flag (the repository already used this during setup):
+## 🚀 Installation & Setup
 
-    ```bash
-    npm install --legacy-peer-deps
-    ```
+### 1. Clone and Install
 
-    ## Start development servers
+```bash
+# Clone the repository
+git clone <repository-url>
+cd multi-framework-ticket-app/react-ticket-management-app
 
-    The project includes a script that runs both the Vite dev server and the json-server API concurrently.
+# Install dependencies
+npm install
 
-    ```bash
-    npm run dev
-    ```
+# If you encounter peer dependency issues
+npm install --legacy-peer-deps
+```
 
-    What this starts:
-    - Vite dev server (frontend) — typically at http://localhost:5173
-    - json-server (fake REST API) — at http://localhost:3001
+### 2. Start Development Environment
 
-    You can also run the json-server separately:
+The project uses concurrently to run both the frontend and mock API server:
 
-    ```bash
-    npm run server
-    ```
+```bash
+# Start both Vite dev server and JSON Server
+npm run dev
+```
 
-    ## Demo login
+This command starts:
+- **Frontend**: http://localhost:5173 (Vite dev server)
+- **API Server**: http://localhost:3001 (JSON Server)
 
-    The app includes a demo account for quick access:
+### 3. Alternative Commands
 
-    - Email: demo@ticketapp.com
-    - Password: demo123
+```bash
+# Run only the frontend
+npm run dev
 
-    Use the login form at `/auth/login` to sign in with the demo account.
+# Run only the API server
+npm run server
 
-    If the demo user is missing, check `db.json` at the project root — it should contain the demo user in the `users` array. Example:
+# Build for production
+npm run build
 
-    ```json
-    {
-      "users": [
-        { "id": "demo", "email": "demo@ticketapp.com", "password": "demo123", "name": "Demo User" }
-      ]
-    }
-    ```
+# Preview production build
+npm run preview
 
-    Note: Passwords in this demo are stored in plaintext in `db.json`. This is intentional for local development only — do not do this in production.
+# Run linting
+npm run lint
+```
 
-    ## Authentication & token behavior
+## 🔐 Authentication
 
-    - After successful login the app stores a token object in localStorage under the key `ticketapp_auth`. The object looks like:
+### Demo Account
 
-    ```json
-    {
-      "token": "<random>",
-      "expiresAt": "<ISO timestamp>",
-      "user": { "id": "demo", "email": "demo@ticketapp.com", "name": "Demo User" }
-    }
-    ```
+Use these credentials for quick access:
 
-    - There is backward compatibility with an older key `ticketapp_session` used in earlier code paths. The app checks `ticketapp_auth` first and falls back to `ticketapp_session` if present.
-    - Tokens expire after 24 hours by default. Expiry is simulated in the front-end mock API (`src/lib/mockApi.ts`) via the `expiresAt` field. When expired, `mockApi` replies with a 401-like error and the token is removed from localStorage.
+- **Email**: `demo@ticketapp.com`
+- **Password**: `demo123`
 
-    ## Working with tickets
+### Authentication Flow
 
-    - The JSON server stores data in `db.json` (root). Sample structure contains `users`, `tickets`, and `auth` collections.
-    - Tickets endpoints (json-server):
-      - GET /tickets
-      - GET /tickets?userId=<id>
-      - POST /tickets
-      - PATCH /tickets/:id
-      - DELETE /tickets/:id
+1. **Login/Signup**: Users can authenticate via `/auth/login` or `/auth/signup`
+2. **Session Management**: Tokens stored in localStorage with 24-hour expiry
+3. **Protected Routes**: Dashboard and ticket management require authentication
+4. **Auto-redirect**: Authenticated users redirected from auth pages to dashboard
 
-    The frontend uses `src/lib/mockApi.ts` as the API layer — it calls the json-server endpoints and enforces token checks on protected operations.
+### Token Structure
 
-    ## Build for production
+```json
+{
+  "token": "<random-string>",
+  "expiresAt": "2025-10-26T15:35:25.844Z",
+  "user": {
+    "id": "demo",
+    "email": "demo@ticketapp.com",
+    "name": "Demo User"
+  }
+}
+```
 
-    To build the frontend:
+## 📊 Features & Functionality
 
-    ```bash
-    npm run build
-    ```
+### Dashboard
+- **Statistics Overview**: Total tickets, open tickets, in-progress, closed
+- **Quick Actions**: Direct access to create new tickets
+- **Recent Activity**: Latest ticket updates
+- **Visual Analytics**: Charts and progress indicators
 
-    This runs TypeScript build + Vite build and outputs `dist/`.
+### Ticket Management
+- **Create Tickets**: Form-based ticket creation with validation
+- **View Tickets**: List view with filtering and search
+- **Update Status**: Change ticket status (open → in_progress → closed)
+- **Edit Tickets**: Modify ticket details
+- **Delete Tickets**: Remove tickets with confirmation
+- **Priority Levels**: High, medium, low priority classification
 
-    ## Troubleshooting
+### User Interface
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **Dark/Light Mode Ready**: CSS variables for theme switching
+- **Accessibility**: ARIA labels and keyboard navigation
+- **Loading States**: Skeleton loaders and progress indicators
+- **Error Handling**: User-friendly error messages
 
-    - Unauthorized on login:
-      1. Confirm json-server is running: open http://localhost:3001/users in your browser. You should see the users array.
-      2. Clear localStorage or open an Incognito window to avoid stale tokens.
-      3. Ensure the demo user exists in `db.json`.
+## 🛠️ API Integration
 
-    - Tickets not appearing on Dashboard:
-      - The Dashboard reads stats from the API (via `apiGetStats`), so make sure json-server is running and `db.json` has `tickets` for your demo user.
+### Mock API Layer (`src/lib/mockApi.ts`)
 
-    - Type errors during development/build:
-      - Run `npm run build` to surface TypeScript errors and inspect stack traces. The project uses a small number of `any`/`unknown` casts where the mock API shape and local storage types differ; these can be unified with a follow-up refactor.
+The application uses a mock API layer that simulates real backend interactions:
 
-    ## Developer notes & next steps
+```typescript
+// Example API calls
+apiGetTickets()      // GET /tickets
+apiCreateTicket(data) // POST /tickets
+apiUpdateTicket(id, data) // PATCH /tickets/:id
+apiDeleteTicket(id)  // DELETE /tickets/:id
+apiLogin(credentials) // POST /auth/login
+```
 
-    - The project currently simulates a backend using `json-server` and a small `mockApi` wrapper. This keeps the frontend close to how it would interact with a real REST API.
-    - Token expiry and auth checks are simulated in `src/lib/mockApi.ts` and tokens are saved in `localStorage` under `ticketapp_auth`.
-    - TODO ideas:
-      - Consolidate ticket types into a single shared type to remove `unknown`/`any` casts.
-      - Add integration tests that start json-server and exercise login + CRUD flows.
-      - Replace `json-server` with a small Node/Express mock server for more control over auth responses.
+### JSON Server Endpoints
 
-    If you want, I can make a one-click script that resets `db.json` to a known-good state (adds the demo user and a few sample tickets).
+- `GET /tickets` - Fetch all tickets
+- `GET /tickets?userId=<id>` - Filter tickets by user
+- `POST /tickets` - Create new ticket
+- `PATCH /tickets/:id` - Update ticket
+- `DELETE /tickets/:id` - Delete ticket
+- `POST /auth/login` - User authentication
 
-    ---
+## 🎨 UI Components
 
-    Happy hacking — if you want me to add the reset script or tighten types I can do that next.
+### Shadcn/ui Components Used
+
+- **Button**: Action buttons with variants
+- **Card**: Content containers
+- **Dialog**: Modals and forms
+- **Input**: Form inputs
+- **Select**: Dropdown selections
+- **Table**: Data display
+- **Badge**: Status indicators
+- **Alert Dialog**: Confirmations
+- **Toast**: Notifications
+
+### Custom Components
+
+- **Header**: Navigation and branding
+- **Footer**: Site information and links
+- **StatCard**: Dashboard statistics
+- **TicketCard**: Ticket list items
+- **TicketForm**: Create/edit ticket forms
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env` file for custom configuration:
+
+```env
+# API Base URL (defaults to localhost:3001)
+VITE_API_BASE_URL=http://localhost:3001
+
+# App Title
+VITE_APP_TITLE=TicketFlex
+```
+
+### Vite Configuration (`vite.config.ts`)
+
+```typescript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  server: {
+    port: 5173,
+  },
+})
+```
+
+## 🧪 Testing & Quality
+
+### Code Quality
+
+- **ESLint**: Configured for React and TypeScript
+- **TypeScript**: Strict type checking enabled
+- **Prettier**: Code formatting (can be added)
+
+### Development Workflow
+
+1. **Hot Module Replacement**: Instant updates during development
+2. **Type Checking**: Real-time TypeScript errors
+3. **Linting**: Automatic code quality checks
+4. **Build Optimization**: Tree shaking and minification
+
+## 🚀 Deployment
+
+### Production Build
+
+```bash
+# Create production build
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+
+### Deployment Checklist
+
+- [ ] Update API endpoints for production
+- [ ] Configure environment variables
+- [ ] Set up proper authentication backend
+- [ ] Configure domain and SSL
+- [ ] Set up monitoring and logging
+- [ ] Test all features in production environment
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Authentication Problems:**
+- Clear localStorage: `localStorage.clear()`
+- Check if JSON Server is running: http://localhost:3001/users
+- Verify demo user exists in `db.json`
+
+**API Connection Issues:**
+- Ensure JSON Server is running on port 3001
+- Check network tab for failed requests
+- Verify CORS settings if using external API
+
+**Build Errors:**
+- Run `npm run lint` to check for code issues
+- Ensure all dependencies are installed
+- Check TypeScript errors with `npm run build`
+
+**Styling Issues:**
+- Verify Tailwind CSS is properly configured
+- Check for CSS class conflicts
+- Ensure custom CSS variables are defined
+
+## 📈 Future Enhancements
+
+### Planned Features
+
+- [ ] Real-time notifications with WebSockets
+- [ ] Advanced filtering and search
+- [ ] Ticket assignment to team members
+- [ ] File attachments for tickets
+- [ ] Email notifications
+- [ ] Role-based access control
+- [ ] Audit logs and activity tracking
+- [ ] API rate limiting
+- [ ] Multi-language support (i18n)
+
+### Technical Improvements
+
+- [ ] Replace JSON Server with Express.js backend
+- [ ] Add comprehensive test suite (Jest + React Testing Library)
+- [ ] Implement state management (Zustand/Redux)
+- [ ] Add error boundary components
+- [ ] Implement progressive web app (PWA) features
+- [ ] Add performance monitoring
+- [ ] Implement caching strategies
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit changes: `git commit -am 'Add your feature'`
+4. Push to branch: `git push origin feature/your-feature`
+5. Submit a pull request
+
+### Development Guidelines
+
+- Follow TypeScript best practices
+- Use functional components with hooks
+- Maintain consistent code style
+- Add proper error handling
+- Write clear commit messages
+- Test changes thoroughly
+
+## 📄 License
+
+This project is not licensed
+
+## 🙏 Acknowledgments
+
+- **React Team** for the amazing framework
+- **Shadcn** for the beautiful UI components
+- **Tailwind CSS** for the utility-first styling approach
+- **Radix UI** for accessible component primitives
+- **Vite** for the lightning-fast build tool
+
+---
+
+**Built with ❤️ using React, TypeScript, and modern web technologies.**

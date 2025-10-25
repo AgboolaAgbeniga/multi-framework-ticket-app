@@ -97,7 +97,7 @@ export function Signup() {
             <div className="text-center mb-8">
               <h1 className="mb-2">Create Account</h1>
               <p className="text-slate-600">
-                Get started with TicketFlow today
+                Get started with TicketFlex today
               </p>
             </div>
 

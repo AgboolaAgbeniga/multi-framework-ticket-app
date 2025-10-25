@@ -4,6 +4,7 @@ import { Card } from '../components/ui/card';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { CheckCircle, Clock, Users, Zap } from 'lucide-react';
+import waveSvgUrl from '../../../assets/wave.svg?url';
 
 export function Landing() {
   const navigate = useNavigate();
@@ -17,17 +18,7 @@ export function Landing() {
         <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500">
           {/* Wavy Background SVG */}
           <div className="absolute bottom-0 left-0 right-0">
-            <svg 
-              viewBox="0 0 1440 120" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-auto"
-            >
-              <path 
-                d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" 
-                fill="white"
-              />
-            </svg>
+            <img src={waveSvgUrl} alt="Wave background" className="w-full h-auto" />
           </div>
 
           {/* Decorative Circles */}
@@ -37,13 +28,13 @@ export function Landing() {
 
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-white mb-6">
-                Streamline Your Support with TicketFlow
+              <h1 className="text-white mb-6 text-6xl">
+                Streamline Your Support with TicketFlex
               </h1>
-              <p className="text-white/90 text-lg md:text-xl mb-8">
-                The ultimate ticket management system for modern teams. Track, manage, and resolve customer issues with ease.
+              <p className="text-white/90 text-lg mb-12 ">
+                The ultimate ticket management system for modern teams. <br/> Track, manage, and resolve customer issues with ease.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-10 justify-center">
                 <Button 
                   size="lg"
                   variant="secondary"
@@ -68,7 +59,7 @@ export function Landing() {
         <section className="py-16 md:py-24 bg-slate-50">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="mb-4">Why Choose TicketFlow?</h2>
+              <h2 className="mb-4">Why Choose TicketFlex?</h2>
               <p className="text-slate-600 max-w-2xl mx-auto">
                 Everything you need to manage customer support tickets efficiently and effectively.
               </p>
@@ -130,7 +121,7 @@ export function Landing() {
                   Ready to Transform Your Support?
                 </h2>
                 <p className="text-white/90 mb-8 text-lg">
-                  Join thousands of teams already using TicketFlow to deliver exceptional customer support.
+                  Join thousands of teams already using TicketFlex to deliver exceptional customer support.
                 </p>
                 <Button 
                   size="lg"

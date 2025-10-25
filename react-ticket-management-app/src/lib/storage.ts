@@ -12,7 +12,7 @@ export type Ticket = {
   updatedAt: string;
 };
 
-const STORAGE_KEY = 'ticket_management_tickets';
+const STORAGE_KEY = 'ticketflex_tickets';
 
 function read(): Ticket[] {
   try {
