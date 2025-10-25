@@ -232,11 +232,6 @@ watch(() => route.query.new, (newVal) => {
 })
 
 onMounted(() => {
-  if (!authStore.isAuthenticated) {
-    router.push('/auth/login')
-    return
-  }
-
   loadTickets()
 
   // Handle query parameters

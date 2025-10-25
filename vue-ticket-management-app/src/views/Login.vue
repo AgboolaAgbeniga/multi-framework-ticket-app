@@ -20,7 +20,7 @@
                   placeholder="you@example.com"
                   v-model="email"
                   :class="{ 'border-red-500': errors.email }"
-                  @input="errors.email = undefined"
+                  @input="clearError('email')"
                 />
                 <div v-if="errors.email" class="flex items-center gap-1 mt-1 text-red-600 text-sm">
                   <AlertCircle class="w-4 h-4" />
@@ -36,7 +36,7 @@
                   placeholder="••••••••"
                   v-model="password"
                   :class="{ 'border-red-500': errors.password }"
-                  @input="errors.password = undefined"
+                  @input="clearError('password')"
                 />
                 <div v-if="errors.password" class="flex items-center gap-1 mt-1 text-red-600 text-sm">
                   <AlertCircle class="w-4 h-4" />
@@ -84,6 +84,12 @@ const password = ref('')
 const errors = ref<{ email?: string; password?: string }>({})
 const isLoading = ref(false)
 
+const clearError = (field: string) => {
+  if (errors.value[field as keyof typeof errors.value]) {
+    errors.value[field as keyof typeof errors.value] = undefined
+  }
+}
+
 const validate = () => {
   const newErrors: { email?: string; password?: string } = {}
 
@@ -119,7 +125,7 @@ const handleSubmit = async () => {
   if (result.success) {
     router.push('/dashboard')
   } else {
-    errors.value = { password: result.error }
+    errors.value = { email: result.error }
   }
 }
 </script>

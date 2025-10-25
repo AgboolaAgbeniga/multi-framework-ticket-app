@@ -6,15 +6,22 @@
       'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
       $attrs.class as string
     )"
+    :value="modelValue"
     v-bind="$attrs"
-    @input="$emit('input', $event)"
+    @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
   />
 </template>
 
 <script setup lang="ts">
 import { cn } from './utils'
 
+interface Props {
+  modelValue?: string
+}
+
+defineProps<Props>()
+
 defineEmits<{
-  input: [event: Event]
+  'update:modelValue': [value: string]
 }>()
 </script>

@@ -20,7 +20,7 @@
                   placeholder="John Doe"
                   v-model="name"
                   :class="{ 'border-red-500': errors.name }"
-                  @input="errors.name = undefined"
+                  @input="clearError('name')"
                 />
                 <div v-if="errors.name" class="flex items-center gap-1 mt-1 text-red-600 text-sm">
                   <AlertCircle class="w-4 h-4" />
@@ -36,7 +36,7 @@
                   placeholder="you@example.com"
                   v-model="email"
                   :class="{ 'border-red-500': errors.email }"
-                  @input="errors.email = undefined"
+                  @input="clearError('email')"
                 />
                 <div v-if="errors.email" class="flex items-center gap-1 mt-1 text-red-600 text-sm">
                   <AlertCircle class="w-4 h-4" />
@@ -52,7 +52,7 @@
                   placeholder="••••••••"
                   v-model="password"
                   :class="{ 'border-red-500': errors.password }"
-                  @input="errors.password = undefined"
+                  @input="clearError('password')"
                 />
                 <div v-if="errors.password" class="flex items-center gap-1 mt-1 text-red-600 text-sm">
                   <AlertCircle class="w-4 h-4" />
@@ -68,7 +68,7 @@
                   placeholder="••••••••"
                   v-model="confirmPassword"
                   :class="{ 'border-red-500': errors.confirmPassword }"
-                  @input="errors.confirmPassword = undefined"
+                  @input="clearError('confirmPassword')"
                 />
                 <div v-if="errors.confirmPassword" class="flex items-center gap-1 mt-1 text-red-600 text-sm">
                   <AlertCircle class="w-4 h-4" />
@@ -123,6 +123,12 @@ const errors = ref<{
 }>({})
 const isLoading = ref(false)
 
+const clearError = (field: string) => {
+  if (errors.value[field as keyof typeof errors.value]) {
+    errors.value[field as keyof typeof errors.value] = undefined
+  }
+}
+
 const validate = () => {
   const newErrors: {
     name?: string
@@ -175,7 +181,7 @@ const handleSubmit = async () => {
   if (result.success) {
     router.push('/auth/login')
   } else {
-    errors.value = { email: result.error }
+    errors.value = { email: result.error || 'Signup failed' }
   }
 }
 </script>

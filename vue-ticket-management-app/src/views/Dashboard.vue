@@ -126,11 +126,6 @@ const statusSummary = computed(() => {
 })
 
 onMounted(async () => {
-  if (!authStore.isAuthenticated) {
-    router.push('/auth/login')
-    return
-  }
-
   try {
     const res = await apiGetStats()
     if (res.ok && res.data) {

@@ -1,38 +1,39 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { getSession, login as authLogin, signup as authSignup, logout as authLogout } from '../lib/auth'
+import { apiLogin, apiSignup, apiLogout, getCurrentUser } from '../lib/mockApi'
+import type { AuthToken } from '../lib/types'
 
 export const useAuthStore = defineStore('auth', () => {
-  const session = ref(getSession())
+  const session = ref<AuthToken['user'] | null>(getCurrentUser())
 
   const isAuthenticated = computed(() => session.value !== null)
   const user = computed(() => session.value)
 
   const login = async (email: string, password: string) => {
-    const result = authLogin(email, password)
-    if (result.success) {
-      session.value = result.session
+    const result = await apiLogin(email, password)
+    if (result.ok && result.data) {
+      session.value = result.data.user
       return { success: true }
     }
-    return { success: false, error: result.error }
+    return { success: false, error: result.error || 'Login failed' }
   }
 
   const signup = async (email: string, password: string, name?: string) => {
-    const result = authSignup(email, password, name)
-    if (result.success) {
-      session.value = result.session
+    const result = await apiSignup(email, password, name || '')
+    if (result.ok && result.data) {
+      // After signup, user needs to login
       return { success: true }
     }
-    return { success: false, error: result.error }
+    return { success: false, error: result.error || 'Signup failed' }
   }
 
   const logout = () => {
-    authLogout()
+    apiLogout()
     session.value = null
   }
 
   const refreshSession = () => {
-    session.value = getSession()
+    session.value = getCurrentUser()
   }
 
   return {

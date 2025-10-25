@@ -122,15 +122,16 @@
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { LogOut, Menu, X } from 'lucide-vue-next'
-import { getSession, logout } from '../../lib/auth'
+import { useAuthStore } from '../../stores/auth'
 import Button from '../ui/Button.vue'
 
 const router = useRouter()
-const session = computed(() => getSession())
+const authStore = useAuthStore()
+const session = computed(() => authStore.user)
 const mobileMenuOpen = ref(false)
 
 const handleLogout = () => {
-  logout()
+  authStore.logout()
   mobileMenuOpen.value = false
   router.push('/')
 }

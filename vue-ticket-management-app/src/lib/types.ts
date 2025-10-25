@@ -11,12 +11,12 @@ export interface AuthToken {
 export interface Ticket {
   id: number;
   title: string;
-  description?: string;
+  description: string;
   status: 'open' | 'in_progress' | 'closed';
-  priority: string;
   userId: number | string;
   createdAt: string;
   updatedAt: string;
+  priority?: string;
 }
 
 export interface User {

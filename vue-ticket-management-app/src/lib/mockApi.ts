@@ -1,6 +1,6 @@
 import type { AuthToken, Ticket, User } from './types';
 
-const API_URL = 'http://localhost:3001';
+const API_URL = 'http://localhost:3002';
 const TOKEN_KEY = 'ticketapp_auth';
 const TOKEN_EXPIRY_HOURS = 24;
 
@@ -123,9 +123,9 @@ export async function apiGetTickets(): Promise<ApiResponse<Ticket[]>> {
 
 export async function apiCreateTicket(payload: {
   title: string;
-  description?: string;
+  description: string;
   status: 'open' | 'in_progress' | 'closed';
-  priority: string;
+  priority?: string;
 }): Promise<ApiResponse<Ticket>> {
   const token = getStoredToken();
   if (!token) return { ok: false, error: 'Unauthorized' };
@@ -133,12 +133,12 @@ export async function apiCreateTicket(payload: {
   const now = new Date().toISOString();
   const newTicket: Omit<Ticket, 'id'> = {
     title: payload.title,
-    description: payload.description || '',
+    description: payload.description,
     status: payload.status,
-    priority: payload.priority,
     userId: token.user.id,
     createdAt: now,
     updatedAt: now,
+    priority: payload.priority || 'medium',
   };
 
   return fetchWithAuth<Ticket>('/tickets', {
