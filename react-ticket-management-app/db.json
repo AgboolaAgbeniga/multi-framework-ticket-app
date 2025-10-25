@@ -1,0 +1,150 @@
+{
+  "users": [
+    {
+      "id": "demo",
+      "email": "demo@ticketapp.com",
+      "password": "demo123",
+      "name": "Demo User"
+    },
+    {
+      "id": "1761345141901",
+      "email": "emmanuelagbeniga@gmail.com",
+      "password": "pZq64yM7@JPp9Pc",
+      "name": "Agbenia Agboola"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "1",
+      "title": "Sample Ticket",
+      "description": "This is a sample ticket",
+      "status": "in_progress",
+      "userId": "demo",
+      "createdAt": "2025-10-24T22:00:00.000Z",
+      "updatedAt": "2025-10-25T06:08:03.083Z",
+      "priority": "medium"
+    },
+    {
+      "id": "fb7d",
+      "title": "Bugs",
+      "description": "You need to fix this Bug Asap",
+      "status": "open",
+      "userId": "demo",
+      "createdAt": "2025-10-24T22:49:11.522Z",
+      "updatedAt": "2025-10-24T22:49:11.522Z",
+      "priority": "high"
+    },
+    {
+      "id": "586c",
+      "title": "Grand",
+      "description": "My grandmother swallow shovel",
+      "status": "in_progress",
+      "userId": "demo",
+      "createdAt": "2025-10-24T23:07:37.361Z",
+      "updatedAt": "2025-10-24T23:07:37.361Z"
+    },
+    {
+    "id": "a1b2",
+    "title": "Broken login button",
+    "description": "High priority: Login button not responding on mobile view.",
+    "status": "open",
+    "userId": "demo",
+    "createdAt": "2025-10-24T09:10:00.000Z",
+    "updatedAt": "2025-10-24T09:10:00.000Z"
+  },
+  {
+    "id": "c3d4",
+    "title": "Database connection timeout",
+    "description": "High priority: Frequent timeout errors during ticket submission.",
+    "status": "in_progress",
+    "userId": "demo",
+    "createdAt": "2025-10-24T09:15:00.000Z",
+    "updatedAt": "2025-10-24T10:00:00.000Z"
+  },
+  {
+    "id": "e5f6",
+    "title": "UI misalignment on dashboard",
+    "description": "Low priority: Analytics cards overlap on smaller screens.",
+    "status": "open",
+    "userId": "demo",
+    "createdAt": "2025-10-24T09:20:00.000Z",
+    "updatedAt": "2025-10-24T09:20:00.000Z"
+  },
+  {
+    "id": "g7h8",
+    "title": "Email notification failure",
+    "description": "Medium priority: Users not receiving password reset emails.",
+    "status": "in_progress",
+    "userId": "demo",
+    "createdAt": "2025-10-24T09:30:00.000Z",
+    "updatedAt": "2025-10-24T09:45:00.000Z"
+  },
+  {
+    "id": "i9j0",
+    "title": "Slow dashboard loading time",
+    "description": "Medium priority: Dashboard takes more than 10 seconds to load.",
+    "status": "open",
+    "userId": "demo",
+    "createdAt": "2025-10-24T09:35:00.000Z",
+    "updatedAt": "2025-10-24T09:35:00.000Z"
+  },
+  {
+    "id": "k1l2",
+    "title": "Ticket filtering not working",
+    "description": "High priority: Users cannot filter tickets by status.",
+    "status": "closed",
+    "userId": "demo",
+    "createdAt": "2025-10-24T09:40:00.000Z",
+    "updatedAt": "2025-10-24T11:00:00.000Z"
+  },
+  {
+    "id": "m3n4",
+    "title": "Forgot password link expired",
+    "description": "Medium priority: Reset links expire in less than 1 minute.",
+    "status": "open",
+    "userId": "demo",
+    "createdAt": "2025-10-24T09:45:00.000Z",
+    "updatedAt": "2025-10-24T09:45:00.000Z"
+  },
+  {
+    "id": "o5p6",
+    "title": "Attachment upload error",
+    "description": "High priority: Users cannot upload screenshots to tickets.",
+    "status": "in_progress",
+    "userId": "demo",
+    "createdAt": "2025-10-24T09:50:00.000Z",
+    "updatedAt": "2025-10-24T10:30:00.000Z"
+  },
+  {
+    "id": "q7r8",
+    "title": "Duplicate ticket creation",
+    "description": "High priority: System allows identical tickets for same user.",
+    "status": "closed",
+    "userId": "demo",
+    "createdAt": "2025-10-24T09:55:00.000Z",
+    "updatedAt": "2025-10-24T10:20:00.000Z"
+  },
+  {
+    "id": "s9t0",
+    "title": "Search function returns wrong results",
+    "description": "Medium priority: Searching by ID shows unrelated tickets.",
+    "status": "open",
+    "userId": "demo",
+    "createdAt": "2025-10-24T10:00:00.000Z",
+    "updatedAt": "2025-10-24T10:00:00.000Z"
+  },
+  {
+    "id": "u1v2",
+    "title": "Session timeout after login",
+    "description": "High priority: Users logged out after 2 minutes of inactivity.",
+    "status": "in_progress",
+    "userId": "demo",
+    "createdAt": "2025-10-24T10:05:00.000Z",
+    "updatedAt": "2025-10-24T10:10:00.000Z"
+  }
+
+  ],
+  "auth": {
+    "tokens": []
+  }
+}
