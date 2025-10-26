@@ -140,6 +140,16 @@
       "createdAt": "2025-10-26T05:02:04.282Z",
       "updatedAt": "2025-10-26T05:02:12.152Z",
       "priority": "high"
+    },
+    {
+      "id": "a759",
+      "title": "Fix footer alingment",
+      "description": "HNF Learn landing page has misaligned footer content, fix it asap. The client is complaining",
+      "status": "open",
+      "userId": "demo",
+      "createdAt": "2025-10-26T06:38:15.581Z",
+      "updatedAt": "2025-10-26T06:51:59.514Z",
+      "priority": "high"
     }
   ],
   "auth": {

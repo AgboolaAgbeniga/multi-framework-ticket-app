@@ -71,7 +71,7 @@
 
     <!-- Delete Confirmation Dialog -->
     <Dialog :open="isDeleteDialogOpen" @close="cancelDelete">
-      <DialogContent class="sm:max-w-[400px]">
+      <DialogContent >
         <DialogHeader>
           <DialogTitle>Are you sure?</DialogTitle>
           <DialogDescription>
@@ -83,7 +83,7 @@
           <Button variant="outline" @click="cancelDelete" class="flex-1">
             Cancel
           </Button>
-          <Button @click="confirmDelete" variant="destructive" class="flex-1">
+          <Button @click="confirmDelete" variant="destructive" class="flex-1 hover:bg-red-700">
             Delete
           </Button>
         </div>

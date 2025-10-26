@@ -1,7 +1,7 @@
 <template>
   <Teleport to="body">
     <TransitionRoot appear :show="open" as="template">
-      <Dialog as="div" :class="cn('relative z-50', $attrs.class as string)">
+      <Dialog as="div" :class="cn('relative z-50', $attrs.class as string)" @close="$emit('close')">
         <TransitionChild
           as="template"
           enter="duration-300 ease-out"
@@ -11,11 +11,11 @@
           leave-from="opacity-100"
           leave-to="opacity-0"
         >
-          <div class="fixed inset-0 bg-black/80" />
+          <div class="fixed inset-0 bg-black/50" @click="$emit('close')" />
         </TransitionChild>
 
         <div class="fixed inset-0 overflow-y-auto">
-          <div class="flex min-h-full items-center justify-center p-4 text-center">
+          <div class="flex min-h-full items-center justify-center p-4">
             <TransitionChild
               as="template"
               enter="duration-300 ease-out"
@@ -25,7 +25,7 @@
               leave-from="opacity-100 scale-100"
               leave-to="opacity-0 scale-95"
             >
-              <DialogPanel class="w-full max-w-lg transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+              <DialogPanel class="w-full max-w-[calc(100%-2rem)] transform overflow-hidden rounded-lg bg-background text-left align-middle shadow-lg transition-all border sm:max-w-lg">
                 <slot />
               </DialogPanel>
             </TransitionChild>

@@ -79,7 +79,7 @@ export function TicketForm({ ticket, onSubmit, onCancel }: TicketFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <Label htmlFor="title">Title *</Label>
+        <Label htmlFor="title" className='mb-2'>Title *</Label>
         <Input
           id="title"
           value={title}
@@ -99,7 +99,7 @@ export function TicketForm({ ticket, onSubmit, onCancel }: TicketFormProps) {
       </div>
 
       <div>
-        <Label htmlFor="description">Description</Label>
+        <Label htmlFor="description" className='mb-2'>Description</Label>
         <Textarea
           id="description"
           value={description}
@@ -115,7 +115,7 @@ export function TicketForm({ ticket, onSubmit, onCancel }: TicketFormProps) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="status">Status *</Label>
+          <Label htmlFor="status" className='mb-2'>Status *</Label>
           <Select value={status} onValueChange={(value) => setStatus(value as TicketStatus)}>
             <SelectTrigger id="status" className={errors.status ? 'border-red-500' : ''}>
               <SelectValue />
@@ -135,7 +135,7 @@ export function TicketForm({ ticket, onSubmit, onCancel }: TicketFormProps) {
         </div>
 
         <div>
-          <Label htmlFor="priority">Priority</Label>
+          <Label htmlFor="priority" className='mb-2'>Priority</Label>
           <Select value={priority} onValueChange={(value) => setPriority(value as TicketPriority)}>
             <SelectTrigger id="priority">
               <SelectValue />

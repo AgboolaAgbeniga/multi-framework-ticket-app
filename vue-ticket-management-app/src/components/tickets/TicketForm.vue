@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="handleSubmit" class="space-y-4">
     <div>
-      <Label for="title">Title *</Label>
+      <Label for="title" class="mb-2">Title *</Label>
       <Input
         id="title"
         v-model="title"
@@ -16,7 +16,7 @@
     </div>
 
     <div>
-      <Label for="description">Description</Label>
+      <Label for="description" class="mb-2">Description</Label>
       <Textarea
         id="description"
         v-model="description"
@@ -31,7 +31,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div>
-        <Label for="status">Status *</Label>
+        <Label for="status" class="mb-2">Status *</Label>
         <Select
           id="status"
           v-model="status"
@@ -45,7 +45,7 @@
       </div>
 
       <div>
-        <Label for="priority">Priority</Label>
+        <Label for="priority" class="mb-2">Priority</Label>
         <Select
           id="priority"
           v-model="priority"
