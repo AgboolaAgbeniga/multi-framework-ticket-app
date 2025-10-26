@@ -17,6 +17,7 @@
             <Button
               variant="ghost"
               @click="$router.push('/dashboard')"
+              
             >
               Dashboard
             </Button>

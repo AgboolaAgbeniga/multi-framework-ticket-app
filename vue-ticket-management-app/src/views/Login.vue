@@ -54,7 +54,7 @@
 
               <div class="text-center text-sm">
                 <span class="text-slate-600">Don't have an account? </span>
-                <router-link to="/auth/signup" class="text-indigo-600 hover:underline">
+                <router-link to="/auth/signup" class="text-primary hover:underline">
                   Sign up
                 </router-link>
               </div>
@@ -70,6 +70,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { AlertCircle } from 'lucide-vue-next'
+import { toast } from 'vue-sonner'
 import { useAuthStore } from '../stores/auth'
 import Card from '../components/ui/Card.vue'
 import Input from '../components/ui/Input.vue'
@@ -111,6 +112,7 @@ const validate = () => {
 
 const handleSubmit = async () => {
   if (!validate()) {
+    toast.error('Please fix the form errors')
     return
   }
 
@@ -123,8 +125,12 @@ const handleSubmit = async () => {
   isLoading.value = false
 
   if (result.success) {
-    router.push('/dashboard')
+    toast.success(`Welcome back, ${authStore.user?.name}!`)
+    setTimeout(() => {
+      router.push('/dashboard')
+    }, 500)
   } else {
+    toast.error(result.error || 'Login failed')
     errors.value = { email: result.error }
   }
 }

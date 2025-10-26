@@ -37,8 +37,8 @@
           class="flex items-center gap-1"
           :title="getDetailedDateTime(ticket.updatedAt)"
         >
-          <Clock class="w-4 h-4 text-indigo-500" />
-          <span class="text-indigo-600">
+          <Clock class="w-4 h-4 text-primary" />
+          <span class="text-primary">
             Updated {{ formatDateTime(ticket.updatedAt) }}
           </span>
         </div>
