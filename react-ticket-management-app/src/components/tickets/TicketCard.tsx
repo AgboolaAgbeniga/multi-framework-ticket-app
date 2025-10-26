@@ -2,7 +2,7 @@ import { Card } from '../ui/card';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import type { Ticket, TicketStatus, TicketPriority } from '../../lib/storage';
-import { Edit, Trash2, Clock, Calendar } from 'lucide-react';
+import { Edit, Trash2, Clock } from 'lucide-react';
 import { formatDateTime, getDetailedDateTime } from '../../lib/dateUtils';
 
 interface TicketCardProps {
