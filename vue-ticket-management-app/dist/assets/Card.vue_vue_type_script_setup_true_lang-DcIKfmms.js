@@ -1,0 +1,1 @@
+import{d as a,a as r,n as s,u as o,M as n,P as t,o as l}from"./index-CtmMlw8y.js";const p=a({__name:"Card",setup(c){return(e,d)=>(l(),r("div",{class:s(o(n)("bg-card text-card-foreground flex flex-col gap-6 rounded-xl border",e.$attrs.class))},[t(e.$slots,"default")],2))}});export{p as _};

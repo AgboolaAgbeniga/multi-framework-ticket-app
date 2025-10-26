@@ -1,13 +1,28 @@
 import type { AuthToken, Ticket, User } from './types';
 
-const API_URL = 'https://vue-ticket-app-ten.vercel.app/api';
 const TOKEN_KEY = 'ticketapp_auth';
+const USERS_KEY = 'ticketapp_users';
+const TICKETS_KEY = 'ticketapp_tickets';
 const TOKEN_EXPIRY_HOURS = 24;
 
 interface ApiResponse<T> {
   ok: boolean;
   data?: T;
   error?: string;
+}
+
+// Local storage helpers
+function getStoredData<T>(key: string): T[] {
+  try {
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : [];
+  } catch {
+    return [];
+  }
+}
+
+function setStoredData<T>(key: string, data: T[]): void {
+  localStorage.setItem(key, JSON.stringify(data));
 }
 
 function getStoredToken(): AuthToken | null {
@@ -27,52 +42,18 @@ function getStoredToken(): AuthToken | null {
   }
 }
 
-async function fetchWithAuth<T>(
-  endpoint: string,
-  options: RequestInit = {}
-): Promise<ApiResponse<T>> {
-  const token = getStoredToken();
-
-  // Allow public user endpoints (list/query and single user lookups) without a token
-  // e.g. /users, /users?email=..., /users/1
-  const isPublicUsersEndpoint = endpoint.startsWith('/users');
-  if (!token && !isPublicUsersEndpoint) {
-    return { ok: false, error: 'Unauthorized' };
-  }
-
-  try {
-    const response = await fetch(`${API_URL}${endpoint}`, {
-      ...options,
-      headers: {
-        'Content-Type': 'application/json',
-        ...(token && { 'Authorization': `Bearer ${token.token}` }),
-        ...options.headers,
-      },
-    });
-
-    if (response.status === 401) {
-      localStorage.removeItem(TOKEN_KEY);
-      return { ok: false, error: 'Token expired' };
-    }
-
-    if (!response.ok) {
-      return { ok: false, error: 'API request failed' };
-    }
-
-    const data = await response.json();
-    return { ok: true, data };
-  } catch (err) {
-    return { ok: false, error: 'Network error' };
-  }
+// Simulate async operations for consistency with original API
+async function delay(ms: number = 100): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 export async function apiLogin(email: string, password: string): Promise<ApiResponse<AuthToken>> {
-  const response = await fetchWithAuth<User[]>(`/users?email=${encodeURIComponent(email)}`);
+  await delay();
 
-  if (!response.ok) return { ok: false, error: response.error };
-  if (!response.data?.length) return { ok: false, error: 'Invalid credentials' };
+  const users = getStoredData<User>(USERS_KEY);
+  const user = users.find(u => u.email === email);
 
-  const user = response.data[0];
+  if (!user) return { ok: false, error: 'Invalid credentials' };
   if (user.password !== password) return { ok: false, error: 'Invalid credentials' };
 
   const token: AuthToken = {
@@ -90,8 +71,12 @@ export async function apiLogin(email: string, password: string): Promise<ApiResp
 }
 
 export async function apiSignup(email: string, password: string, name: string): Promise<ApiResponse<User>> {
-  const checkExisting = await fetchWithAuth<User[]>('/users?email=' + email);
-  if (checkExisting.data?.length) {
+  await delay();
+
+  const users = getStoredData<User>(USERS_KEY);
+  const existingUser = users.find(u => u.email === email);
+
+  if (existingUser) {
     return { ok: false, error: 'Email already exists' };
   }
 
@@ -102,12 +87,12 @@ export async function apiSignup(email: string, password: string, name: string): 
     name,
   };
 
-  const response = await fetchWithAuth<User>('/users', {
-    method: 'POST',
-    body: JSON.stringify(newUser),
-  });
+  users.push(newUser);
+  setStoredData(USERS_KEY, users);
 
-  return response;
+  // Return user without password
+  const { password: _, ...userWithoutPassword } = newUser;
+  return { ok: true, data: userWithoutPassword as User };
 }
 
 export function apiLogout(): void {
@@ -115,10 +100,15 @@ export function apiLogout(): void {
 }
 
 export async function apiGetTickets(): Promise<ApiResponse<Ticket[]>> {
+  await delay();
+
   const token = getStoredToken();
   if (!token) return { ok: false, error: 'Unauthorized' };
 
-  return fetchWithAuth<Ticket[]>(`/tickets?userId=${token.user.id}`);
+  const tickets = getStoredData<Ticket>(TICKETS_KEY);
+  const userTickets = tickets.filter(t => t.userId === token.user.id);
+
+  return { ok: true, data: userTickets };
 }
 
 export async function apiCreateTicket(payload: {
@@ -127,11 +117,14 @@ export async function apiCreateTicket(payload: {
   status: 'open' | 'in_progress' | 'closed';
   priority?: string;
 }): Promise<ApiResponse<Ticket>> {
+  await delay();
+
   const token = getStoredToken();
   if (!token) return { ok: false, error: 'Unauthorized' };
 
   const now = new Date().toISOString();
-  const newTicket: Omit<Ticket, 'id'> = {
+  const newTicket: Ticket = {
+    id: Date.now(),
     title: payload.title,
     description: payload.description,
     status: payload.status,
@@ -141,67 +134,84 @@ export async function apiCreateTicket(payload: {
     priority: payload.priority || 'medium',
   };
 
-  return fetchWithAuth<Ticket>('/tickets', {
-    method: 'POST',
-    body: JSON.stringify(newTicket),
-  });
+  const tickets = getStoredData<Ticket>(TICKETS_KEY);
+  tickets.push(newTicket);
+  setStoredData(TICKETS_KEY, tickets);
+
+  return { ok: true, data: newTicket };
 }
 
 export async function apiUpdateTicket(
   id: string | number,
   updates: Partial<Ticket>
 ): Promise<ApiResponse<Ticket>> {
+  await delay();
+
   const token = getStoredToken();
   if (!token) return { ok: false, error: 'Unauthorized' };
 
-  // First fetch the ticket to verify ownership
-  const ticket = await fetchWithAuth<Ticket>(`/tickets/${id}`);
-  if (!ticket.ok) return ticket;
-  if (ticket.data?.userId !== token.user.id) {
+  const tickets = getStoredData<Ticket>(TICKETS_KEY);
+  const ticketIndex = tickets.findIndex(t => t.id === id);
+
+  if (ticketIndex === -1) {
+    return { ok: false, error: 'Ticket not found' };
+  }
+
+  const ticket = tickets[ticketIndex];
+  if (ticket.userId !== token.user.id) {
     return { ok: false, error: 'Unauthorized' };
   }
 
   const updatedTicket = {
+    ...ticket,
     ...updates,
     updatedAt: new Date().toISOString(),
   };
 
-  return fetchWithAuth<Ticket>(`/tickets/${id}`, {
-    method: 'PATCH',
-    body: JSON.stringify(updatedTicket),
-  });
+  tickets[ticketIndex] = updatedTicket;
+  setStoredData(TICKETS_KEY, tickets);
+
+  return { ok: true, data: updatedTicket };
 }
 
 export async function apiDeleteTicket(id: string | number): Promise<ApiResponse<boolean>> {
+  await delay();
+
   const token = getStoredToken();
   if (!token) return { ok: false, error: 'Unauthorized' };
 
-  // First fetch the ticket to verify ownership
-  const ticket = await fetchWithAuth<Ticket>(`/tickets/${id}`);
-  if (!ticket.ok) return { ok: false, error: ticket.error };
-  if (ticket.data?.userId !== token.user.id) {
+  const tickets = getStoredData<Ticket>(TICKETS_KEY);
+  const ticketIndex = tickets.findIndex(t => t.id === id);
+
+  if (ticketIndex === -1) {
+    return { ok: false, error: 'Ticket not found' };
+  }
+
+  const ticket = tickets[ticketIndex];
+  if (ticket.userId !== token.user.id) {
     return { ok: false, error: 'Unauthorized' };
   }
 
-  const response = await fetchWithAuth<void>(`/tickets/${id}`, {
-    method: 'DELETE',
-  });
+  tickets.splice(ticketIndex, 1);
+  setStoredData(TICKETS_KEY, tickets);
 
-  return { ok: response.ok, data: response.ok, error: response.error };
+  return { ok: true, data: true };
 }
 
 export async function apiGetStats(): Promise<ApiResponse<any>> {
+  await delay();
+
   const token = getStoredToken();
   if (!token) return { ok: false, error: 'Unauthorized' };
 
-  const tickets = await fetchWithAuth<Ticket[]>(`/tickets?userId=${token.user.id}`);
-  if (!tickets.ok) return tickets;
+  const tickets = getStoredData<Ticket>(TICKETS_KEY);
+  const userTickets = tickets.filter(t => t.userId === token.user.id);
 
   const stats = {
-    total: tickets.data?.length || 0,
-    open: tickets.data?.filter(t => t.status === 'open').length || 0,
-    inProgress: tickets.data?.filter(t => t.status === 'in_progress').length || 0,
-    closed: tickets.data?.filter(t => t.status === 'closed').length || 0,
+    total: userTickets.length,
+    open: userTickets.filter((t: Ticket) => t.status === 'open').length,
+    inProgress: userTickets.filter((t: Ticket) => t.status === 'in_progress').length,
+    closed: userTickets.filter((t: Ticket) => t.status === 'closed').length,
   };
 
   return { ok: true, data: stats };
@@ -223,3 +233,20 @@ export default {
   apiGetStats,
   getCurrentUser,
 };
+
+// Initialize with demo data if no users exist
+const initializeDemoData = () => {
+  const users = getStoredData<User>(USERS_KEY);
+  if (users.length === 0) {
+    const demoUser: User = {
+      id: 1,
+      email: 'demo@ticketapp.com',
+      password: 'demo123',
+      name: 'Demo User',
+    };
+    setStoredData(USERS_KEY, [demoUser]);
+  }
+};
+
+// Initialize demo data on module load
+initializeDemoData();
