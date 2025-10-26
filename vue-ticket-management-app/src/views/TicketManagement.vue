@@ -62,10 +62,10 @@
           </DialogDescription>
         </DialogHeader>
         <TicketForm
-          :ticket="selectedTicket"
-          @submit="selectedTicket ? handleUpdate : handleCreate"
-          @cancel="closeForm"
-        />
+           :ticket="selectedTicket"
+           @submit="handleFormSubmit"
+           @cancel="closeForm"
+         />
       </DialogContent>
     </Dialog>
 
@@ -96,6 +96,7 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { Plus, Filter } from 'lucide-vue-next'
+import { toast } from 'vue-sonner'
 import { useAuthStore } from '../stores/auth'
 import { apiGetTickets, apiCreateTicket, apiUpdateTicket, apiDeleteTicket } from '../lib/mockApi'
 import type { Ticket } from '../lib/types'
@@ -166,12 +167,16 @@ const handleCreate = async (data: { title: string; description: string; status: 
     if (res.ok) {
       await loadTickets()
       closeForm()
+      toast.success('Ticket created successfully!')
     } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
       authStore.logout()
       router.push('/auth/login')
+    } else {
+      toast.error(res.error || 'Failed to create ticket')
     }
   } catch (e) {
     console.error('Failed to create ticket:', e)
+    toast.error('Failed to create ticket')
   }
 }
 
@@ -180,20 +185,35 @@ const handleEdit = (ticket: Ticket) => {
   isFormOpen.value = true
 }
 
+const handleFormSubmit = async (data: { title: string; description: string; status: 'open' | 'in_progress' | 'closed'; priority: string }) => {
+  if (selectedTicket.value) {
+    await handleUpdate(data)
+  } else {
+    await handleCreate(data)
+  }
+}
+
 const handleUpdate = async (data: { title: string; description: string; status: 'open' | 'in_progress' | 'closed'; priority: string }) => {
   if (!selectedTicket.value) return
 
+  console.log('Updating ticket:', selectedTicket.value.id, 'with data:', data)
+
   try {
     const res = await apiUpdateTicket(selectedTicket.value.id, data)
+    console.log('Update response:', res)
     if (res.ok) {
       await loadTickets()
       closeForm()
+      toast.success('Ticket updated successfully!')
     } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
       authStore.logout()
       router.push('/auth/login')
+    } else {
+      toast.error(res.error || 'Failed to update ticket')
     }
   } catch (e) {
     console.error('Failed to update ticket:', e)
+    toast.error('Failed to update ticket')
   }
 }
 
@@ -209,12 +229,16 @@ const confirmDelete = async () => {
     const res = await apiDeleteTicket(ticketToDelete.value.id)
     if (res.ok && res.data) {
       await loadTickets()
+      toast.success('Ticket deleted successfully!')
     } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
       authStore.logout()
       router.push('/auth/login')
+    } else {
+      toast.error(res.error || 'Failed to delete ticket')
     }
   } catch (e) {
     console.error('Failed to delete ticket:', e)
+    toast.error('Failed to delete ticket')
   } finally {
     cancelDelete()
   }

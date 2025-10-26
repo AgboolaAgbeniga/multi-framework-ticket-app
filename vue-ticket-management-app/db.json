@@ -60,11 +60,12 @@
     {
       "id": "i9j0",
       "title": "Slow dashboard loading time",
-      "description": "Medium priority: Dashboard takes more than 10 seconds to load.",
+      "description": "Medium priority: Dashboard takes more than 10 seconds to load. check dashboard card allignment as well",
       "status": "open",
       "userId": "demo",
       "createdAt": "2025-10-24T09:35:00.000Z",
-      "updatedAt": "2025-10-24T09:35:00.000Z"
+      "updatedAt": "2025-10-26T05:01:25.097Z",
+      "priority": "high"
     },
     {
       "id": "k1l2",
@@ -129,6 +130,16 @@
       "status": "open",
       "createdAt": "2025-10-25T11:24:27.694Z",
       "updatedAt": "2025-10-25T11:24:27.694Z"
+    },
+    {
+      "id": "8290",
+      "title": "agege bread",
+      "description": "agege boys plugin is breaking anytime there is an api request",
+      "status": "in_progress",
+      "userId": "demo",
+      "createdAt": "2025-10-26T05:02:04.282Z",
+      "updatedAt": "2025-10-26T05:02:12.152Z",
+      "priority": "high"
     }
   ],
   "auth": {

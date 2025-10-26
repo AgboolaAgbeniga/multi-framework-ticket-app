@@ -128,6 +128,13 @@ const handleSubmit = () => {
     return
   }
 
+  console.log('Submitting form data:', {
+    title: title.value.trim(),
+    description: description.value.trim(),
+    status: status.value,
+    priority: priority.value
+  })
+
   emit('submit', {
     title: title.value.trim(),
     description: description.value.trim(),
