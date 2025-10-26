@@ -1,6 +1,6 @@
 import type { AuthToken, Ticket, User } from './types';
 
-const API_URL = 'http://localhost:3002';
+const API_URL = '/api';
 const TOKEN_KEY = 'ticketapp_auth';
 const TOKEN_EXPIRY_HOURS = 24;
 
