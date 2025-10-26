@@ -70,7 +70,7 @@
     </Dialog>
 
     <!-- Delete Confirmation Dialog -->
-    <Dialog :open="isDeleteDialogOpen" @close="cancelDelete">
+    <AlertDialog :open="isDeleteDialogOpen">
       <DialogContent >
         <DialogHeader>
           <DialogTitle>Are you sure?</DialogTitle>
@@ -79,7 +79,7 @@
             This action cannot be undone.
           </DialogDescription>
         </DialogHeader>
-        <div class="flex gap-3 pt-4">
+        <div class="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
           <Button variant="outline" @click="cancelDelete" class="flex-1">
             Cancel
           </Button>
@@ -88,7 +88,7 @@
           </Button>
         </div>
       </DialogContent>
-    </Dialog>
+    </AlertDialog>
   </div>
 </template>
 
@@ -107,6 +107,7 @@ import DialogContent from '../components/ui/DialogContent.vue'
 import DialogHeader from '../components/ui/DialogHeader.vue'
 import DialogTitle from '../components/ui/DialogTitle.vue'
 import DialogDescription from '../components/ui/DialogDescription.vue'
+import AlertDialog from '../components/ui/AlertDialog.vue'
 import TicketCard from '../components/tickets/TicketCard.vue'
 import TicketForm from '../components/tickets/TicketForm.vue'
 
@@ -167,15 +168,18 @@ const handleCreate = async (data: { title: string; description: string; status: 
     if (res.ok) {
       await loadTickets()
       closeForm()
+      console.log('Attempting to show success toast for ticket creation')
       toast.success('Ticket created successfully!')
     } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
       authStore.logout()
       router.push('/auth/login')
     } else {
+      console.log('Attempting to show error toast for ticket creation:', res.error)
       toast.error(res.error || 'Failed to create ticket')
     }
   } catch (e) {
     console.error('Failed to create ticket:', e)
+    console.log('Attempting to show error toast for ticket creation catch')
     toast.error('Failed to create ticket')
   }
 }
@@ -204,15 +208,18 @@ const handleUpdate = async (data: { title: string; description: string; status: 
     if (res.ok) {
       await loadTickets()
       closeForm()
+      console.log('Attempting to show success toast for ticket update')
       toast.success('Ticket updated successfully!')
     } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
       authStore.logout()
       router.push('/auth/login')
     } else {
+      console.log('Attempting to show error toast for ticket update:', res.error)
       toast.error(res.error || 'Failed to update ticket')
     }
   } catch (e) {
     console.error('Failed to update ticket:', e)
+    console.log('Attempting to show error toast for ticket update catch')
     toast.error('Failed to update ticket')
   }
 }
@@ -229,15 +236,18 @@ const confirmDelete = async () => {
     const res = await apiDeleteTicket(ticketToDelete.value.id)
     if (res.ok && res.data) {
       await loadTickets()
+      console.log('Attempting to show success toast for ticket deletion')
       toast.success('Ticket deleted successfully!')
     } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
       authStore.logout()
       router.push('/auth/login')
     } else {
+      console.log('Attempting to show error toast for ticket deletion:', res.error)
       toast.error(res.error || 'Failed to delete ticket')
     }
   } catch (e) {
     console.error('Failed to delete ticket:', e)
+    console.log('Attempting to show error toast for ticket deletion catch')
     toast.error('Failed to delete ticket')
   } finally {
     cancelDelete()

@@ -21,23 +21,14 @@
   ],
   "tickets": [
     {
-      "id": "fb7d",
-      "title": "Bugs",
-      "description": "You need to fix this Bug Asap",
-      "status": "open",
-      "userId": "demo",
-      "createdAt": "2025-10-24T22:49:11.522Z",
-      "updatedAt": "2025-10-25T20:44:46.268Z",
-      "priority": ""
-    },
-    {
       "id": "586c",
       "title": "Grand",
       "description": "My grandmother swallow shovel",
-      "status": "in_progress",
+      "status": "open",
       "userId": "demo",
       "createdAt": "2025-10-24T23:07:37.361Z",
-      "updatedAt": "2025-10-24T23:07:37.361Z"
+      "updatedAt": "2025-10-26T08:22:43.237Z",
+      "priority": "medium"
     },
     {
       "id": "a1b2",

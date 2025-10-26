@@ -58,16 +58,6 @@
       "updatedAt": "2025-10-24T09:45:00.000Z"
     },
     {
-      "id": "i9j0",
-      "title": "Slow dashboard loading time",
-      "description": "Medium priority: Dashboard takes more than 10 seconds to load. check dashboard card allignment as well",
-      "status": "open",
-      "userId": "demo",
-      "createdAt": "2025-10-24T09:35:00.000Z",
-      "updatedAt": "2025-10-26T05:01:25.097Z",
-      "priority": "high"
-    },
-    {
       "id": "k1l2",
       "title": "Ticket filtering not working",
       "description": "High priority: Users cannot filter tickets by status.",
@@ -76,15 +66,6 @@
       "createdAt": "2025-10-24T09:40:00.000Z",
       "updatedAt": "2025-10-25T10:12:37.721Z",
       "priority": "medium"
-    },
-    {
-      "id": "m3n4",
-      "title": "Forgot password link expired",
-      "description": "Medium priority: Reset links expire in less than 1 minute.",
-      "status": "open",
-      "userId": "demo",
-      "createdAt": "2025-10-24T09:45:00.000Z",
-      "updatedAt": "2025-10-24T09:45:00.000Z"
     },
     {
       "id": "o5p6",
@@ -106,15 +87,6 @@
       "priority": "medium"
     },
     {
-      "id": "s9t0",
-      "title": "Search function returns wrong results",
-      "description": "Medium priority: Searching by ID shows unrelated tickets.",
-      "status": "open",
-      "userId": "demo",
-      "createdAt": "2025-10-24T10:00:00.000Z",
-      "updatedAt": "2025-10-24T10:00:00.000Z"
-    },
-    {
       "id": "u1v2",
       "title": "Session timeout after login",
       "description": "High priority: Users logged out after 2 minutes of inactivity.",
@@ -122,14 +94,6 @@
       "userId": "demo",
       "createdAt": "2025-10-24T10:05:00.000Z",
       "updatedAt": "2025-10-24T10:10:00.000Z"
-    },
-    {
-      "id": "c6f0",
-      "title": "Fire",
-      "description": "Fire on the mountain",
-      "status": "open",
-      "createdAt": "2025-10-25T11:24:27.694Z",
-      "updatedAt": "2025-10-25T11:24:27.694Z"
     },
     {
       "id": "8290",
@@ -148,7 +112,117 @@
       "status": "open",
       "userId": "demo",
       "createdAt": "2025-10-26T06:38:15.581Z",
-      "updatedAt": "2025-10-26T06:51:59.514Z",
+      "updatedAt": "2025-10-26T08:35:19.191Z",
+      "priority": "high"
+    },
+    {
+      "id": "0f49",
+      "title": "fix mobile view for National app",
+      "description": "To be pushed to the backed team",
+      "status": "open",
+      "userId": "demo",
+      "createdAt": "2025-10-26T08:18:30.534Z",
+      "updatedAt": "2025-10-26T08:33:41.631Z",
+      "priority": "medium"
+    },
+    {
+      "id": "p903",
+      "title": "Payment gateway delay",
+      "description": "Users report a 5-second delay before transactions are confirmed.",
+      "status": "open",
+      "userId": "demo",
+      "createdAt": "2025-10-25T09:00:00.000Z",
+      "updatedAt": "2025-10-25T09:05:00.000Z",
+      "priority": "medium"
+    },
+    {
+      "id": "b721",
+      "title": "Broken image links on dashboard",
+      "description": "Some image URLs return 404 on the main analytics dashboard.",
+      "status": "in_progress",
+      "userId": "demo",
+      "createdAt": "2025-10-25T14:10:00.000Z",
+      "updatedAt": "2025-10-25T14:20:00.000Z",
+      "priority": "low"
+    },
+    {
+      "id": "n244",
+      "title": "Email notifications not sending",
+      "description": "Password reset and ticket creation emails are not being delivered.",
+      "status": "open",
+      "userId": "demo",
+      "createdAt": "2025-10-25T16:30:00.000Z",
+      "updatedAt": "2025-10-25T16:32:00.000Z",
+      "priority": "high"
+    },
+    {
+      "id": "z552",
+      "title": "Dark mode styling inconsistency",
+      "description": "Text color in modals remains black in dark mode.",
+      "status": "in_progress",
+      "userId": "demo",
+      "createdAt": "2025-10-25T18:40:00.000Z",
+      "updatedAt": "2025-10-25T18:42:00.000Z",
+      "priority": "low"
+    },
+    {
+      "id": "t003",
+      "title": "Ticket search returning null",
+      "description": "Search feature does not return results for partial keywords.",
+      "status": "closed",
+      "userId": "demo",
+      "createdAt": "2025-10-25T20:15:00.000Z",
+      "updatedAt": "2025-10-25T21:00:00.000Z",
+      "priority": "medium"
+    },
+    {
+      "id": "g119",
+      "title": "Unauthorized API call error",
+      "description": "API key validation fails intermittently during user sync.",
+      "status": "open",
+      "userId": "demo",
+      "createdAt": "2025-10-26T05:10:00.000Z",
+      "updatedAt": "2025-10-26T05:20:00.000Z",
+      "priority": "high"
+    },
+    {
+      "id": "m480",
+      "title": "Upload button not responsive",
+      "description": "Upload button on ticket attachment form is unresponsive in Safari.",
+      "status": "in_progress",
+      "userId": "demo",
+      "createdAt": "2025-10-26T07:05:00.000Z",
+      "updatedAt": "2025-10-26T07:15:00.000Z",
+      "priority": "medium"
+    },
+    {
+      "id": "x788",
+      "title": "Analytics chart misalignment",
+      "description": "Bar chart labels overlap on smaller screens.",
+      "status": "closed",
+      "userId": "demo",
+      "createdAt": "2025-10-26T08:00:00.000Z",
+      "updatedAt": "2025-10-26T08:05:00.000Z",
+      "priority": "low"
+    },
+    {
+      "id": "q231",
+      "title": "User avatar upload failure",
+      "description": "Users cannot upload new avatars, receiving 500 error response.",
+      "status": "open",
+      "userId": "demo",
+      "createdAt": "2025-10-26T09:00:00.000Z",
+      "updatedAt": "2025-10-26T09:10:00.000Z",
+      "priority": "high"
+    },
+    {
+      "id": "s955",
+      "title": "Session persistence issue",
+      "description": "User session expires after browser refresh.",
+      "status": "in_progress",
+      "userId": "demo",
+      "createdAt": "2025-10-26T10:00:00.000Z",
+      "updatedAt": "2025-10-26T10:05:00.000Z",
       "priority": "high"
     }
   ],

@@ -1,6 +1,8 @@
 <template>
   <Toaster
     theme="light"
+    position="top-right"
+    :rich-colors="true"
     class="toaster group"
     :style="{
       '--normal-bg': 'var(--popover)',
