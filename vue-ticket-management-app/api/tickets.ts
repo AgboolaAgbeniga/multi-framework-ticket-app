@@ -1,7 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { kv } from '@vercel/kv';
+import fs from 'fs';
+import path from 'path';
 
-const DB_KEY = 'ticket-app-db';
+const DB_PATH = path.join(process.cwd(), 'db.json');
 
 interface Ticket {
   id: string;
@@ -14,23 +15,17 @@ interface Ticket {
   priority?: string;
 }
 
-async function readDb(): Promise<any> {
+function readDb(): any {
   try {
-    const data = await kv.get(DB_KEY);
-    return data || { users: [], tickets: [], auth: { tokens: [] } };
+    const data = fs.readFileSync(DB_PATH, 'utf8');
+    return JSON.parse(data);
   } catch (error) {
-    console.error('Error reading from KV:', error);
     return { users: [], tickets: [], auth: { tokens: [] } };
   }
 }
 
-async function writeDb(data: any): Promise<void> {
-  try {
-    await kv.set(DB_KEY, data);
-  } catch (error) {
-    console.error('Error writing to KV:', error);
-    throw error;
-  }
+function writeDb(data: any): void {
+  fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
 }
 
 function authenticate(req: VercelRequest): string | null {
@@ -61,7 +56,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Get tickets for the authenticated user
     console.log('GET tickets for user:', userId);
     try {
-      const db = await readDb();
+      const db = readDb();
       console.log('Database read successful, total tickets:', db.tickets.length);
       const userTickets = db.tickets.filter((t: Ticket) => t.userId === userId);
       console.log('User tickets found:', userTickets.length);
@@ -83,7 +78,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
-      const db = await readDb();
+      const db = readDb();
       const now = new Date().toISOString();
 
       const newTicket: Ticket = {
@@ -98,7 +93,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       };
 
       db.tickets.push(newTicket);
-      await writeDb(db);
+      writeDb(db);
       console.log('Ticket created successfully:', newTicket.id);
 
       return res.status(201).json(newTicket);

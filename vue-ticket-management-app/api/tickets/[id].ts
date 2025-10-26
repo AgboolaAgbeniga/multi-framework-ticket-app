@@ -1,7 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { kv } from '@vercel/kv';
+import fs from 'fs';
+import path from 'path';
 
-const DB_KEY = 'ticket-app-db';
+const DB_PATH = path.join(process.cwd(), 'db.json');
 
 interface Ticket {
   id: string;
@@ -14,23 +15,17 @@ interface Ticket {
   priority?: string;
 }
 
-async function readDb(): Promise<any> {
+function readDb(): any {
   try {
-    const data = await kv.get(DB_KEY);
-    return data || { users: [], tickets: [], auth: { tokens: [] } };
+    const data = fs.readFileSync(DB_PATH, 'utf8');
+    return JSON.parse(data);
   } catch (error) {
-    console.error('Error reading from KV:', error);
     return { users: [], tickets: [], auth: { tokens: [] } };
   }
 }
 
-async function writeDb(data: any): Promise<void> {
-  try {
-    await kv.set(DB_KEY, data);
-  } catch (error) {
-    console.error('Error writing to KV:', error);
-    throw error;
-  }
+function writeDb(data: any): void {
+  fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
 }
 
 function authenticate(req: VercelRequest): string | null {
@@ -70,7 +65,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   let ticket: Ticket;
 
   try {
-    db = await readDb();
+    db = readDb();
     console.log('Database read successful for ticket operation');
     ticketIndex = db.tickets.findIndex((t: Ticket) => t.id === ticketId);
 
@@ -109,7 +104,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     };
 
     db.tickets[ticketIndex] = updatedTicket;
-    await writeDb(db);
+    writeDb(db);
     console.log('Ticket updated successfully');
 
     return res.status(200).json(updatedTicket);
@@ -119,7 +114,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Delete ticket
     console.log('Deleting ticket');
     db.tickets.splice(ticketIndex, 1);
-    await writeDb(db);
+    writeDb(db);
     console.log('Ticket deleted successfully');
 
     return res.status(204).end();

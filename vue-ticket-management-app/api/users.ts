@@ -1,7 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { kv } from '@vercel/kv';
+import fs from 'fs';
+import path from 'path';
 
-const DB_KEY = 'ticket-app-db';
+const DB_PATH = path.join(process.cwd(), 'db.json');
 
 interface User {
   id: string;
@@ -20,23 +21,17 @@ interface AuthToken {
   };
 }
 
-async function readDb(): Promise<any> {
+function readDb(): any {
   try {
-    const data = await kv.get(DB_KEY);
-    return data || { users: [], tickets: [], auth: { tokens: [] } };
+    const data = fs.readFileSync(DB_PATH, 'utf8');
+    return JSON.parse(data);
   } catch (error) {
-    console.error('Error reading from KV:', error);
     return { users: [], tickets: [], auth: { tokens: [] } };
   }
 }
 
-async function writeDb(data: any): Promise<void> {
-  try {
-    await kv.set(DB_KEY, data);
-  } catch (error) {
-    console.error('Error writing to KV:', error);
-    throw error;
-  }
+function writeDb(data: any): void {
+  fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -49,7 +44,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (email) {
       try {
-        const db = await readDb();
+        const db = readDb();
         console.log('Database read successful, users count:', db.users.length);
         const user = db.users.find((u: User) => u.email === email);
         if (user) {
@@ -80,7 +75,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
-      const db = await readDb();
+      const db = readDb();
       console.log('Database read successful for registration');
 
       // Check if user already exists
@@ -98,7 +93,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       };
 
       db.users.push(newUser);
-      await writeDb(db);
+      writeDb(db);
       console.log('User created successfully:', newUser.email);
 
       // Return user without password
