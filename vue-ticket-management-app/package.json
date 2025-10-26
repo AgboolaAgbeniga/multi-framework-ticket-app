@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx vue-tsc --build --force && vite build",
     "dev": "concurrently \"vite\" \"npm run server\"",
-    "postinstall": "chmod +x node_modules/.bin/vue-tsc",
+    "postinstall": "chmod +x node_modules/.bin/vue-tsc node_modules/.bin/vite",
     "preview": "vite preview",
     "type-check": "npx vue-tsc --build --force",
     "server": "json-server --watch db.json --port 3002"
