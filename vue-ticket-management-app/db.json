@@ -21,50 +21,13 @@
   ],
   "tickets": [
     {
-      "id": "586c",
-      "title": "Grand",
-      "description": "My grandmother swallow shovel",
-      "status": "in_progress",
-      "userId": "demo",
-      "createdAt": "2025-10-24T23:07:37.361Z",
-      "updatedAt": "2025-10-24T23:07:37.361Z"
-    },
-    {
-      "id": "a1b2",
-      "title": "Broken login button",
-      "description": "High priority: Login button not responding on mobile view.",
-      "status": "in_progress",
-      "userId": "demo",
-      "createdAt": "2025-10-24T09:10:00.000Z",
-      "updatedAt": "2025-10-25T10:12:41.717Z",
-      "priority": "medium"
-    },
-    {
-      "id": "c3d4",
-      "title": "Database connection timeout",
-      "description": "High priority: Frequent timeout errors during ticket submission.",
-      "status": "in_progress",
-      "userId": "demo",
-      "createdAt": "2025-10-24T09:15:00.000Z",
-      "updatedAt": "2025-10-24T10:00:00.000Z"
-    },
-    {
       "id": "g7h8",
       "title": "Email notification failure",
       "description": "Medium priority: Users not receiving password reset emails.",
       "status": "in_progress",
       "userId": "demo",
       "createdAt": "2025-10-24T09:30:00.000Z",
-      "updatedAt": "2025-10-24T09:45:00.000Z"
-    },
-    {
-      "id": "k1l2",
-      "title": "Ticket filtering not working",
-      "description": "High priority: Users cannot filter tickets by status.",
-      "status": "in_progress",
-      "userId": "demo",
-      "createdAt": "2025-10-24T09:40:00.000Z",
-      "updatedAt": "2025-10-25T10:12:37.721Z",
+      "updatedAt": "2025-10-26T14:31:00.992Z",
       "priority": "medium"
     },
     {
@@ -106,33 +69,13 @@
       "priority": "high"
     },
     {
-      "id": "a759",
-      "title": "Fix footer alingment",
-      "description": "HNF Learn landing page has misaligned footer content, fix it asap. The client is complaining",
-      "status": "open",
-      "userId": "demo",
-      "createdAt": "2025-10-26T06:38:15.581Z",
-      "updatedAt": "2025-10-26T08:35:19.191Z",
-      "priority": "high"
-    },
-    {
       "id": "0f49",
       "title": "fix mobile view for National app",
       "description": "To be pushed to the backed team",
       "status": "open",
       "userId": "demo",
       "createdAt": "2025-10-26T08:18:30.534Z",
-      "updatedAt": "2025-10-26T08:33:41.631Z",
-      "priority": "medium"
-    },
-    {
-      "id": "p903",
-      "title": "Payment gateway delay",
-      "description": "Users report a 5-second delay before transactions are confirmed.",
-      "status": "open",
-      "userId": "demo",
-      "createdAt": "2025-10-25T09:00:00.000Z",
-      "updatedAt": "2025-10-25T09:05:00.000Z",
+      "updatedAt": "2025-10-26T14:30:17.740Z",
       "priority": "medium"
     },
     {
@@ -152,7 +95,7 @@
       "status": "open",
       "userId": "demo",
       "createdAt": "2025-10-25T16:30:00.000Z",
-      "updatedAt": "2025-10-25T16:32:00.000Z",
+      "updatedAt": "2025-10-26T14:21:19.941Z",
       "priority": "high"
     },
     {
@@ -182,7 +125,7 @@
       "status": "open",
       "userId": "demo",
       "createdAt": "2025-10-26T05:10:00.000Z",
-      "updatedAt": "2025-10-26T05:20:00.000Z",
+      "updatedAt": "2025-10-26T14:30:21.819Z",
       "priority": "high"
     },
     {
@@ -204,26 +147,6 @@
       "createdAt": "2025-10-26T08:00:00.000Z",
       "updatedAt": "2025-10-26T08:05:00.000Z",
       "priority": "low"
-    },
-    {
-      "id": "q231",
-      "title": "User avatar upload failure",
-      "description": "Users cannot upload new avatars, receiving 500 error response.",
-      "status": "open",
-      "userId": "demo",
-      "createdAt": "2025-10-26T09:00:00.000Z",
-      "updatedAt": "2025-10-26T09:10:00.000Z",
-      "priority": "high"
-    },
-    {
-      "id": "s955",
-      "title": "Session persistence issue",
-      "description": "User session expires after browser refresh.",
-      "status": "in_progress",
-      "userId": "demo",
-      "createdAt": "2025-10-26T10:00:00.000Z",
-      "updatedAt": "2025-10-26T10:05:00.000Z",
-      "priority": "high"
     }
   ],
   "auth": {

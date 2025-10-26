@@ -40,6 +40,7 @@
           <TicketCard
             v-for="ticket in filteredTickets"
             :key="ticket.id"
+            v-memo="[ticket.id, ticket.title, ticket.description, ticket.status, ticket.priority, ticket.updatedAt]"
             :ticket="ticket"
             @edit="handleEdit"
             @delete="handleDelete"
@@ -116,7 +117,8 @@ const route = useRoute()
 const authStore = useAuthStore()
 
 const tickets = ref<Ticket[]>([])
-const filterStatus = ref(route.query.status as string || 'all')
+// Default to 'all' to show all tickets by default
+const filterStatus = ref((route.query.status as string) || 'all')
 const isFormOpen = ref(false)
 const isDeleteDialogOpen = ref(false)
 const selectedTicket = ref<Ticket | null>(null)
@@ -163,23 +165,24 @@ const closeForm = () => {
 }
 
 const handleCreate = async (data: { title: string; description: string; status: 'open' | 'in_progress' | 'closed'; priority: string }) => {
+  closeForm()
+
   try {
     const res = await apiCreateTicket(data)
     if (res.ok) {
-      await loadTickets()
-      closeForm()
-      console.log('Attempting to show success toast for ticket creation')
+      // Add the new ticket to the array without reloading all tickets
+      if (res.data) {
+        tickets.value.push(res.data as Ticket)
+      }
       toast.success('Ticket created successfully!')
     } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
       authStore.logout()
       router.push('/auth/login')
     } else {
-      console.log('Attempting to show error toast for ticket creation:', res.error)
       toast.error(res.error || 'Failed to create ticket')
     }
   } catch (e) {
     console.error('Failed to create ticket:', e)
-    console.log('Attempting to show error toast for ticket creation catch')
     toast.error('Failed to create ticket')
   }
 }
@@ -200,26 +203,28 @@ const handleFormSubmit = async (data: { title: string; description: string; stat
 const handleUpdate = async (data: { title: string; description: string; status: 'open' | 'in_progress' | 'closed'; priority: string }) => {
   if (!selectedTicket.value) return
 
-  console.log('Updating ticket:', selectedTicket.value.id, 'with data:', data)
+  const ticketId = selectedTicket.value.id
+  const ticketIndex = tickets.value.findIndex(t => t.id === ticketId)
+
+  closeForm()
 
   try {
-    const res = await apiUpdateTicket(selectedTicket.value.id, data)
-    console.log('Update response:', res)
+    const res = await apiUpdateTicket(ticketId, data)
     if (res.ok) {
-      await loadTickets()
-      closeForm()
-      console.log('Attempting to show success toast for ticket update')
+      // Update only the specific ticket in place to avoid full page re-render
+      if (ticketIndex !== -1 && res.data) {
+        // Update the object properties in place
+        Object.assign(tickets.value[ticketIndex], res.data)
+      }
       toast.success('Ticket updated successfully!')
     } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
       authStore.logout()
       router.push('/auth/login')
     } else {
-      console.log('Attempting to show error toast for ticket update:', res.error)
       toast.error(res.error || 'Failed to update ticket')
     }
   } catch (e) {
     console.error('Failed to update ticket:', e)
-    console.log('Attempting to show error toast for ticket update catch')
     toast.error('Failed to update ticket')
   }
 }
@@ -232,25 +237,27 @@ const handleDelete = (ticket: Ticket) => {
 const confirmDelete = async () => {
   if (!ticketToDelete.value) return
 
+  const ticketToRemove = ticketToDelete.value
+  cancelDelete()
+
   try {
-    const res = await apiDeleteTicket(ticketToDelete.value.id)
+    const res = await apiDeleteTicket(ticketToRemove.id)
     if (res.ok && res.data) {
-      await loadTickets()
-      console.log('Attempting to show success toast for ticket deletion')
+      // Remove the ticket from the array without reloading all tickets
+      const index = tickets.value.findIndex(t => t.id === ticketToRemove.id)
+      if (index !== -1) {
+        tickets.value.splice(index, 1)
+      }
       toast.success('Ticket deleted successfully!')
     } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
       authStore.logout()
       router.push('/auth/login')
     } else {
-      console.log('Attempting to show error toast for ticket deletion:', res.error)
       toast.error(res.error || 'Failed to delete ticket')
     }
   } catch (e) {
     console.error('Failed to delete ticket:', e)
-    console.log('Attempting to show error toast for ticket deletion catch')
     toast.error('Failed to delete ticket')
-  } finally {
-    cancelDelete()
   }
 }
 
@@ -272,5 +279,6 @@ onMounted(() => {
   if (route.query.new === 'true') {
     openCreateForm()
   }
+
 })
 </script>

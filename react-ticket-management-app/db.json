@@ -13,7 +13,7 @@
       "name": "Agbenia Agboola"
     },
     {
-      "id": 1761404404420,
+      "id": "1761404404420",
       "email": "agboolaagbeniga@gmail.com",
       "password": "shukushuku",
       "name": "Agbenia Agboola"
@@ -27,7 +27,7 @@
       "status": "open",
       "userId": "demo",
       "createdAt": "2025-10-24T23:07:37.361Z",
-      "updatedAt": "2025-10-26T08:22:43.237Z",
+      "updatedAt": "2025-10-26T14:24:47.155Z",
       "priority": "medium"
     },
     {
@@ -39,15 +39,6 @@
       "createdAt": "2025-10-24T09:10:00.000Z",
       "updatedAt": "2025-10-25T10:12:41.717Z",
       "priority": "medium"
-    },
-    {
-      "id": "c3d4",
-      "title": "Database connection timeout",
-      "description": "High priority: Frequent timeout errors during ticket submission.",
-      "status": "in_progress",
-      "userId": "demo",
-      "createdAt": "2025-10-24T09:15:00.000Z",
-      "updatedAt": "2025-10-24T10:00:00.000Z"
     },
     {
       "id": "e5f6",

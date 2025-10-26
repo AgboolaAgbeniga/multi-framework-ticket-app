@@ -19,6 +19,7 @@ export function TicketManagement() {
   const [searchParams] = useSearchParams();
   const [tickets, setTickets] = useState<Ticket[]>([]);
   const [filteredTickets, setFilteredTickets] = useState<Ticket[]>([]);
+  // Default to 'all' to show all tickets by default
   const [filterStatus, setFilterStatus] = useState<string>(searchParams.get('status') || 'all');
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);

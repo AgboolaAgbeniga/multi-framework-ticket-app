@@ -87,6 +87,10 @@ defineEmits<{
   delete: [ticket: Ticket]
 }>()
 
+defineOptions({
+  name: 'TicketCard'
+})
+
 const statusConfig = {
   open: { label: 'Open', className: 'bg-green-100 text-green-800 border-green-200' },
   in_progress: { label: 'In Progress', className: 'bg-amber-100 text-amber-800 border-amber-200' },

@@ -127,11 +127,11 @@ export function Dashboard() {
                 {stats.total > 0 && (
                   <Button
                     variant="secondary"
-                    onClick={() => navigate('/tickets?status=open')}
+                    onClick={() => navigate('/tickets')}
                     className='w-full'
                   >
                     <Clock className="w-4 h-4 mr-2" />
-                    View {stats.total} Open Tickets
+                    View All {stats.total} Tickets
                   </Button>
                 )}
               </div>

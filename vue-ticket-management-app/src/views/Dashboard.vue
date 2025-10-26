@@ -58,11 +58,11 @@
               <Button
                 v-if="stats.total > 0"
                 variant="secondary"
-                @click="$router.push('/tickets?status=open')"
+                @click="$router.push('/tickets')"
                 class="w-full"
               >
                 <Clock class="w-4 h-4 mr-2" />
-                View {{ stats.total }} Open Tickets
+                View All {{ stats.total }} Tickets
               </Button>
             </div>
           </Card>
