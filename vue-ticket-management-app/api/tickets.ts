@@ -1,8 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import fs from 'fs';
-import path from 'path';
+import { kv } from '@vercel/kv';
 
-const DB_PATH = path.join(process.cwd(), 'db.json');
+const DB_KEY = 'ticket-app-db';
 
 interface Ticket {
   id: string;
@@ -15,17 +14,23 @@ interface Ticket {
   priority?: string;
 }
 
-function readDb(): any {
+async function readDb(): Promise<any> {
   try {
-    const data = fs.readFileSync(DB_PATH, 'utf8');
-    return JSON.parse(data);
+    const data = await kv.get(DB_KEY);
+    return data || { users: [], tickets: [], auth: { tokens: [] } };
   } catch (error) {
+    console.error('Error reading from KV:', error);
     return { users: [], tickets: [], auth: { tokens: [] } };
   }
 }
 
-function writeDb(data: any): void {
-  fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
+async function writeDb(data: any): Promise<void> {
+  try {
+    await kv.set(DB_KEY, data);
+  } catch (error) {
+    console.error('Error writing to KV:', error);
+    throw error;
+  }
 }
 
 function authenticate(req: VercelRequest): string | null {
@@ -43,44 +48,64 @@ function authenticate(req: VercelRequest): string | null {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  console.log('Tickets API called:', req.method, req.url);
+
   const userId = authenticate(req);
   if (!userId) {
+    console.log('Authentication failed');
     return res.status(401).json({ error: 'Unauthorized' });
   }
+  console.log('Authenticated user:', userId);
 
   if (req.method === 'GET') {
     // Get tickets for the authenticated user
-    const db = readDb();
-    const userTickets = db.tickets.filter((t: Ticket) => t.userId === userId);
-    return res.status(200).json(userTickets);
+    console.log('GET tickets for user:', userId);
+    try {
+      const db = await readDb();
+      console.log('Database read successful, total tickets:', db.tickets.length);
+      const userTickets = db.tickets.filter((t: Ticket) => t.userId === userId);
+      console.log('User tickets found:', userTickets.length);
+      return res.status(200).json(userTickets);
+    } catch (error) {
+      console.error('Error reading tickets:', error);
+      return res.status(500).json({ error: 'Database error' });
+    }
   }
 
   if (req.method === 'POST') {
     // Create a new ticket
+    console.log('POST ticket for user:', userId, 'body:', req.body);
     const { title, description, status, priority } = req.body;
 
     if (!title || !status) {
+      console.log('Missing required fields:', { title: !!title, status: !!status });
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    const db = readDb();
-    const now = new Date().toISOString();
+    try {
+      const db = await readDb();
+      const now = new Date().toISOString();
 
-    const newTicket: Ticket = {
-      id: Math.random().toString(36).substring(2, 8),
-      title,
-      description: description || '',
-      status,
-      userId,
-      createdAt: now,
-      updatedAt: now,
-      priority: priority || 'medium',
-    };
+      const newTicket: Ticket = {
+        id: Math.random().toString(36).substring(2, 8),
+        title,
+        description: description || '',
+        status,
+        userId,
+        createdAt: now,
+        updatedAt: now,
+        priority: priority || 'medium',
+      };
 
-    db.tickets.push(newTicket);
-    writeDb(db);
+      db.tickets.push(newTicket);
+      await writeDb(db);
+      console.log('Ticket created successfully:', newTicket.id);
 
-    return res.status(201).json(newTicket);
+      return res.status(201).json(newTicket);
+    } catch (error) {
+      console.error('Error creating ticket:', error);
+      return res.status(500).json({ error: 'Failed to create ticket' });
+    }
   }
 
   res.setHeader('Allow', ['GET', 'POST']);
