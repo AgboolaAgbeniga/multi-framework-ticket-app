@@ -14,7 +14,6 @@
     "@headlessui/vue": "^1.7.23",
     "@tailwindcss/vite": "^4.1.16",
     "@tsconfig/node20": "^20.1.6",
-    "@vercel/node": "^5.5.0",
     "@vueuse/core": "^14.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -31,6 +30,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.16",
+    "@vercel/node": "^5.5.0",
     "@vitejs/plugin-vue": "^5.0.0",
     "@vue/tsconfig": "^0.5.0",
     "autoprefixer": "^10.4.21",
