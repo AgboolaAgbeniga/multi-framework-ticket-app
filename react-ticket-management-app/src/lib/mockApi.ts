@@ -1,6 +1,6 @@
 import type { AuthToken, Ticket, User } from './types';
 
-const API_URL = 'http://localhost:3001';
+const API_URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3001';
 const TOKEN_KEY = 'ticketapp_auth';
 const TOKEN_EXPIRY_HOURS = 24;
 
