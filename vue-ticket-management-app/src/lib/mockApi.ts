@@ -1,6 +1,6 @@
 import type { AuthToken, Ticket, User } from './types';
 
-const API_URL = '/api';
+const API_URL = 'https://vue-ticket-app-ten.vercel.app/api';
 const TOKEN_KEY = 'ticketapp_auth';
 const TOKEN_EXPIRY_HOURS = 24;
 
