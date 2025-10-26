@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import fs from 'fs';
 import path from 'path';
 
-const DB_PATH = path.join(process.cwd(), 'db.json');
+const DB_PATH = path.join(__dirname, '../../../db.json');
 
 interface Ticket {
   id: string;
