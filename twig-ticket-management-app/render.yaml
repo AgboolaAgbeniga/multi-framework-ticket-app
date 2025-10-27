@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: twig-ticket-app
+    runtime: docker
+    rootDirectory: twig-ticket-management-app
+    buildCommand: docker build -t twig-ticket-app .
+    startCommand: docker run -p $PORT:80 twig-ticket-app
+    envVars:
+      - key: PORT
+        value: 80

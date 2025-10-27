@@ -2,117 +2,113 @@
 
 {% block title %}Dashboard - TicketFlex{% endblock %}
 
-{% block header %}
-    {% include 'layouts/header.html.twig' %}
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block content %}
-    <div class="min-h-screen flex flex-col bg-slate-50 py-8">
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex-1">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+    <div class="min-h-screen flex flex-col">
+      {% include 'layouts/header.html.twig' %}
+
+      <main class="flex-1 bg-slate-50 py-8">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+            <div>
+              <h1 class="mb-2">Dashboard</h1>
+              <p class="text-slate-600">
+                Welcome back, {{ session.name }}! Here's an overview of your tickets.
+              </p>
+            </div>
+            <a href="/tickets/create" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <i class="fas fa-plus mr-2"></i>
+              New Ticket
+            </a>
+          </div>
+
+          {/* Statistics Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+              <div className="flex items-center justify-between">
                 <div>
-                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Dashboard</h1>
-                    <p class="text-slate-600">
-                        Welcome back, {{ session.name }}! Here's an overview of your tickets.
-                    </p>
+                  <p className="text-slate-600 text-sm mb-1">Total Tickets</p>
+                  <p className="text-3xl font-bold">{{ stats.total }}</p>
                 </div>
-                <a href="/tickets/create" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    <i class="fas fa-plus mr-2"></i>
-                    New Ticket
+                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                  <i className="fas fa-ticket-alt text-indigo-600 text-xl"></i>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-slate-600 text-sm mb-1">Open Tickets</p>
+                  <p className="text-3xl font-bold">{{ stats.open }}</p>
+                </div>
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <i className="fas fa-folder-open text-green-600 text-xl"></i>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-slate-600 text-sm mb-1">In Progress</p>
+                  <p className="text-3xl font-bold">{{ stats.inProgress }}</p>
+                </div>
+                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+                  <i className="fas fa-clock text-amber-600 text-xl"></i>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-slate-600 text-sm mb-1">Resolved</p>
+                  <p className="text-3xl font-bold">{{ stats.closed }}</p>
+                </div>
+                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
+                  <i className="fas fa-check-circle text-slate-600 text-xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg p-6 text-white">
+              <h3 className="text-white font-bold">Quick Actions</h3>
+              <p className="text-white/90 mb-4 text-sm">
+                Get started by creating a new ticket or manage your existing ones.
+              </p>
+              {% if stats.total > 0 %}
+                <a href="/tickets" className="inline-flex items-center px-4 py-2 border border-white/30 text-sm font-medium rounded-md text-white bg-white/10 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                  <i className="fas fa-clock mr-2"></i>
+                  View All {{ stats.total }} Tickets
                 </a>
+              {% endif %}
             </div>
 
-            <!-- Statistics Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-slate-600 text-sm mb-1">Total Tickets</p>
-                            <p class="text-3xl font-bold">{{ stats.total }}</p>
-                        </div>
-                        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-ticket-alt text-indigo-600 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-slate-600 text-sm mb-1">Open Tickets</p>
-                            <p class="text-3xl font-bold">{{ stats.open }}</p>
-                        </div>
-                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-folder-open text-green-600 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-slate-600 text-sm mb-1">In Progress</p>
-                            <p class="text-3xl font-bold">{{ stats.inProgress }}</p>
-                        </div>
-                        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-clock text-amber-600 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-slate-600 text-sm mb-1">Resolved</p>
-                            <p class="text-3xl font-bold">{{ stats.closed }}</p>
-                        </div>
-                        <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-check-circle text-slate-600 text-xl"></i>
-                        </div>
-                    </div>
-                </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <h3 className="font-bold">Status Overview</h3>
+              {% if stats.total == 0 %}
+                <p className="text-slate-600 mb-4 text-sm">No tickets yet. Create your first one!</p>
+              {% else %}
+                <p className="text-slate-600 mb-4 text-sm">You have {{ statusSummary }}.</p>
+              {% endif %}
+              {% if stats.open > 0 or stats.inProgress > 0 %}
+                <a href="/tickets" className="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <i className="fas fa-arrow-right mr-2"></i>
+                  View Details
+                </a>
+              {% endif %}
             </div>
-
-            <!-- Quick Actions -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg p-6 text-white">
-                    <h3 class="text-white font-bold mb-2">Quick Actions</h3>
-                    <p class="text-white/90 mb-4 text-sm">
-                        Get started by creating a new ticket or manage your existing ones.
-                    </p>
-                    {% if stats.total > 0 %}
-                        <a href="/tickets" class="inline-flex items-center px-4 py-2 border border-white/30 text-sm font-medium rounded-md text-white bg-white/10 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-                            <i class="fas fa-clock mr-2"></i>
-                            View All {{ stats.total }} Tickets
-                        </a>
-                    {% endif %}
-                </div>
-
-                <div class="bg-white rounded-lg p-6 shadow-sm">
-                    <h3 class="font-bold mb-2">Status Overview</h3>
-                    {% if stats.total == 0 %}
-                        <p class="text-slate-600 mb-4 text-sm">No tickets yet. Create your first one!</p>
-                    {% else %}
-                        <p class="text-slate-600 mb-4 text-sm">
-                            You have
-                            {% if stats.open > 0 %}{{ stats.open }} open{% endif %}
-                            {% if stats.inProgress > 0 %}{% if stats.open > 0 %} and {% endif %}{{ stats.inProgress }} in progress{% endif %}
-                            {% if stats.closed > 0 %}{% if stats.open > 0 or stats.inProgress > 0 %} and {% endif %}{{ stats.closed }} resolved{% endif %}
-                            ticket{{ stats.total > 1 ? 's' : '' }}.
-                        </p>
-                    {% endif %}
-                    {% if stats.open > 0 or stats.inProgress > 0 %}
-                        <a href="/tickets" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            <i class="fas fa-arrow-right mr-2"></i>
-                            View Details
-                        </a>
-                    {% endif %}
-                </div>
-            </div>
+          </div>
         </div>
+      </main>
+
+      {% include 'layouts/footer.html.twig' %}
     </div>
 {% endblock %}
 
-{% block footer %}
-    {% include 'layouts/footer.html.twig' %}
-{% endblock %}
+{% block footer %}{% endblock %}

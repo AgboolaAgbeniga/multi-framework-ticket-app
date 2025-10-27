@@ -2,22 +2,23 @@
 
 {% block title %}Edit Ticket - TicketFlex{% endblock %}
 
-{% block header %}
-    {% include 'layouts/header.html.twig' %}
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block content %}
-    <div class="min-h-screen flex flex-col bg-slate-50 py-8">
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex-1">
-            <div class="max-w-2xl mx-auto">
-                <div class="mb-8">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Edit Ticket</h1>
-                    <p class="text-slate-600">
-                        Update the ticket details below
-                    </p>
-                </div>
+    <div class="min-h-screen flex flex-col">
+      {% include 'layouts/header.html.twig' %}
 
-                <div class="bg-white p-8 rounded-lg shadow-sm">
+      <main class="flex-1 bg-slate-50 py-8">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-2xl mx-auto">
+            <div class="mb-8">
+              <h1 class="mb-2">Edit Ticket</h1>
+              <p class="text-slate-600">
+                Update the ticket details below
+              </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-sm">
                     <form method="POST" action="/tickets/{{ ticket.id }}/edit" class="space-y-6">
                         <div>
                             <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Title *</label>
@@ -101,14 +102,13 @@
                             >
                                 Cancel
                             </a>
-                        </div>
-                    </form>
-                </div>
             </div>
+          </div>
         </div>
+      </main>
+
+      {% include 'layouts/footer.html.twig' %}
     </div>
 {% endblock %}
 
-{% block footer %}
-    {% include 'layouts/footer.html.twig' %}
-{% endblock %}
+{% block footer %}{% endblock %}
