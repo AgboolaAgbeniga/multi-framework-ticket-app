@@ -8,6 +8,8 @@ A fully functional ticket management system built with PHP, Twig templating, and
 
 Use demo credentials: `demo@ticketapp.com` / `demo123`
 
+**🚀 Deployed on Render**
+
 ## Features
 
 - **User Authentication**: Login and registration with session management
@@ -111,7 +113,7 @@ The demo account comes pre-loaded with 10 sample tickets showcasing different st
 
 ### Vercel Deployment
 
-This Twig app is configured for deployment on Vercel with PHP runtime:
+This Twig app is configured for deployment on Render with PHP runtime:
 
 ```bash
 # The app is ready for Vercel deployment
