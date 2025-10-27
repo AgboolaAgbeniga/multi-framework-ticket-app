@@ -1,0 +1,8 @@
+[
+    {
+        "id": "demo",
+        "email": "demo@ticketapp.com",
+        "password": "demo123",
+        "name": "Demo User"
+    }
+]
