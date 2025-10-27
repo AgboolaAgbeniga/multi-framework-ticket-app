@@ -1,6 +1,12 @@
 # Twig Ticket Management App
 
-A fully functional ticket management system built with PHP, Twig templating, and Tailwind CSS. This is a recreation of the React version using server-side rendering.
+A fully functional ticket management system built with PHP, Twig templating, and Tailwind CSS. This is one of three implementations (React/Vue/Twig) showcasing the same functionality across different web frameworks using server-side rendering.
+
+## 🌐 Live Demo
+
+**[Try the Twig Implementation](https://twig-ticket-app-035g.onrender.com)**
+
+Use demo credentials: `demo@ticketapp.com` / `demo123`
 
 ## Features
 
@@ -87,9 +93,11 @@ This can be easily replaced with SQLite or a full database system.
 
 ## Demo Data
 
-A demo user is pre-configured:
+A demo user is pre-configured with sample tickets:
 - Email: `demo@ticketapp.com`
 - Password: `demo123`
+
+The demo account comes pre-loaded with 10 sample tickets showcasing different statuses (open, in_progress, closed) and priorities (high, medium, low).
 
 ## Development Notes
 
@@ -99,8 +107,59 @@ A demo user is pre-configured:
 - Error handling provides user-friendly messages
 - The application follows MVC principles for maintainability
 
+## Deployment
+
+### Vercel Deployment
+
+This Twig app is configured for deployment on Vercel with PHP runtime:
+
+```bash
+# The app is ready for Vercel deployment
+# Vercel automatically detects PHP applications
+```
+
+### Vercel Configuration
+
+The `vercel.json` configures the PHP runtime and routing:
+
+```json
+{
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "@vercel/php@0.6.0"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.php"
+    }
+  ]
+}
+```
+
+### Requirements
+
+- PHP 8.1+ runtime
+- Writable `data/` directory for JSON storage
+- Composer dependencies installed
+
+## Related Projects
+
+This Twig implementation is part of a multi-framework comparison project:
+
+- **[React Implementation](../react-ticket-management-app/)** - React + TypeScript version
+- **[Vue Implementation](../vue-ticket-management-app/)** - Vue.js + TypeScript version
+- **[Project Root](../README.md)** - Overview of all implementations
+
 ## Browser Support
 
 - Modern browsers (Chrome, Firefox, Safari, Edge)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 - Responsive design works on all screen sizes
+
+---
+
+**Built with ❤️ using PHP, Twig, and traditional server-side technologies.**
+
+*Part of the Multi-Framework Ticket Management System comparison project.*

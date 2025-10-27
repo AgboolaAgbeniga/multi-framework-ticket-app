@@ -1,6 +1,12 @@
 # Vue Ticket Management App
 
-A modern ticket management application built with Vue 3, TypeScript, and Tailwind CSS. This app allows users to create, view, update, and manage support tickets with a clean, responsive interface.
+A modern ticket management application built with Vue 3, TypeScript, and Tailwind CSS. This is one of three implementations (React/Vue/Twig) showcasing the same functionality across different web frameworks.
+
+## 🌐 Live Demo
+
+**[Try the Vue Implementation](https://vue-ticket-app-ten.vercel.app/)**
+
+Use demo credentials: `demo@ticketapp.com` / `demo123`
 
 ## Features
 
@@ -9,7 +15,7 @@ A modern ticket management application built with Vue 3, TypeScript, and Tailwin
 - **User Authentication**: Login and signup functionality
 - **Responsive Design**: Mobile-friendly interface using Tailwind CSS
 - **Real-time Updates**: Live notifications with Sonner
-- **Mock Backend**: JSON Server for development and testing
+- **Local Storage**: Client-side data persistence
 
 ## Technologies Used
 
@@ -20,7 +26,7 @@ A modern ticket management application built with Vue 3, TypeScript, and Tailwin
 - **Tailwind CSS**: Utility-first CSS framework
 - **Radix Vue**: Accessible UI components
 - **Vite**: Fast build tool and development server
-- **JSON Server**: Mock REST API for development
+- **Local Storage**: Client-side data persistence
 
 ## Installation
 
@@ -40,7 +46,9 @@ A modern ticket management application built with Vue 3, TypeScript, and Tailwin
    npm run dev
    ```
 
-   This will start both the Vite dev server and the JSON Server mock backend.
+   This starts the application at: **http://localhost:5173**
+
+   **Note**: This Vue implementation uses localStorage for data persistence, so no separate API server is required.
 
 ## Available Scripts
 
@@ -48,7 +56,7 @@ A modern ticket management application built with Vue 3, TypeScript, and Tailwin
 - `npm run build` - Build the project for production
 - `npm run preview` - Preview the production build locally
 - `npm run type-check` - Run TypeScript type checking
-- `npm run server` - Start JSON Server mock backend only
+- `npm run type-check` - Run TypeScript type checking
 
 ## Project Structure
 
@@ -67,9 +75,46 @@ src/
 
 ## Development
 
-The app uses JSON Server for mock data during development. The database file is `db.json` in the root directory.
+The app uses localStorage for data persistence, providing a client-side database experience. Demo data is automatically initialized when a user first logs in.
 
-For production deployment, replace the mock API calls with actual backend endpoints.
+### Demo Credentials
+
+Use these credentials to explore the application:
+- **Email**: `demo@ticketapp.com`
+- **Password**: `demo123`
+
+The demo account comes pre-loaded with 10 sample tickets showcasing different statuses and priorities.
+
+## Deployment
+
+### Vercel Deployment
+
+This Vue app is configured for seamless deployment on Vercel:
+
+```bash
+# Build for production
+npm run build
+
+# Deploy to Vercel (if CLI is configured)
+npm run deploy
+```
+
+### Vercel Configuration
+
+The `vercel.json` handles SPA routing to prevent 404 errors on refresh:
+
+```json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+```
 
 ## Contributing
 
@@ -79,6 +124,20 @@ For production deployment, replace the mock API calls with actual backend endpoi
 4. Run tests and type checking
 5. Submit a pull request
 
+## Related Projects
+
+This Vue implementation is part of a multi-framework comparison project:
+
+- **[React Implementation](../react-ticket-management-app/)** - React + TypeScript version
+- **[Twig Implementation](../twig-ticket-management-app/)** - PHP + Twig version
+- **[Project Root](../README.md)** - Overview of all implementations
+
 ## License
 
-This project is licensed under the MIT License.
+This project is for educational purposes demonstrating different web development approaches.
+
+---
+
+**Built with ❤️ using Vue.js, TypeScript, and modern web technologies.**
+
+*Part of the Multi-Framework Ticket Management System comparison project.*
