@@ -27,14 +27,16 @@ RUN composer install --no-dev --optimize-autoloader
 # Copy application code
 COPY . .
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html \
-    && chmod -R 775 /var/www/html/data
+# Move public directory contents to web root and set permissions
+RUN if [ -d "public" ]; then mv public/* . && rm -rf public; fi && \
+    chown -R www-data:www-data /var/www/html && \
+    chmod -R 755 /var/www/html && \
+    chmod -R 775 /var/www/html/data
 
 # Configure Apache
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
-    && a2enmod rewrite
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
+    a2enmod rewrite && \
+    echo "DirectoryIndex index.php index.html" >> /etc/apache2/apache2.conf
 
 # Expose port 80
 EXPOSE 80
