@@ -17,6 +17,6 @@ RewriteRule ^ index.php [QSA,L]
 </Files>
 
 # Allow access to public assets
-<Directory "assets">
+<Directory "/var/www/html/assets">
     Allow from all
 </Directory>
