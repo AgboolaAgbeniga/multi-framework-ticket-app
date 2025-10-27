@@ -28,7 +28,7 @@ RUN composer install --no-dev --optimize-autoloader
 COPY . .
 
 # Move public directory contents to web root and set permissions
-RUN if [ -d "public" ]; then \
+RUN set -x && if [ -d "public" ]; then \
         mv public/* . && \
         rm -rf public; \
     fi && \
