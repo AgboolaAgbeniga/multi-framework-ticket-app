@@ -2,6 +2,10 @@
 
 A modern ticket management application built with Vue 3, TypeScript, and Tailwind CSS. This is one of three implementations (React/Vue/Twig) showcasing the same functionality across different web frameworks.
 
+## 📸 Screenshots
+
+*Coming soon - Screenshots of the Vue implementation will be added here*
+
 ## 🌐 Live Demo
 
 **[Try the Vue Implementation](https://vue-ticket-app-ten.vercel.app/)**

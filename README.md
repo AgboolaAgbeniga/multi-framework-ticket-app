@@ -84,7 +84,7 @@ Each app comes pre-loaded with 10 sample tickets showcasing different statuses a
 - **Architecture**: MVC pattern
 - **Storage**: JSON files
 - **Styling**: Tailwind CSS
-- **Deployment**: Vercel (PHP runtime)
+- **Deployment**: Render
 
 ## 📖 Getting Started
 

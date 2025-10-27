@@ -23,24 +23,24 @@
             </a>
           </div>
 
-          {/* Filter */}
-          <div className="mb-6 flex items-center gap-3">
-            <i className="fas fa-filter text-slate-500"></i>
-            <select id="statusFilter" onchange="filterTickets()" className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+          <!-- Filter -->
+          <div class="mb-6 flex items-center gap-3">
+            <i class="fas fa-filter text-slate-500"></i>
+            <select id="statusFilter" onchange="filterTickets()" class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
               <option value="all" {{ filter_status == 'all' ? 'selected' : '' }}>All Tickets</option>
               <option value="open" {{ filter_status == 'open' ? 'selected' : '' }}>Open</option>
               <option value="in_progress" {{ filter_status == 'in_progress' ? 'selected' : '' }}>In Progress</option>
               <option value="closed" {{ filter_status == 'closed' ? 'selected' : '' }}>Closed</option>
             </select>
-            <span className="text-sm text-slate-600">
+            <span class="text-sm text-slate-600">
               Showing {{ tickets|length }} ticket{{ tickets|length != 1 ? 's' : '' }}
             </span>
           </div>
 
-          {/* Tickets Grid */}
+          <!-- Tickets Grid -->
           {% if tickets|length == 0 %}
-            <div className="text-center py-12">
-              <p className="text-slate-600 mb-4">
+            <div class="text-center py-12">
+              <p class="text-slate-600 mb-4">
                 {% if filter_status == 'all' %}
                   No tickets yet. Create your first ticket to get started!
                 {% else %}
@@ -48,14 +48,14 @@
                 {% endif %}
               </p>
               {% if filter_status == 'all' %}
-                <a href="/tickets/create" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  <i className="fas fa-plus mr-2"></i>
+                <a href="/tickets/create" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <i class="fas fa-plus mr-2"></i>
                   Create First Ticket
                 </a>
               {% endif %}
             </div>
           {% else %}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {% for ticket in tickets %}
                         <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
                             <div class="flex items-start justify-between mb-3">

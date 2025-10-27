@@ -118,25 +118,14 @@ This Twig app is configured for deployment on Vercel with PHP runtime:
 # Vercel automatically detects PHP applications
 ```
 
-### Vercel Configuration
+### Render Configuration
 
-The `vercel.json` configures the PHP runtime and routing:
+The Twig app is configured for deployment on Render with the following setup:
 
-```json
-{
-  "functions": {
-    "api/**/*.php": {
-      "runtime": "@vercel/php@0.6.0"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.php"
-    }
-  ]
-}
-```
+- **Build Command**: `composer install`
+- **Start Command**: `php -S 0.0.0.0:$PORT -t public`
+- **Environment**: PHP 8.1+
+- **Root Directory**: `/opt/render/project/src` (points to twig-ticket-management-app)
 
 ### Requirements
 
