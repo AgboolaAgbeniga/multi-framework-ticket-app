@@ -99,7 +99,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { AlertCircle } from 'lucide-vue-next'
 import { toast } from 'vue-sonner'
@@ -123,6 +123,13 @@ const errors = ref<{
   confirmPassword?: string
 }>({})
 const isLoading = ref(false)
+
+// Check if user is already logged in and redirect to dashboard
+onMounted(() => {
+  if (authStore.isAuthenticated) {
+    router.push('/dashboard')
+  }
+})
 
 const clearError = (field: string) => {
   if (errors.value[field as keyof typeof errors.value]) {
