@@ -1,7 +1,7 @@
 <?php
 
 error_log("index.php started");
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 error_log("Autoloader loaded");
 
 use Symfony\Component\HttpFoundation\Request;
@@ -15,18 +15,18 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
 // Initialize Twig
-$loader = new FilesystemLoader(__DIR__ . '/../app/templates');
+$loader = new FilesystemLoader(__DIR__ . '/app/templates');
 $twig = new Environment($loader, [
     'cache' => false, // Disable cache for development
     'debug' => true,
 ]);
 
 // Include models and controllers
-require_once __DIR__ . '/../app/Models/User.php';
-require_once __DIR__ . '/../app/Models/Ticket.php';
-require_once __DIR__ . '/../app/Controllers/AuthController.php';
-require_once __DIR__ . '/../app/Controllers/TicketController.php';
-require_once __DIR__ . '/../app/Controllers/DashboardController.php';
+require_once __DIR__ . '/app/Models/User.php';
+require_once __DIR__ . '/app/Models/Ticket.php';
+require_once __DIR__ . '/app/Controllers/AuthController.php';
+require_once __DIR__ . '/app/Controllers/TicketController.php';
+require_once __DIR__ . '/app/Controllers/DashboardController.php';
 
 // Initialize request
 $request = Request::createFromGlobals();
