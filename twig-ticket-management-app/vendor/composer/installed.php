@@ -3,7 +3,7 @@
         'name' => 'ticketflex/twig-ticket-management',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd7bda0675e902f86c1471464bb07e8c913f523af',
+        'reference' => '446a6a1c690dbb3a1b9cb967b1e6f8e591226a34',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -67,7 +67,7 @@
         'ticketflex/twig-ticket-management' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd7bda0675e902f86c1471464bb07e8c913f523af',
+            'reference' => '446a6a1c690dbb3a1b9cb967b1e6f8e591226a34',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
