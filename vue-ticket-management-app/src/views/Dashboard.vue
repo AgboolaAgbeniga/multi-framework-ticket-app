@@ -126,16 +126,22 @@ const statusSummary = computed(() => {
 })
 
 onMounted(async () => {
+  console.log('Dashboard onMounted: Starting to load stats')
   try {
     const res = await apiGetStats()
+    console.log('Dashboard onMounted: apiGetStats response:', res)
     if (res.ok && res.data) {
       stats.value = res.data
+      console.log('Dashboard onMounted: Stats loaded:', res.data) // Debug log
     } else if (res.error === 'Unauthorized' || res.error === 'Token expired') {
+      console.log('Dashboard onMounted: Unauthorized, logging out')
       authStore.logout()
       router.push('/auth/login')
+    } else {
+      console.error('Dashboard onMounted: Failed to load stats:', res.error) // Debug log
     }
   } catch (e) {
-    console.error('Failed to load stats:', e)
+    console.error('Dashboard onMounted: Exception loading stats:', e)
   }
 })
 </script>
