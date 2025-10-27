@@ -151,6 +151,7 @@
 
 {% block footer %}{% endblock %}
 
+{% block scripts %}
 <script>
 function filterTickets() {
     const status = document.getElementById('statusFilter').value;
@@ -173,3 +174,4 @@ function closeDeleteModal() {
     document.getElementById('deleteModal').classList.add('hidden');
 }
 </script>
+{% endblock %}
