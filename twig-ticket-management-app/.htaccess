@@ -15,8 +15,3 @@ RewriteRule ^ index.php [QSA,L]
     Order allow,deny
     Deny from all
 </Files>
-
-# Allow access to public assets
-<Directory "/var/www/html/assets">
-    Allow from all
-</Directory>
