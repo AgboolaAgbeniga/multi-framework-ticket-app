@@ -48,7 +48,9 @@ async function delay(ms: number = 100): Promise<void> {
 }
 
 export async function apiLogin(email: string, password: string): Promise<ApiResponse<AuthToken>> {
+  console.log('Frontend: Attempting login with email:', email);
   try {
+    console.log('Frontend: Making fetch request to /api/login');
     const response = await fetch('/api/login', {
       method: 'POST',
       headers: {
@@ -57,16 +59,22 @@ export async function apiLogin(email: string, password: string): Promise<ApiResp
       body: JSON.stringify({ email, password }),
     });
 
+    console.log('Frontend: Response status:', response.status);
+    console.log('Frontend: Response headers:', Object.fromEntries(response.headers.entries()));
+
     const data = await response.json();
+    console.log('Frontend: Response data:', data);
 
     if (!response.ok) {
+      console.log('Frontend: Login failed with error:', data.error);
       return { ok: false, error: data.error || 'Login failed' };
     }
 
+    console.log('Frontend: Login successful, storing token');
     localStorage.setItem(TOKEN_KEY, JSON.stringify(data));
     return { ok: true, data };
   } catch (error) {
-    console.error('Login error:', error);
+    console.error('Frontend: Login network error:', error);
     return { ok: false, error: 'Network error' };
   }
 }

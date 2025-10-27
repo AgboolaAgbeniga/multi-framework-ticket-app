@@ -35,7 +35,11 @@ function writeDb(data: any): void {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  console.log('Login API called with method:', req.method);
+  console.log('Request body:', req.body);
+
   if (req.method !== 'POST') {
+    console.log('Method not allowed:', req.method);
     res.setHeader('Allow', ['POST']);
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
@@ -43,19 +47,29 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { email, password } = req.body;
 
   if (!email || !password) {
+    console.log('Missing email or password');
     return res.status(400).json({ error: 'Email and password are required' });
   }
 
+  console.log('Attempting login for email:', email);
+
   const db = readDb();
+  console.log('Database users count:', db.users?.length || 0);
+
   const user = db.users.find((u: User) => u.email === email);
 
   if (!user) {
+    console.log('User not found for email:', email);
     return res.status(401).json({ error: 'Invalid credentials' });
   }
 
+  console.log('User found, checking password');
   if (user.password !== password) {
+    console.log('Password mismatch for user:', email);
     return res.status(401).json({ error: 'Invalid credentials' });
   }
+
+  console.log('Login successful for user:', email);
 
   // Create auth token
   const token: AuthToken = {
@@ -73,5 +87,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   db.auth.tokens.push(token);
   writeDb(db);
 
+  console.log('Token created and stored for user:', email);
   return res.status(200).json(token);
 }
