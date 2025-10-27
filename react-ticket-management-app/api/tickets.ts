@@ -37,9 +37,18 @@ function authenticate(req: VercelRequest): string | null {
   const token = authHeader.substring(7);
   const db = readDb();
 
-  // In a real implementation, you'd validate the token properly
-  // For now, we'll assume the token is valid if it exists
-  return token ? 'demo' : null; // Simplified for demo
+  // Validate token exists in our stored tokens
+  const storedToken = db.auth?.tokens?.find((t: any) => t.token === token);
+  if (!storedToken) {
+    return null;
+  }
+
+  // Check if token is expired
+  if (new Date(storedToken.expiresAt) < new Date()) {
+    return null;
+  }
+
+  return storedToken.user.id;
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {

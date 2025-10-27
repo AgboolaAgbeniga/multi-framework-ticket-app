@@ -48,26 +48,27 @@ async function delay(ms: number = 100): Promise<void> {
 }
 
 export async function apiLogin(email: string, password: string): Promise<ApiResponse<AuthToken>> {
-  await delay();
+  try {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
 
-  const users = getStoredData<User>(USERS_KEY);
-  const user = users.find(u => u.email === email);
+    const data = await response.json();
 
-  if (!user) return { ok: false, error: 'Invalid credentials' };
-  if (user.password !== password) return { ok: false, error: 'Invalid credentials' };
+    if (!response.ok) {
+      return { ok: false, error: data.error || 'Login failed' };
+    }
 
-  const token: AuthToken = {
-    token: Math.random().toString(36).slice(2) + Date.now().toString(36),
-    expiresAt: new Date(Date.now() + TOKEN_EXPIRY_HOURS * 60 * 60 * 1000).toISOString(),
-    user: {
-      id: user.id,
-      email: user.email,
-      name: user.name,
-    },
-  };
-
-  localStorage.setItem(TOKEN_KEY, JSON.stringify(token));
-  return { ok: true, data: token };
+    localStorage.setItem(TOKEN_KEY, JSON.stringify(data));
+    return { ok: true, data };
+  } catch (error) {
+    console.error('Login error:', error);
+    return { ok: false, error: 'Network error' };
+  }
 }
 
 export async function apiSignup(email: string, password: string, name: string): Promise<ApiResponse<User>> {
@@ -100,15 +101,29 @@ export function apiLogout(): void {
 }
 
 export async function apiGetTickets(): Promise<ApiResponse<Ticket[]>> {
-  await delay();
+  try {
+    const token = getStoredToken();
+    if (!token) return { ok: false, error: 'Unauthorized' };
 
-  const token = getStoredToken();
-  if (!token) return { ok: false, error: 'Unauthorized' };
+    const response = await fetch('/api/tickets', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token.token}`,
+        'Content-Type': 'application/json',
+      },
+    });
 
-  const tickets = getStoredData<Ticket>(TICKETS_KEY);
-  const userTickets = tickets.filter(t => t.userId === token.user.id);
+    const data = await response.json();
 
-  return { ok: true, data: userTickets };
+    if (!response.ok) {
+      return { ok: false, error: data.error || 'Failed to fetch tickets' };
+    }
+
+    return { ok: true, data };
+  } catch (error) {
+    console.error('Get tickets error:', error);
+    return { ok: false, error: 'Network error' };
+  }
 }
 
 export async function apiCreateTicket(payload: {
@@ -117,27 +132,30 @@ export async function apiCreateTicket(payload: {
   status: 'open' | 'in_progress' | 'closed';
   priority: string;
 }): Promise<ApiResponse<Ticket>> {
-  await delay();
+  try {
+    const token = getStoredToken();
+    if (!token) return { ok: false, error: 'Unauthorized' };
 
-  const token = getStoredToken();
-  if (!token) return { ok: false, error: 'Unauthorized' };
+    const response = await fetch('/api/tickets', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token.token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
 
-  const now = new Date().toISOString();
-  const newTicket: Ticket = {
-    id: Date.now(),
-    title: payload.title,
-    description: payload.description || '',
-    status: payload.status,
-    userId: token.user.id,
-    createdAt: now,
-    updatedAt: now,
-  };
+    const data = await response.json();
 
-  const tickets = getStoredData<Ticket>(TICKETS_KEY);
-  tickets.push(newTicket);
-  setStoredData(TICKETS_KEY, tickets);
+    if (!response.ok) {
+      return { ok: false, error: data.error || 'Failed to create ticket' };
+    }
 
-  return { ok: true, data: newTicket };
+    return { ok: true, data };
+  } catch (error) {
+    console.error('Create ticket error:', error);
+    return { ok: false, error: 'Network error' };
+  }
 }
 
 export async function apiUpdateTicket(
