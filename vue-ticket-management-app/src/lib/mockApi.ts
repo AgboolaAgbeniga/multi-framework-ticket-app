@@ -245,6 +245,114 @@ const initializeDemoData = () => {
       name: 'Demo User',
     };
     setStoredData(USERS_KEY, [demoUser]);
+
+    // Initialize demo tickets for the demo user
+    const tickets = getStoredData<Ticket>(TICKETS_KEY);
+    if (tickets.length === 0) {
+      const demoTickets: Ticket[] = [
+        {
+          id: 1,
+          title: 'Website Login Issue',
+          description: 'Users are unable to login to the website. The login form is not responding.',
+          status: 'open',
+          userId: 1,
+          createdAt: '2024-01-15T10:00:00.000Z',
+          updatedAt: '2024-01-15T10:00:00.000Z',
+          priority: 'high'
+        },
+        {
+          id: 2,
+          title: 'Database Connection Error',
+          description: 'The application is showing database connection errors intermittently.',
+          status: 'in_progress',
+          userId: 1,
+          createdAt: '2024-01-14T14:30:00.000Z',
+          updatedAt: '2024-01-16T09:15:00.000Z',
+          priority: 'high'
+        },
+        {
+          id: 3,
+          title: 'Mobile App Crashing',
+          description: 'The mobile app crashes when users try to upload images.',
+          status: 'open',
+          userId: 1,
+          createdAt: '2024-01-13T16:45:00.000Z',
+          updatedAt: '2024-01-13T16:45:00.000Z',
+          priority: 'medium'
+        },
+        {
+          id: 4,
+          title: 'Email Notifications Not Working',
+          description: 'Users are not receiving email notifications for ticket updates.',
+          status: 'closed',
+          userId: 1,
+          createdAt: '2024-01-12T11:20:00.000Z',
+          updatedAt: '2024-01-18T13:30:00.000Z',
+          priority: 'medium'
+        },
+        {
+          id: 5,
+          title: 'Payment Gateway Integration',
+          description: 'Need to integrate Stripe payment gateway for subscription plans.',
+          status: 'open',
+          userId: 1,
+          createdAt: '2024-01-11T09:00:00.000Z',
+          updatedAt: '2024-01-11T09:00:00.000Z',
+          priority: 'high'
+        },
+        {
+          id: 6,
+          title: 'UI/UX Improvements',
+          description: 'Update the dashboard design to improve user experience.',
+          status: 'in_progress',
+          userId: 1,
+          createdAt: '2024-01-10T15:30:00.000Z',
+          updatedAt: '2024-01-17T10:45:00.000Z',
+          priority: 'low'
+        },
+        {
+          id: 7,
+          title: 'API Rate Limiting',
+          description: 'Implement rate limiting for API endpoints to prevent abuse.',
+          status: 'open',
+          userId: 1,
+          createdAt: '2024-01-09T12:15:00.000Z',
+          updatedAt: '2024-01-09T12:15:00.000Z',
+          priority: 'medium'
+        },
+        {
+          id: 8,
+          title: 'Data Backup Issues',
+          description: 'Automated backups are failing and need to be fixed.',
+          status: 'closed',
+          userId: 1,
+          createdAt: '2024-01-08T08:45:00.000Z',
+          updatedAt: '2024-01-19T14:20:00.000Z',
+          priority: 'high'
+        },
+        {
+          id: 9,
+          title: 'Performance Optimization',
+          description: 'Optimize database queries to improve application performance.',
+          status: 'in_progress',
+          userId: 1,
+          createdAt: '2024-01-07T13:00:00.000Z',
+          updatedAt: '2024-01-16T16:30:00.000Z',
+          priority: 'medium'
+        },
+        {
+          id: 10,
+          title: 'Security Vulnerability',
+          description: 'Address potential security vulnerability in user authentication.',
+          status: 'open',
+          userId: 1,
+          createdAt: '2024-01-06T10:30:00.000Z',
+          updatedAt: '2024-01-06T10:30:00.000Z',
+          priority: 'high'
+        }
+      ];
+      setStoredData(TICKETS_KEY, demoTickets);
+    }
   }
 };
 

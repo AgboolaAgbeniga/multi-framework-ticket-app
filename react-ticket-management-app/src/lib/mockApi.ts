@@ -48,35 +48,26 @@ async function delay(ms: number = 100): Promise<void> {
 }
 
 export async function apiLogin(email: string, password: string): Promise<ApiResponse<AuthToken>> {
-  console.log('Frontend: Attempting login with email:', email);
-  try {
-    console.log('Frontend: Making fetch request to /api/login');
-    const response = await fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
+  await delay();
 
-    console.log('Frontend: Response status:', response.status);
-    console.log('Frontend: Response headers:', Object.fromEntries(response.headers.entries()));
+  const users = getStoredData<User>(USERS_KEY);
+  const user = users.find(u => u.email === email);
 
-    const data = await response.json();
-    console.log('Frontend: Response data:', data);
+  if (!user) return { ok: false, error: 'Invalid credentials' };
+  if (user.password !== password) return { ok: false, error: 'Invalid credentials' };
 
-    if (!response.ok) {
-      console.log('Frontend: Login failed with error:', data.error);
-      return { ok: false, error: data.error || 'Login failed' };
-    }
+  const token: AuthToken = {
+    token: Math.random().toString(36).slice(2) + Date.now().toString(36),
+    expiresAt: new Date(Date.now() + TOKEN_EXPIRY_HOURS * 60 * 60 * 1000).toISOString(),
+    user: {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+    },
+  };
 
-    console.log('Frontend: Login successful, storing token');
-    localStorage.setItem(TOKEN_KEY, JSON.stringify(data));
-    return { ok: true, data };
-  } catch (error) {
-    console.error('Frontend: Login network error:', error);
-    return { ok: false, error: 'Network error' };
-  }
+  localStorage.setItem(TOKEN_KEY, JSON.stringify(token));
+  return { ok: true, data: token };
 }
 
 export async function apiSignup(email: string, password: string, name: string): Promise<ApiResponse<User>> {
@@ -109,29 +100,15 @@ export function apiLogout(): void {
 }
 
 export async function apiGetTickets(): Promise<ApiResponse<Ticket[]>> {
-  try {
-    const token = getStoredToken();
-    if (!token) return { ok: false, error: 'Unauthorized' };
+  await delay();
 
-    const response = await fetch('/api/tickets', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token.token}`,
-        'Content-Type': 'application/json',
-      },
-    });
+  const token = getStoredToken();
+  if (!token) return { ok: false, error: 'Unauthorized' };
 
-    const data = await response.json();
+  const tickets = getStoredData<Ticket>(TICKETS_KEY);
+  const userTickets = tickets.filter(t => t.userId === token.user.id);
 
-    if (!response.ok) {
-      return { ok: false, error: data.error || 'Failed to fetch tickets' };
-    }
-
-    return { ok: true, data };
-  } catch (error) {
-    console.error('Get tickets error:', error);
-    return { ok: false, error: 'Network error' };
-  }
+  return { ok: true, data: userTickets };
 }
 
 export async function apiCreateTicket(payload: {
@@ -140,30 +117,28 @@ export async function apiCreateTicket(payload: {
   status: 'open' | 'in_progress' | 'closed';
   priority: string;
 }): Promise<ApiResponse<Ticket>> {
-  try {
-    const token = getStoredToken();
-    if (!token) return { ok: false, error: 'Unauthorized' };
+  await delay();
 
-    const response = await fetch('/api/tickets', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${token.token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    });
+  const token = getStoredToken();
+  if (!token) return { ok: false, error: 'Unauthorized' };
 
-    const data = await response.json();
+  const now = new Date().toISOString();
+  const newTicket: Ticket = {
+    id: Date.now(),
+    title: payload.title,
+    description: payload.description || '',
+    status: payload.status,
+    userId: token.user.id,
+    createdAt: now,
+    updatedAt: now,
+    priority: payload.priority,
+  };
 
-    if (!response.ok) {
-      return { ok: false, error: data.error || 'Failed to create ticket' };
-    }
+  const tickets = getStoredData<Ticket>(TICKETS_KEY);
+  tickets.push(newTicket);
+  setStoredData(TICKETS_KEY, tickets);
 
-    return { ok: true, data };
-  } catch (error) {
-    console.error('Create ticket error:', error);
-    return { ok: false, error: 'Network error' };
-  }
+  return { ok: true, data: newTicket };
 }
 
 export async function apiUpdateTicket(
@@ -270,6 +245,114 @@ const initializeDemoData = () => {
       name: 'Demo User',
     };
     setStoredData(USERS_KEY, [demoUser]);
+
+    // Initialize demo tickets for the demo user
+    const tickets = getStoredData<Ticket>(TICKETS_KEY);
+    if (tickets.length === 0) {
+      const demoTickets: Ticket[] = [
+        {
+          id: 1,
+          title: 'Website Login Issue',
+          description: 'Users are unable to login to the website. The login form is not responding.',
+          status: 'open',
+          userId: 1,
+          createdAt: '2024-01-15T10:00:00.000Z',
+          updatedAt: '2024-01-15T10:00:00.000Z',
+          priority: 'high'
+        },
+        {
+          id: 2,
+          title: 'Database Connection Error',
+          description: 'The application is showing database connection errors intermittently.',
+          status: 'in_progress',
+          userId: 1,
+          createdAt: '2024-01-14T14:30:00.000Z',
+          updatedAt: '2024-01-16T09:15:00.000Z',
+          priority: 'high'
+        },
+        {
+          id: 3,
+          title: 'Mobile App Crashing',
+          description: 'The mobile app crashes when users try to upload images.',
+          status: 'open',
+          userId: 1,
+          createdAt: '2024-01-13T16:45:00.000Z',
+          updatedAt: '2024-01-13T16:45:00.000Z',
+          priority: 'medium'
+        },
+        {
+          id: 4,
+          title: 'Email Notifications Not Working',
+          description: 'Users are not receiving email notifications for ticket updates.',
+          status: 'closed',
+          userId: 1,
+          createdAt: '2024-01-12T11:20:00.000Z',
+          updatedAt: '2024-01-18T13:30:00.000Z',
+          priority: 'medium'
+        },
+        {
+          id: 5,
+          title: 'Payment Gateway Integration',
+          description: 'Need to integrate Stripe payment gateway for subscription plans.',
+          status: 'open',
+          userId: 1,
+          createdAt: '2024-01-11T09:00:00.000Z',
+          updatedAt: '2024-01-11T09:00:00.000Z',
+          priority: 'high'
+        },
+        {
+          id: 6,
+          title: 'UI/UX Improvements',
+          description: 'Update the dashboard design to improve user experience.',
+          status: 'in_progress',
+          userId: 1,
+          createdAt: '2024-01-10T15:30:00.000Z',
+          updatedAt: '2024-01-17T10:45:00.000Z',
+          priority: 'low'
+        },
+        {
+          id: 7,
+          title: 'API Rate Limiting',
+          description: 'Implement rate limiting for API endpoints to prevent abuse.',
+          status: 'open',
+          userId: 1,
+          createdAt: '2024-01-09T12:15:00.000Z',
+          updatedAt: '2024-01-09T12:15:00.000Z',
+          priority: 'medium'
+        },
+        {
+          id: 8,
+          title: 'Data Backup Issues',
+          description: 'Automated backups are failing and need to be fixed.',
+          status: 'closed',
+          userId: 1,
+          createdAt: '2024-01-08T08:45:00.000Z',
+          updatedAt: '2024-01-19T14:20:00.000Z',
+          priority: 'high'
+        },
+        {
+          id: 9,
+          title: 'Performance Optimization',
+          description: 'Optimize database queries to improve application performance.',
+          status: 'in_progress',
+          userId: 1,
+          createdAt: '2024-01-07T13:00:00.000Z',
+          updatedAt: '2024-01-16T16:30:00.000Z',
+          priority: 'medium'
+        },
+        {
+          id: 10,
+          title: 'Security Vulnerability',
+          description: 'Address potential security vulnerability in user authentication.',
+          status: 'open',
+          userId: 1,
+          createdAt: '2024-01-06T10:30:00.000Z',
+          updatedAt: '2024-01-06T10:30:00.000Z',
+          priority: 'high'
+        }
+      ];
+      setStoredData(TICKETS_KEY, demoTickets);
+    }
   }
 };
 

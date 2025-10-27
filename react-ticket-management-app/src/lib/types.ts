@@ -16,6 +16,7 @@ export interface Ticket {
   userId: number | string;
   createdAt: string;
   updatedAt: string;
+  priority?: string;
 }
 
 export interface User {

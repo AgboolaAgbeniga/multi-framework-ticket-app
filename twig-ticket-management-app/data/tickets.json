@@ -1,12 +1,102 @@
 [
     {
-        "title": "Grandma swallow shovel",
-        "description": "cdcdss",
+        "id": "1",
+        "title": "Website Login Issue",
+        "description": "Users are unable to login to the website. The login form is not responding.",
         "status": "open",
+        "priority": "high",
+        "userId": "demo",
+        "createdAt": "2024-01-15T10:00:00+00:00",
+        "updatedAt": "2024-01-15T10:00:00+00:00"
+    },
+    {
+        "id": "2",
+        "title": "Database Connection Error",
+        "description": "The application is showing database connection errors intermittently.",
+        "status": "in_progress",
+        "priority": "high",
+        "userId": "demo",
+        "createdAt": "2024-01-14T14:30:00+00:00",
+        "updatedAt": "2024-01-16T09:15:00+00:00"
+    },
+    {
+        "id": "3",
+        "title": "Mobile App Crashing",
+        "description": "The mobile app crashes when users try to upload images.",
+        "status": "open",
+        "priority": "medium",
+        "userId": "demo",
+        "createdAt": "2024-01-13T16:45:00+00:00",
+        "updatedAt": "2024-01-13T16:45:00+00:00"
+    },
+    {
+        "id": "4",
+        "title": "Email Notifications Not Working",
+        "description": "Users are not receiving email notifications for ticket updates.",
+        "status": "closed",
+        "priority": "medium",
+        "userId": "demo",
+        "createdAt": "2024-01-12T11:20:00+00:00",
+        "updatedAt": "2024-01-18T13:30:00+00:00"
+    },
+    {
+        "id": "5",
+        "title": "Payment Gateway Integration",
+        "description": "Need to integrate Stripe payment gateway for subscription plans.",
+        "status": "open",
+        "priority": "high",
+        "userId": "demo",
+        "createdAt": "2024-01-11T09:00:00+00:00",
+        "updatedAt": "2024-01-11T09:00:00+00:00"
+    },
+    {
+        "id": "6",
+        "title": "UI/UX Improvements",
+        "description": "Update the dashboard design to improve user experience.",
+        "status": "in_progress",
         "priority": "low",
         "userId": "demo",
-        "id": "68ff0815bec0a",
-        "createdAt": "2025-10-27T05:50:13+00:00",
-        "updatedAt": "2025-10-27T05:50:13+00:00"
+        "createdAt": "2024-01-10T15:30:00+00:00",
+        "updatedAt": "2024-01-17T10:45:00+00:00"
+    },
+    {
+        "id": "7",
+        "title": "API Rate Limiting",
+        "description": "Implement rate limiting for API endpoints to prevent abuse.",
+        "status": "open",
+        "priority": "medium",
+        "userId": "demo",
+        "createdAt": "2024-01-09T12:15:00+00:00",
+        "updatedAt": "2024-01-09T12:15:00+00:00"
+    },
+    {
+        "id": "8",
+        "title": "Data Backup Issues",
+        "description": "Automated backups are failing and need to be fixed.",
+        "status": "closed",
+        "priority": "high",
+        "userId": "demo",
+        "createdAt": "2024-01-08T08:45:00+00:00",
+        "updatedAt": "2024-01-19T14:20:00+00:00"
+    },
+    {
+        "id": "9",
+        "title": "Performance Optimization",
+        "description": "Optimize database queries to improve application performance.",
+        "status": "in_progress",
+        "priority": "medium",
+        "userId": "demo",
+        "createdAt": "2024-01-07T13:00:00+00:00",
+        "updatedAt": "2024-01-16T16:30:00+00:00"
+    },
+    {
+        "id": "10",
+        "title": "Security Vulnerability",
+        "description": "Address potential security vulnerability in user authentication.",
+        "status": "open",
+        "priority": "high",
+        "userId": "demo",
+        "createdAt": "2024-01-06T10:30:00+00:00",
+        "updatedAt": "2024-01-06T10:30:00+00:00"
     }
 ]
