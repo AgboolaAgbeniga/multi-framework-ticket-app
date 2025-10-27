@@ -49,6 +49,7 @@ $routes->add('dashboard', new Route('/dashboard', ['controller' => 'DashboardCon
 $routes->add('tickets', new Route('/tickets', ['controller' => 'TicketController', 'action' => 'index']));
 $routes->add('tickets_create', new Route('/tickets/create', ['controller' => 'TicketController', 'action' => 'create']));
 $routes->add('tickets_edit', new Route('/tickets/{id}/edit', ['controller' => 'TicketController', 'action' => 'edit']));
+$routes->add('tickets_delete', new Route('/tickets/{id}/delete', ['controller' => 'TicketController', 'action' => 'delete']));
 $routes->add('logout', new Route('/logout', ['controller' => 'AuthController', 'action' => 'logout']));
 
 // Match route
