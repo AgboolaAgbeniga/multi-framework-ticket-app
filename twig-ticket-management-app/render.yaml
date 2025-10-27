@@ -8,3 +8,5 @@ services:
     envVars:
       - key: PORT
         value: 80
+      - key: APP_ENV
+        value: production

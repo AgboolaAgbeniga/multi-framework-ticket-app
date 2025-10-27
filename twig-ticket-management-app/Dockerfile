@@ -28,15 +28,31 @@ RUN composer install --no-dev --optimize-autoloader
 COPY . .
 
 # Move public directory contents to web root and set permissions
-RUN if [ -d "public" ]; then mv public/* . && rm -rf public; fi && \
+RUN if [ -d "public" ]; then \
+        mv public/* . && \
+        rm -rf public; \
+    fi && \
     chown -R www-data:www-data /var/www/html && \
     chmod -R 755 /var/www/html && \
-    chmod -R 775 /var/www/html/data
+    chmod -R 775 /var/www/html/data && \
+    mkdir -p /var/www/html/data && \
+    mkdir -p /var/www/html/cache && \
+    chmod -R 775 /var/www/html/cache && \
+    touch /var/www/html/data/tickets.json /var/www/html/data/users.json
 
 # Configure Apache
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
     a2enmod rewrite && \
-    echo "DirectoryIndex index.php index.html" >> /etc/apache2/apache2.conf
+    echo "DirectoryIndex index.php index.html" >> /etc/apache2/apache2.conf && \
+    echo "<VirtualHost *:80>\n\
+    DocumentRoot /var/www/html\n\
+    <Directory /var/www/html>\n\
+        AllowOverride All\n\
+        Require all granted\n\
+    </Directory>\n\
+    ErrorLog \${APACHE_LOG_DIR}/error.log\n\
+    CustomLog \${APACHE_LOG_DIR}/access.log combined\n\
+</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
 
 # Expose port 80
 EXPOSE 80

@@ -17,8 +17,8 @@ use Twig\Loader\FilesystemLoader;
 // Initialize Twig
 $loader = new FilesystemLoader(__DIR__ . '/../app/templates');
 $twig = new Environment($loader, [
-    'cache' => false, // Disable cache for development
-    'debug' => true,
+    'cache' => getenv('APP_ENV') === 'production' ? __DIR__ . '/../cache' : false,
+    'debug' => getenv('APP_ENV') !== 'production',
 ]);
 
 // Include models and controllers
