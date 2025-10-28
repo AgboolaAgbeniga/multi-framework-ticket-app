@@ -43,6 +43,8 @@
     transform: scale(0.95);
     transition: transform 0.2s ease-out;
     margin: 1rem;
+    max-height: calc(100vh - 2rem);
+    overflow: auto;
 }
 
 .modal.is-open .modal__container {
@@ -139,7 +141,7 @@
 
 @media (min-width: 640px) {
     .modal__container {
-        max-width: 28rem;
+        max-width: 32rem;
     }
 
     .modal__header {

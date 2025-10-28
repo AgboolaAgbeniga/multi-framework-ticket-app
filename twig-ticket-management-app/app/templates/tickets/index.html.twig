@@ -26,12 +26,84 @@
           <!-- Filter -->
           <div class="mb-6 flex items-center gap-3">
             <i class="fas fa-filter text-slate-500"></i>
-            <select id="statusFilter" onchange="filterTickets()" class="w-[200px] px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-              <option value="all" {{ filter_status == 'all' ? 'selected' : '' }}>All Tickets</option>
-              <option value="open" {{ filter_status == 'open' ? 'selected' : '' }}>Open</option>
-              <option value="in_progress" {{ filter_status == 'in_progress' ? 'selected' : '' }}>In Progress</option>
-              <option value="closed" {{ filter_status == 'closed' ? 'selected' : '' }}>Closed</option>
-            </select>
+            <div class="relative">
+              <button
+                type="button"
+                id="statusFilterTrigger"
+                class="w-[200px] border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex items-center justify-between gap-2 rounded-md border bg-input-background px-3 py-2 text-sm whitespace-nowrap transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 h-9 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+              >
+                <span id="statusFilterValue" data-slot="select-value">
+                  {% if filter_status == 'all' %}All Tickets{% elseif filter_status == 'open' %}Open{% elseif filter_status == 'in_progress' %}In Progress{% elseif filter_status == 'closed' %}Closed{% else %}All Tickets{% endif %}
+                </span>
+                <svg class="size-4 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </button>
+              <div
+                id="statusFilterContent"
+                class="w-full bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-full left-0 z-50 max-h-60 min-w-[8rem] overflow-x-hidden overflow-y-auto rounded-md border shadow-md hidden mt-1"
+                role="listbox"
+                aria-labelledby="statusFilterTrigger"
+              >
+                <div class="p-1 bg-white w-full">
+                  <div
+                    class="focus:bg-[#e9ebef] focus:text-[#030213] [&_svg:not([class*='text-'])]:text-[#717182] relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 hover:bg-[#e9ebef] hover:text-[#030213] data-[highlighted]:bg-[#e9ebef] data-[highlighted]:text-[#030213] {{ filter_status == 'all' ? 'bg-[#e9ebef] text-[#030213]' : '' }}"
+                    role="option"
+                    data-value="all"
+                    tabindex="0"
+                  >
+                    <span class="absolute right-2 flex size-3.5 items-center justify-center">
+                      <svg class="size-4 {{ filter_status != 'all' ? 'hidden' : '' }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </span>
+                    All Tickets
+                  </div>
+                  <div
+                    class="focus:bg-[#e9ebef] focus:text-[#030213] [&_svg:not([class*='text-'])]:text-[#717182] relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 hover:bg-[#e9ebef] hover:text-[#030213] data-[highlighted]:bg-[#e9ebef] data-[highlighted]:text-[#030213] {{ filter_status == 'open' ? 'bg-[#e9ebef] text-[#030213]' : '' }}"
+                    role="option"
+                    data-value="open"
+                    tabindex="-1"
+                  >
+                    <span class="absolute right-2 flex size-3.5 items-center justify-center">
+                      <svg class="size-4 {{ filter_status != 'open' ? 'hidden' : '' }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </span>
+                    Open
+                  </div>
+                  <div
+                    class="focus:bg-[#e9ebef] focus:text-[#030213] [&_svg:not([class*='text-'])]:text-[#717182] relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 hover:bg-[#e9ebef] hover:text-[#030213] data-[highlighted]:bg-[#e9ebef] data-[highlighted]:text-[#030213] {{ filter_status == 'in_progress' ? 'bg-[#e9ebef] text-[#030213]' : '' }}"
+                    role="option"
+                    data-value="in_progress"
+                    tabindex="-1"
+                  >
+                    <span class="absolute right-2 flex size-3.5 items-center justify-center">
+                      <svg class="size-4 {{ filter_status != 'in_progress' ? 'hidden' : '' }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </span>
+                    In Progress
+                  </div>
+                  <div
+                    class="focus:bg-[#e9ebef] focus:text-[#030213] [&_svg:not([class*='text-'])]:text-[#717182] relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 hover:bg-[#e9ebef] hover:text-[#030213] data-[highlighted]:bg-[#e9ebef] data-[highlighted]:text-[#030213] {{ filter_status == 'closed' ? 'bg-[#e9ebef] text-[#030213]' : '' }}"
+                    role="option"
+                    data-value="closed"
+                    tabindex="-1"
+                  >
+                    <span class="absolute right-2 flex size-3.5 items-center justify-center">
+                      <svg class="size-4 {{ filter_status != 'closed' ? 'hidden' : '' }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </span>
+                    Closed
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" id="statusFilterHidden" value="{{ filter_status }}">
+            </div>
             <span class="text-sm text-slate-600">
               Showing {{ tickets|length }} ticket{{ tickets|length != 1 ? 's' : '' }}
             </span>
@@ -462,6 +534,11 @@ class CustomSelect {
 
         this.close();
         this.trigger.focus();
+
+        // Trigger filter if this is the status filter
+        if (this.trigger.id === 'statusFilterTrigger') {
+            filterTickets();
+        }
     }
 
     setValue(value) {
@@ -473,15 +550,19 @@ class CustomSelect {
 }
 
 // Initialize custom selects
-let statusSelect, prioritySelect;
+let statusSelect, prioritySelect, statusFilterSelect;
 
 document.addEventListener('DOMContentLoaded', function() {
     statusSelect = new CustomSelect('ticketStatusTrigger', 'ticketStatusContent', 'ticketStatusValue', 'ticketStatusHidden');
     prioritySelect = new CustomSelect('ticketPriorityTrigger', 'ticketPriorityContent', 'ticketPriorityValue', 'ticketPriorityHidden');
+    statusFilterSelect = new CustomSelect('statusFilterTrigger', 'statusFilterContent', 'statusFilterValue', 'statusFilterHidden');
+
+    // Set initial value for filter dropdown
+    statusFilterSelect.setValue('{{ filter_status }}');
 });
 
 function filterTickets() {
-    const status = document.getElementById('statusFilter').value;
+    const status = document.getElementById('statusFilterHidden').value;
     window.location.href = `/tickets?status=${status}`;
 }
 
