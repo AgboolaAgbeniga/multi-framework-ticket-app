@@ -2,7 +2,13 @@
 
 ini_set('error_log', __DIR__ . '/../php_errors.log');
 error_log("index.php started");
-require_once __DIR__ . '/../vendor/autoload.php';
+// Determine project root whether this file lives in /public or was moved to the web root
+$rootDir = __DIR__;
+if (!is_dir($rootDir . '/vendor') && is_dir(dirname(__DIR__) . '/vendor')) {
+    $rootDir = dirname(__DIR__);
+}
+
+require_once $rootDir . '/vendor/autoload.php';
 error_log("Autoloader loaded");
 
 use Symfony\Component\HttpFoundation\Request;
@@ -16,18 +22,18 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
 // Initialize Twig
-$loader = new FilesystemLoader(__DIR__ . '/../app/templates');
+$loader = new FilesystemLoader($rootDir . '/app/templates');
 $twig = new Environment($loader, [
     'cache' => false, // Disable cache for development
     'debug' => true,
 ]);
 
 // Include models and controllers
-require_once __DIR__ . '/../app/Models/User.php';
-require_once __DIR__ . '/../app/Models/Ticket.php';
-require_once __DIR__ . '/../app/Controllers/AuthController.php';
-require_once __DIR__ . '/../app/Controllers/TicketController.php';
-require_once __DIR__ . '/../app/Controllers/DashboardController.php';
+require_once $rootDir . '/app/Models/User.php';
+require_once $rootDir . '/app/Models/Ticket.php';
+require_once $rootDir . '/app/Controllers/AuthController.php';
+require_once $rootDir . '/app/Controllers/TicketController.php';
+require_once $rootDir . '/app/Controllers/DashboardController.php';
 
 // Initialize request
 $request = Request::createFromGlobals();
