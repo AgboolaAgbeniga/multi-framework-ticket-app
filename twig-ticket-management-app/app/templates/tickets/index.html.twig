@@ -100,7 +100,18 @@
                                         <div class="flex items-center gap-1">
                                             <i class="fas fa-clock text-indigo-500"></i>
                                             <span class="text-indigo-600">
-                                                Updated {{ ticket.updatedAt|date('M j, Y') }}
+                                                {% set now = 'now'|date('U') %}
+                                                {% set updated = ticket.updatedAt|date('U') %}
+                                                {% set diff = now - updated %}
+                                                {% if diff < 60 %}
+                                                    Updated just now
+                                                {% elseif diff < 3600 %}
+                                                    Updated {{ (diff / 60)|round }} minute{{ (diff / 60)|round != 1 ? 's' : '' }} ago
+                                                {% elseif diff < 86400 %}
+                                                    Updated {{ (diff / 3600)|round }} hour{{ (diff / 3600)|round != 1 ? 's' : '' }} ago
+                                                {% else %}
+                                                    Updated {{ ticket.updatedAt|date('M j, Y') }}
+                                                {% endif %}
                                             </span>
                                         </div>
                                     {% endif %}
@@ -138,7 +149,7 @@
                     <p class="text-muted-foreground text-sm mb-6" id="ticketModal-description">Fill in the details to create a new ticket.</p>
                     <form id="ticketForm" class="space-y-4">
                         <div>
-                            <label for="ticketTitle" class="block text-sm font-medium text-gray-700 mb-2">Title *</label>
+                            <label for="ticketTitle" class="block text-sm font-semibold text-[#030213] mb-2">Title *</label>
                             <input
                                 id="ticketTitle"
                                 name="title"
@@ -151,7 +162,7 @@
                         </div>
 
                         <div>
-                            <label for="ticketDescription" class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                            <label for="ticketDescription" class="block text-sm font-semibold text-[#030213] mb-2">Description</label>
                             <textarea
                                 id="ticketDescription"
                                 name="description"
@@ -167,40 +178,149 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label for="ticketStatus" class="block text-sm font-medium text-gray-700 mb-2">Status *</label>
-                                <select
-                                    id="ticketStatus"
-                                    name="status"
-                                    class="border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-full items-center justify-between gap-2 rounded-md border bg-input-background px-3 py-2 text-sm whitespace-nowrap transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"
-                                >
-                                    <option value="open">Open</option>
-                                    <option value="in_progress">In Progress</option>
-                                    <option value="closed">Closed</option>
-                                </select>
+                                <label for="ticketStatus" class="block text-sm font-semibold text-[#030213] mb-2">Status *</label>
+                                <div class="relative">
+                                    <button
+                                        type="button"
+                                        id="ticketStatusTrigger"
+                                        class="border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-full items-center justify-between gap-2 rounded-md border bg-input-background px-3 py-2 text-sm whitespace-nowrap transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 h-9 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                                        aria-haspopup="listbox"
+                                        aria-expanded="false"
+                                    >
+                                        <span id="ticketStatusValue" data-slot="select-value">Open</span>
+                                        <svg class="size-4 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="m6 9 6 6 6-6"/>
+                                        </svg>
+                                    </button>
+                                    <div
+                                        id="ticketStatusContent"
+                                        class="w-full bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-full left-0 z-50 max-h-60 min-w-[8rem] overflow-x-hidden overflow-y-auto rounded-md border shadow-md hidden mt-1"
+                                        role="listbox"
+                                        aria-labelledby="ticketStatusTrigger"
+                                    >
+                                        <div class="p-1 bg-white w-full">
+                                            <div
+                                                 class="focus:bg-[#e9ebef] focus:text-[#030213] [&_svg:not([class*='text-'])]:text-[#717182] relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 hover:bg-[#e9ebef] hover:text-[#030213] data-[highlighted]:bg-[#e9ebef] data-[highlighted]:text-[#030213]"
+                                                role="option"
+                                                data-value="open"
+                                                tabindex="0"
+                                            >
+                                                <span class="absolute right-2 flex size-3.5 items-center justify-center">
+                                                    <svg class="size-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M20 6L9 17l-5-5"/>
+                                                    </svg>
+                                                </span>
+                                                Open
+                                            </div>
+                                            <div
+                                                class="focus:bg-[#e9ebef] focus:text-[#030213] [&_svg:not([class*='text-'])]:text-[#717182] relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 hover:bg-[#e9ebef] hover:text-[#030213] data-[highlighted]:bg-[#e9ebef] data-[highlighted]:text-[#030213]"
+                                                role="option"
+                                                data-value="in_progress"
+                                                tabindex="-1"
+                                            >
+                                                <span class="absolute right-2 flex size-3.5 items-center justify-center">
+                                                    <svg class="size-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                                        <path d="M20 6L9 17l-5-5"/>
+                                                    </svg>
+                                                </span>
+                                                In Progress
+                                            </div>
+                                            <div
+                                                 class="focus:bg-[#e9ebef] focus:text-[#030213] [&_svg:not([class*='text-'])]:text-[#717182] relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 hover:bg-[#e9ebef] hover:text-[#030213] data-[highlighted]:bg-[#e9ebef] data-[highlighted]:text-[#030213]"
+                                                role="option"
+                                                data-value="closed"
+                                                tabindex="-1"
+                                            >
+                                                <span class="absolute right-2 flex size-3.5 items-center justify-center">
+                                                    <svg class="size-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M20 6L9 17l-5-5"/>
+                                                    </svg>
+                                                </span>
+                                                Closed
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="ticketStatusHidden" name="status" value="open">
+                                </div>
                             </div>
 
                             <div>
-                                <label for="ticketPriority" class="block text-sm font-medium text-gray-700 mb-2">Priority</label>
-                                <select
-                                    id="ticketPriority"
-                                    name="priority"
-                                    class="border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-full items-center justify-between gap-2 rounded-md border bg-input-background px-3 py-2 text-sm whitespace-nowrap transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"
-                                >
-                                    <option value="low">Low</option>
-                                    <option value="medium">Medium</option>
-                                    <option value="high">High</option>
-                                </select>
+                                <label for="ticketPriority" class="block text-sm font-semibold text-[#030213] mb-2">Priority</label>
+                                <div class="relative">
+                                    <button
+                                        type="button"
+                                        id="ticketPriorityTrigger"
+                                        class="border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-full items-center justify-between gap-2 rounded-md border bg-input-background px-3 py-2 text-sm whitespace-nowrap transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 h-9 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                                        aria-haspopup="listbox"
+                                        aria-expanded="false"
+                                    >
+                                        <span id="ticketPriorityValue" data-slot="select-value">Medium</span>
+                                        <svg class="size-4 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="m6 9 6 6 6-6"/>
+                                        </svg>
+                                    </button>
+                                    <div
+                                        id="ticketPriorityContent"
+                                        class="w-full bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-full left-0 z-50 max-h-60 min-w-[8rem] overflow-x-hidden overflow-y-auto rounded-md border shadow-md hidden mt-1"
+                                        role="listbox"
+                                        aria-labelledby="ticketPriorityTrigger"
+                                    > 
+                                        <div class="p-1 bg-white">
+                                            <div
+                                                 class="focus:bg-[#e9ebef] focus:text-[#030213] [&_svg:not([class*='text-'])]:text-[#717182] relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 hover:bg-[#e9ebef] hover:text-[#030213] data-[highlighted]:bg-[#e9ebef] data-[highlighted]:text-[#030213]"
+                                                role="option"
+                                                data-value="low"
+                                                tabindex="0"
+                                            >
+                                                <span class="absolute right-2 flex size-3.5 items-center justify-center">
+                                                    <svg class="size-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M20 6L9 17l-5-5"/>
+                                                    </svg>
+                                                </span>
+                                                Low
+                                            </div>
+                                            <div
+                                                 class="focus:bg-[#e9ebef] focus:text-[#030213] [&_svg:not([class*='text-'])]:text-[#717182] relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 hover:bg-[#e9ebef] hover:text-[#030213] data-[highlighted]:bg-[#e9ebef] data-[highlighted]:text-[#030213]"
+                                                role="option"
+                                                data-value="medium"
+                                                tabindex="-1"
+                                            >
+                                                <span class="absolute right-2 flex size-3.5 items-center justify-center">
+                                                    <svg class="size-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M20 6L9 17l-5-5"/>
+                                                    </svg>
+                                                </span>
+                                                Medium
+                                            </div>
+                                            <div
+                                                 class="focus:bg-[#e9ebef] focus:text-[#030213] [&_svg:not([class*='text-'])]:text-[#717182] relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 hover:bg-[#e9ebef] hover:text-[#030213] data-[highlighted]:bg-[#e9ebef] data-[highlighted]:text-[#030213]"
+                                                role="option"
+                                                data-value="high"
+                                                tabindex="-1"
+                                            >
+                                                <span class="absolute right-2 flex size-3.5 items-center justify-center">
+                                                    <svg class="size-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M20 6L9 17l-5-5"/>
+                                                    </svg>
+                                                </span>
+                                                High
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="ticketPriorityHidden" name="priority" value="medium">
+                                </div>
                             </div>
                         </div>
                     </form>
                 </main>
                 <footer class="modal__footer">
-                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 flex-1" data-micromodal-close>
-                        Cancel
-                    </button>
-                    <button id="submitTicket" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 flex-1">
+                <button id="submitTicket" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-[#030211] hover:bg-[#030211]/90 text-white h-9 px-4 py-2 flex-1">
                         Create Ticket
                     </button>
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-white text-foreground hover:bg-[#e9ebef] hover:text-[#030213] dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 flex-1" data-micromodal-close>
+                        Cancel
+                    </button>
+                    
                 </footer>
             </div>
         </div>
@@ -234,6 +354,132 @@
 
 {% block scripts %}
 <script>
+// Custom Select Dropdown functionality
+class CustomSelect {
+    constructor(triggerId, contentId, valueId, hiddenId) {
+        this.trigger = document.getElementById(triggerId);
+        this.content = document.getElementById(contentId);
+        this.valueElement = document.getElementById(valueId);
+        this.hiddenInput = document.getElementById(hiddenId);
+        this.isOpen = false;
+
+        this.init();
+    }
+
+    init() {
+        // Toggle dropdown on trigger click
+        this.trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.toggle();
+        });
+
+        // Handle option selection
+        this.content.querySelectorAll('[role="option"]').forEach(option => {
+            option.addEventListener('click', () => {
+                this.selectOption(option);
+            });
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!this.trigger.contains(e.target) && !this.content.contains(e.target)) {
+                this.close();
+            }
+        });
+
+        // Keyboard navigation
+        this.trigger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.toggle();
+            } else if (e.key === 'Escape') {
+                this.close();
+            } else if (e.key === 'ArrowDown' && !this.isOpen) {
+                e.preventDefault();
+                this.open();
+            }
+        });
+
+        this.content.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.close();
+                this.trigger.focus();
+            }
+        });
+    }
+
+    toggle() {
+        if (this.isOpen) {
+            this.close();
+        } else {
+            this.open();
+        }
+    }
+
+    open() {
+        this.content.classList.remove('hidden');
+        this.trigger.setAttribute('aria-expanded', 'true');
+        this.isOpen = true;
+
+        // Find the currently selected option (the one with visible checkmark)
+        const selectedOption = this.content.querySelector('[role="option"] svg:not(.hidden)');
+        let optionToFocus = selectedOption ? selectedOption.closest('[role="option"]') : null;
+
+        // If no selected option, focus the first option
+        if (!optionToFocus) {
+            optionToFocus = this.content.querySelector('[role="option"]');
+        }
+
+        console.log('Dropdown opened. Selected option:', selectedOption ? selectedOption.closest('[role="option"]').textContent.trim() : 'None');
+        console.log('Focusing option:', optionToFocus ? optionToFocus.textContent.trim() : 'None');
+
+        if (optionToFocus) {
+            optionToFocus.focus();
+        }
+    }
+
+    close() {
+        this.content.classList.add('hidden');
+        this.trigger.setAttribute('aria-expanded', 'false');
+        this.isOpen = false;
+    }
+
+    selectOption(option) {
+        const value = option.getAttribute('data-value');
+        const text = option.textContent.trim();
+
+        // Update display value
+        this.valueElement.textContent = text;
+
+        // Update hidden input
+        this.hiddenInput.value = value;
+
+        // Update checkmarks
+        this.content.querySelectorAll('[role="option"] svg').forEach(svg => {
+            svg.classList.add('hidden');
+        });
+        option.querySelector('svg').classList.remove('hidden');
+
+        this.close();
+        this.trigger.focus();
+    }
+
+    setValue(value) {
+        const option = this.content.querySelector(`[data-value="${value}"]`);
+        if (option) {
+            this.selectOption(option);
+        }
+    }
+}
+
+// Initialize custom selects
+let statusSelect, prioritySelect;
+
+document.addEventListener('DOMContentLoaded', function() {
+    statusSelect = new CustomSelect('ticketStatusTrigger', 'ticketStatusContent', 'ticketStatusValue', 'ticketStatusHidden');
+    prioritySelect = new CustomSelect('ticketPriorityTrigger', 'ticketPriorityContent', 'ticketPriorityValue', 'ticketPriorityHidden');
+});
+
 function filterTickets() {
     const status = document.getElementById('statusFilter').value;
     window.location.href = `/tickets?status=${status}`;
@@ -248,8 +494,8 @@ function openTicketModal() {
     document.getElementById('ticketForm').reset();
     document.getElementById('ticketTitle').value = '';
     document.getElementById('ticketDescription').value = '';
-    document.getElementById('ticketStatus').value = 'open';
-    document.getElementById('ticketPriority').value = 'medium';
+    statusSelect.setValue('open');
+    prioritySelect.setValue('medium');
     updateDescriptionCount();
 
     // Set up submit handler for create
@@ -266,8 +512,8 @@ function editTicket(id, title, description, status, priority) {
     // Populate form with ticket data
     document.getElementById('ticketTitle').value = title;
     document.getElementById('ticketDescription').value = description || '';
-    document.getElementById('ticketStatus').value = status;
-    document.getElementById('ticketPriority').value = priority || 'medium';
+    statusSelect.setValue(status);
+    prioritySelect.setValue(priority || 'medium');
     updateDescriptionCount();
 
     // Set up submit handler for update
@@ -328,8 +574,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function deleteTicket(id, title) {
+    console.log('deleteTicket called with id:', id, 'title:', title);
     document.getElementById('deleteMessage').textContent = `This will permanently delete the ticket "${title}". This action cannot be undone.`;
     document.getElementById('confirmDelete').onclick = () => {
+        console.log('Confirm delete clicked, submitting form to:', `/tickets/${id}/delete`);
         const form = document.createElement('form');
         form.method = 'POST';
         form.action = `/tickets/${id}/delete`;
