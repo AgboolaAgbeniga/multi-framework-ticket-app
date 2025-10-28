@@ -28,8 +28,7 @@ RUN composer install --no-dev --optimize-autoloader
 COPY . .
 
 # Move public directory contents to web root and set permissions
-RUN mv public/* . && \
-    rm -rf public && \
+RUN if [ -d public ]; then cp -a public/. . && rm -rf public; fi && \
     mkdir -p data && \
     chown -R www-data:www-data /var/www/html && \
     chmod -R 755 /var/www/html && \
