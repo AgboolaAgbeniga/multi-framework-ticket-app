@@ -3,11 +3,11 @@
         'name' => 'ticketflex/twig-ticket-management',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '446a6a1c690dbb3a1b9cb967b1e6f8e591226a34',
+        'reference' => '70fcf96ae133c9ae0a51cc4c8cc3a5f8de0e391d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'dev' => false,
+        'dev' => true,
     ),
     'versions' => array(
         'symfony/deprecation-contracts' => array(
@@ -67,7 +67,7 @@
         'ticketflex/twig-ticket-management' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '446a6a1c690dbb3a1b9cb967b1e6f8e591226a34',
+            'reference' => '70fcf96ae133c9ae0a51cc4c8cc3a5f8de0e391d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

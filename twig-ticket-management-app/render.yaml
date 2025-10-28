@@ -8,3 +8,5 @@ services:
     envVars:
       - key: PORT
         value: 80
+      - key: PHP_VERSION
+        value: 8.4

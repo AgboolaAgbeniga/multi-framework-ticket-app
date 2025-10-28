@@ -11,97 +11,101 @@
       <main class="flex-1 bg-slate-50 py-8">
         <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-2xl mx-auto">
-            <div class="mb-8">
-              <h1 class="mb-2">Create New Ticket</h1>
-              <p class="text-slate-600">
-                Fill in the details to create a new support ticket
-              </p>
-            </div>
+            <!-- Dialog-like styling -->
+            <div class="bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-[600px]">
+              <!-- Dialog Header -->
+              <div class="flex flex-col gap-2 text-left">
+                <h1 class="text-lg leading-none font-semibold">Create New Ticket</h1>
+                <p class="text-muted-foreground text-sm">Fill in the details to create a new ticket.</p>
+              </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-sm">
-                    <form method="POST" action="/tickets/create" class="space-y-6">
-                        <div>
-                            <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Title *</label>
-                            <input
-                                id="title"
-                                name="title"
-                                type="text"
-                                required
-                                value="{{ title|default('') }}"
-                                maxlength="100"
-                                class="appearance-none relative block w-full px-3 py-2 border {{ errors.title ? 'border-red-300' : 'border-gray-300' }} placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                                placeholder="Enter ticket title"
-                            >
-                            {% if errors.title %}
-                                <div class="flex items-center gap-1 mt-1 text-red-600 text-sm">
-                                    <i class="fas fa-exclamation-circle"></i>
-                                    <span>{{ errors.title }}</span>
-                                </div>
-                            {% endif %}
-                        </div>
+              <!-- Dialog Content -->
+              <form method="POST" action="/tickets/create" class="space-y-4">
+                <div>
+                  <label for="title" class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 mb-2">Title *</label>
+                  <input
+                    id="title"
+                    name="title"
+                    type="text"
+                    required
+                    value="{{ title|default('') }}"
+                    maxlength="100"
+                    class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base bg-input-background transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive {{ errors.title ? 'border-destructive' : '' }}"
+                    placeholder="Enter ticket title"
+                  >
+                  {% if errors.title %}
+                    <div class="flex items-center gap-1 mt-1 text-red-600 text-sm">
+                      <i class="fas fa-exclamation-circle w-4 h-4"></i>
+                      <span>{{ errors.title }}</span>
+                    </div>
+                  {% endif %}
+                </div>
 
-                        <div>
-                            <label for="description" class="block text-sm font-medium text-gray-700 mb-2">Description</label>
-                            <textarea
-                                id="description"
-                                name="description"
-                                rows="4"
-                                maxlength="500"
-                                class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                                placeholder="Enter ticket description (optional)"
-                            >{{ description|default('') }}</textarea>
-                            <p class="text-xs text-slate-500 mt-1">
-                                {{ description|default('')|length }}/500 characters
-                            </p>
-                        </div>
+                <div>
+                  <label for="description" class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 mb-2">Description</label>
+                  <textarea
+                    id="description"
+                    name="description"
+                    rows="4"
+                    maxlength="500"
+                    class="resize-none border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 w-full rounded-md border bg-input-background px-3 py-2 text-base transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                    placeholder="Enter ticket description (optional)"
+                  >{{ description|default('') }}</textarea>
+                  <p class="text-xs text-slate-500 mt-1">
+                    {{ description|default('')|length }}/500 characters
+                  </p>
+                </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="status" class="block text-sm font-medium text-gray-700 mb-2">Status *</label>
-                                <select
-                                    id="status"
-                                    name="status"
-                                    class="appearance-none relative block w-full px-3 py-2 border {{ errors.status ? 'border-red-300' : 'border-gray-300' }} text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                                >
-                                    <option value="open" {{ status == 'open' ? 'selected' : '' }}>Open</option>
-                                    <option value="in_progress" {{ status == 'in_progress' ? 'selected' : '' }}>In Progress</option>
-                                    <option value="closed" {{ status == 'closed' ? 'selected' : '' }}>Closed</option>
-                                </select>
-                                {% if errors.status %}
-                                    <div class="flex items-center gap-1 mt-1 text-red-600 text-sm">
-                                        <i class="fas fa-exclamation-circle"></i>
-                                        <span>{{ errors.status }}</span>
-                                    </div>
-                                {% endif %}
-                            </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="status" class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 mb-2">Status *</label>
+                    <select
+                      id="status"
+                      name="status"
+                      class="border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-full items-center justify-between gap-2 rounded-md border bg-input-background px-3 py-2 text-sm whitespace-nowrap transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 h-9 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 {{ errors.status ? 'border-destructive' : '' }}"
+                    >
+                      <option value="open" {{ status == 'open' ? 'selected' : '' }}>Open</option>
+                      <option value="in_progress" {{ status == 'in_progress' ? 'selected' : '' }}>In Progress</option>
+                      <option value="closed" {{ status == 'closed' ? 'selected' : '' }}>Closed</option>
+                    </select>
+                    {% if errors.status %}
+                      <div class="flex items-center gap-1 mt-1 text-red-600 text-sm">
+                        <i class="fas fa-exclamation-circle w-4 h-4"></i>
+                        <span>{{ errors.status }}</span>
+                      </div>
+                    {% endif %}
+                  </div>
 
-                            <div>
-                                <label for="priority" class="block text-sm font-medium text-gray-700 mb-2">Priority</label>
-                                <select
-                                    id="priority"
-                                    name="priority"
-                                    class="appearance-none relative block w-full px-3 py-2 border border-gray-300 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                                >
-                                    <option value="low" {{ priority == 'low' ? 'selected' : '' }}>Low</option>
-                                    <option value="medium" {{ priority == 'medium' ? 'selected' : '' }}>Medium</option>
-                                    <option value="high" {{ priority == 'high' ? 'selected' : '' }}>High</option>
-                                </select>
-                            </div>
-                        </div>
+                  <div>
+                    <label for="priority" class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 mb-2">Priority</label>
+                    <select
+                      id="priority"
+                      name="priority"
+                      class="border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-full items-center justify-between gap-2 rounded-md border bg-input-background px-3 py-2 text-sm whitespace-nowrap transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 h-9 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                    >
+                      <option value="low" {{ priority == 'low' ? 'selected' : '' }}>Low</option>
+                      <option value="medium" {{ priority == 'medium' ? 'selected' : '' }}>Medium</option>
+                      <option value="high" {{ priority == 'high' ? 'selected' : '' }}>High</option>
+                    </select>
+                  </div>
+                </div>
 
-                        <div class="flex gap-3 pt-4">
-                            <button
-                                type="submit"
-                                class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            >
-                                Create Ticket
-                            </button>
-                            <a
-                                href="/tickets"
-                                class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            >
-                                Cancel
-                            </a>
+                <!-- Dialog Footer -->
+                <div class="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end pt-4">
+                  <a
+                    href="/tickets"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 dark:aria-invalid:ring-[var(--destructive)]/40 aria-invalid:border-[var(--destructive)] border bg-[var(--background)] text-[var(--foreground)] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)] dark:bg-[color-mix(in oklab,var(--input) 30%, transparent)] dark:border-[var(--input)] dark:hover:bg-[color-mix(in oklab,var(--input) 50%, transparent)] h-9 px-4 py-2 has-[>svg]:px-3"
+                  >
+                    Cancel
+                  </a>
+                  <button
+                    type="submit"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 dark:aria-invalid:ring-[var(--destructive)]/40 aria-invalid:border-[var(--destructive)] bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[color-mix(in oklab,var(--primary) 90%, transparent)] h-9 px-4 py-2 has-[>svg]:px-3"
+                  >
+                    Create Ticket
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

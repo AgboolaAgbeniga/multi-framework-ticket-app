@@ -12,12 +12,12 @@
         <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
             <div>
-              <h1 class="mb-2">Dashboard</h1>
+              <h1 class="mb-2 text-2xl font-semibold">Dashboard</h1>
               <p class="text-slate-600">
                 Welcome back, {{ session.name }}! Here's an overview of your tickets.
               </p>
             </div>
-            <a href="/tickets/create" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <a href="/tickets/create" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 dark:aria-invalid:ring-[var(--destructive)]/40 aria-invalid:border-[var(--destructive)] bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[color-mix(in oklab,var(--primary) 90%, transparent)] h-9 px-4 py-2 has-[>svg]:px-3">
               <i class="fas fa-plus mr-2"></i>
               New Ticket
             </a>
@@ -29,7 +29,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="text-slate-600 text-sm mb-1">Total Tickets</p>
-                  <p class="text-3xl font-bold">{{ stats.total }}</p>
+                  <p class="text-3xl ">{{ stats.total }}</p>
                 </div>
                 <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
                   <i class="fas fa-ticket-alt text-indigo-600 text-xl"></i>
@@ -41,7 +41,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="text-slate-600 text-sm mb-1">Open Tickets</p>
-                  <p class="text-3xl font-bold">{{ stats.open }}</p>
+                  <p class="text-3xl">{{ stats.open }}</p>
                 </div>
                 <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                   <i class="fas fa-folder-open text-green-600 text-xl"></i>
@@ -53,7 +53,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="text-slate-600 text-sm mb-1">In Progress</p>
-                  <p class="text-3xl font-bold">{{ stats.inProgress }}</p>
+                  <p class="text-3xl">{{ stats.inProgress }}</p>
                 </div>
                 <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
                   <i class="fas fa-clock text-amber-600 text-xl"></i>
@@ -65,7 +65,7 @@
               <div class="flex items-center justify-between">
                 <div>
                   <p class="text-slate-600 text-sm mb-1">Resolved</p>
-                  <p class="text-3xl font-bold">{{ stats.closed }}</p>
+                  <p class="text-3xl">{{ stats.closed }}</p>
                 </div>
                 <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
                   <i class="fas fa-check-circle text-slate-600 text-xl"></i>
@@ -76,20 +76,20 @@
 
           <!-- Quick Actions -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg p-6 text-white">
+            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 flex flex-col gap-6 rounded-lg p-6 text-white">
               <h3 class="text-white font-bold">Quick Actions</h3>
               <p class="text-white/90 mb-4 text-sm">
                 Get started by creating a new ticket or manage your existing ones.
               </p>
               {% if stats.total > 0 %}
-                <a href="/tickets" class="inline-flex items-center px-4 py-2 border border-white/30 text-sm font-medium rounded-md text-white bg-white/10 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                <a href="/tickets" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 dark:aria-invalid:ring-[var(--destructive)]/40 aria-invalid:border-[var(--destructive)] bg-[var(--secondary)] text-[var(--secondary-foreground)] hover:bg-[color-mix(in oklab,var(--secondary) 80%, transparent)] h-9 px-4 py-2 has-[>svg]:px-3">
                   <i class="fas fa-clock mr-2"></i>
                   View All {{ stats.total }} Tickets
                 </a>
               {% endif %}
             </div>
 
-            <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="bg-white rounded-lg p-6 shadow-sm flex flex-col gap-6">
               <h3 class="font-bold">Status Overview</h3>
               {% if stats.total == 0 %}
                 <p class="text-slate-600 mb-4 text-sm">No tickets yet. Create your first one!</p>
@@ -97,7 +97,7 @@
                 <p class="text-slate-600 mb-4 text-sm">You have {{ statusSummary }}.</p>
               {% endif %}
               {% if stats.open > 0 or stats.inProgress > 0 %}
-                <a href="/tickets" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                <a href="/tickets" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 dark:aria-invalid:ring-[var(--destructive)]/40 aria-invalid:border-[var(--destructive)] border bg-[var(--background)] text-[var(--foreground)] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)] dark:bg-[color-mix(in oklab,var(--input) 30%, transparent)] dark:border-[var(--input)] dark:hover:bg-[color-mix(in oklab,var(--input) 50%, transparent)] h-9 px-4 py-2 has-[>svg]:px-3">
                   <i class="fas fa-arrow-right mr-2"></i>
                   View Details
                 </a>

@@ -8,7 +8,7 @@ import { Card } from '../components/ui/card';
 import { getSession } from '../lib/auth';
 import { apiGetStats } from '../lib/mockApi';
 import { toast } from 'sonner';
-import { Ticket, Clock, CheckCircle, FolderOpen, ArrowRight } from 'lucide-react';
+import { Ticket, Clock, CheckCircle, FolderOpen, ArrowRight, Plus } from 'lucide-react';
 
 export function Dashboard() {
   const navigate = useNavigate();
@@ -78,7 +78,7 @@ export function Dashboard() {
               </p>
             </div>
             <Button onClick={() => navigate('/tickets?new=true')} size="lg" className="shrink-0">
-              <Ticket className="w-4 h-4 mr-2" />
+              <Plus className="w-4 h-4 mr-2" />
               New Ticket
             </Button>
           </div>

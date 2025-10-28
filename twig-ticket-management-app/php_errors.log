@@ -1,1 +1,2721 @@
 [Mon Oct 27 06:23:27 2025] PHP 8.4.14 Development Server (http://localhost:8000) started
+[27-Oct-2025 23:50:37 UTC] Test log message
+[27-Oct-2025 23:53:01 UTC] index.php started
+[27-Oct-2025 23:53:01 UTC] Autoloader loaded
+[27-Oct-2025 23:53:01 UTC] About to match route for path: /tickets
+[27-Oct-2025 23:53:01 UTC] Request Path: /tickets
+[27-Oct-2025 23:53:01 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[27-Oct-2025 23:53:01 UTC] Controller: TicketController, Action: index
+[27-Oct-2025 23:53:01 UTC] Instantiating controller: App\Controllers\TicketController
+[27-Oct-2025 23:53:01 UTC] Controller instantiated successfully
+[27-Oct-2025 23:53:01 UTC] Calling action: index
+[27-Oct-2025 23:53:01 UTC] TicketController index method called
+[27-Oct-2025 23:53:01 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[27-Oct-2025 23:54:06 UTC] index.php started
+[27-Oct-2025 23:54:06 UTC] Autoloader loaded
+[27-Oct-2025 23:54:06 UTC] About to match route for path: /tickets
+[27-Oct-2025 23:54:06 UTC] Request Path: /tickets
+[27-Oct-2025 23:54:06 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[27-Oct-2025 23:54:06 UTC] Controller: TicketController, Action: index
+[27-Oct-2025 23:54:06 UTC] Instantiating controller: App\Controllers\TicketController
+[27-Oct-2025 23:54:06 UTC] Controller instantiated successfully
+[27-Oct-2025 23:54:06 UTC] Calling action: index
+[27-Oct-2025 23:54:06 UTC] TicketController index method called
+[27-Oct-2025 23:54:06 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[27-Oct-2025 23:54:49 UTC] index.php started
+[27-Oct-2025 23:54:49 UTC] Autoloader loaded
+[27-Oct-2025 23:54:49 UTC] About to match route for path: /tickets
+[27-Oct-2025 23:54:49 UTC] Request Path: /tickets
+[27-Oct-2025 23:54:49 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[27-Oct-2025 23:54:49 UTC] Controller: TicketController, Action: index
+[27-Oct-2025 23:54:49 UTC] Instantiating controller: App\Controllers\TicketController
+[27-Oct-2025 23:54:49 UTC] Controller instantiated successfully
+[27-Oct-2025 23:54:49 UTC] Calling action: index
+[27-Oct-2025 23:54:49 UTC] TicketController index method called
+[27-Oct-2025 23:54:49 UTC] isAuthenticated check: false
+[27-Oct-2025 23:54:49 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[27-Oct-2025 23:56:32 UTC] index.php started
+[27-Oct-2025 23:56:32 UTC] Autoloader loaded
+[27-Oct-2025 23:56:32 UTC] About to match route for path: /tickets
+[27-Oct-2025 23:56:32 UTC] Request Path: /tickets
+[27-Oct-2025 23:56:32 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[27-Oct-2025 23:56:32 UTC] Controller: TicketController, Action: index
+[27-Oct-2025 23:56:32 UTC] Instantiating controller: App\Controllers\TicketController
+[27-Oct-2025 23:56:32 UTC] Controller instantiated successfully
+[27-Oct-2025 23:56:32 UTC] Calling action: index
+[27-Oct-2025 23:56:32 UTC] TicketController index method called
+[27-Oct-2025 23:56:32 UTC] isAuthenticated check: true
+[27-Oct-2025 23:56:32 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[27-Oct-2025 23:56:32 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[27-Oct-2025 23:56:32 UTC] Status filter: all
+[27-Oct-2025 23:56:32 UTC] Tickets retrieved: 10
+[27-Oct-2025 23:56:33 UTC] Exception caught: A template that extends another one cannot include content outside Twig blocks. Did you forget to put the content inside a {% block %} tag in "tickets/index.html.twig" at line 153?
+[27-Oct-2025 23:56:33 UTC] Exception trace: #0 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Parser.php(562): Twig\Parser->filterBodyNodes()
+#1 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Parser.php(103): Twig\Parser->filterBodyNodes()
+#2 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(558): Twig\Parser->parse()
+#3 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(589): Twig\Environment->parse()
+#4 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(408): Twig\Environment->compileSource()
+#5 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(370): Twig\Environment->loadTemplate()
+#6 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(333): Twig\Environment->load()
+#7 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\app\Controllers\BaseController.php(34): Twig\Environment->render()
+#8 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\app\Controllers\TicketController.php(29): App\Controllers\BaseController->render()
+#9 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\public\index.php(89): App\Controllers\TicketController->index()
+#10 {main}
+[27-Oct-2025 23:56:33 UTC] index.php started
+[27-Oct-2025 23:56:33 UTC] Autoloader loaded
+[27-Oct-2025 23:56:33 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:56:33 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:56:33 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[27-Oct-2025 23:56:33 UTC] index.php started
+[27-Oct-2025 23:56:33 UTC] Autoloader loaded
+[27-Oct-2025 23:56:33 UTC] About to match route for path: /tickets
+[27-Oct-2025 23:56:33 UTC] Request Path: /tickets
+[27-Oct-2025 23:56:33 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[27-Oct-2025 23:56:33 UTC] Controller: TicketController, Action: index
+[27-Oct-2025 23:56:33 UTC] Instantiating controller: App\Controllers\TicketController
+[27-Oct-2025 23:56:33 UTC] Controller instantiated successfully
+[27-Oct-2025 23:56:33 UTC] Calling action: index
+[27-Oct-2025 23:56:33 UTC] TicketController index method called
+[27-Oct-2025 23:56:33 UTC] isAuthenticated check: true
+[27-Oct-2025 23:56:33 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[27-Oct-2025 23:56:33 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[27-Oct-2025 23:56:33 UTC] Status filter: all
+[27-Oct-2025 23:56:33 UTC] Tickets retrieved: 10
+[27-Oct-2025 23:56:33 UTC] Exception caught: A template that extends another one cannot include content outside Twig blocks. Did you forget to put the content inside a {% block %} tag in "tickets/index.html.twig" at line 153?
+[27-Oct-2025 23:56:33 UTC] Exception trace: #0 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Parser.php(562): Twig\Parser->filterBodyNodes()
+#1 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Parser.php(103): Twig\Parser->filterBodyNodes()
+#2 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(558): Twig\Parser->parse()
+#3 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(589): Twig\Environment->parse()
+#4 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(408): Twig\Environment->compileSource()
+#5 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(370): Twig\Environment->loadTemplate()
+#6 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(333): Twig\Environment->load()
+#7 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\app\Controllers\BaseController.php(34): Twig\Environment->render()
+#8 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\app\Controllers\TicketController.php(29): App\Controllers\BaseController->render()
+#9 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\public\index.php(89): App\Controllers\TicketController->index()
+#10 {main}
+[27-Oct-2025 23:56:34 UTC] index.php started
+[27-Oct-2025 23:56:34 UTC] Autoloader loaded
+[27-Oct-2025 23:56:34 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:56:34 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:56:34 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[27-Oct-2025 23:56:53 UTC] index.php started
+[27-Oct-2025 23:56:53 UTC] Autoloader loaded
+[27-Oct-2025 23:56:53 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:56:53 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:56:53 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[27-Oct-2025 23:56:59 UTC] index.php started
+[27-Oct-2025 23:56:59 UTC] Autoloader loaded
+[27-Oct-2025 23:56:59 UTC] About to match route for path: /logout
+[27-Oct-2025 23:56:59 UTC] Request Path: /logout
+[27-Oct-2025 23:56:59 UTC] Matched parameters: {"controller":"AuthController","action":"logout","_route":"logout"}
+[27-Oct-2025 23:56:59 UTC] Controller: AuthController, Action: logout
+[27-Oct-2025 23:56:59 UTC] Instantiating controller: App\Controllers\AuthController
+[27-Oct-2025 23:56:59 UTC] Controller instantiated successfully
+[27-Oct-2025 23:56:59 UTC] Calling action: logout
+[27-Oct-2025 23:56:59 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[27-Oct-2025 23:56:59 UTC] index.php started
+[27-Oct-2025 23:56:59 UTC] Autoloader loaded
+[27-Oct-2025 23:56:59 UTC] About to match route for path: /
+[27-Oct-2025 23:56:59 UTC] Request Path: /
+[27-Oct-2025 23:56:59 UTC] Matched parameters: {"controller":"DashboardController","action":"landing","_route":"home"}
+[27-Oct-2025 23:56:59 UTC] Controller: DashboardController, Action: landing
+[27-Oct-2025 23:56:59 UTC] Instantiating controller: App\Controllers\DashboardController
+[27-Oct-2025 23:56:59 UTC] Controller instantiated successfully
+[27-Oct-2025 23:56:59 UTC] Calling action: landing
+[27-Oct-2025 23:56:59 UTC] DashboardController::landing called
+[27-Oct-2025 23:56:59 UTC] isAuthenticated check: false
+[27-Oct-2025 23:56:59 UTC] User authenticated: no
+[27-Oct-2025 23:56:59 UTC] Rendering landing.html.twig
+[27-Oct-2025 23:56:59 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[27-Oct-2025 23:56:59 UTC] index.php started
+[27-Oct-2025 23:56:59 UTC] Autoloader loaded
+[27-Oct-2025 23:56:59 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:56:59 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:56:59 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[27-Oct-2025 23:56:59 UTC] index.php started
+[27-Oct-2025 23:56:59 UTC] Autoloader loaded
+[27-Oct-2025 23:56:59 UTC] About to match route for path: /assets/logo.png
+[27-Oct-2025 23:56:59 UTC] Request Path: /assets/logo.png
+[27-Oct-2025 23:56:59 UTC] Route not found: No routes found for "/assets/logo.png".
+[27-Oct-2025 23:56:59 UTC] index.php started
+[27-Oct-2025 23:56:59 UTC] Autoloader loaded
+[27-Oct-2025 23:56:59 UTC] About to match route for path: /assets/wave.svg
+[27-Oct-2025 23:56:59 UTC] Request Path: /assets/wave.svg
+[27-Oct-2025 23:56:59 UTC] Route not found: No routes found for "/assets/wave.svg".
+[27-Oct-2025 23:57:00 UTC] index.php started
+[27-Oct-2025 23:57:00 UTC] Autoloader loaded
+[27-Oct-2025 23:57:00 UTC] About to match route for path: /assets/logo_footer.png
+[27-Oct-2025 23:57:00 UTC] Request Path: /assets/logo_footer.png
+[27-Oct-2025 23:57:00 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[27-Oct-2025 23:57:01 UTC] index.php started
+[27-Oct-2025 23:57:01 UTC] Autoloader loaded
+[27-Oct-2025 23:57:01 UTC] About to match route for path: /
+[27-Oct-2025 23:57:01 UTC] Request Path: /
+[27-Oct-2025 23:57:01 UTC] Matched parameters: {"controller":"DashboardController","action":"landing","_route":"home"}
+[27-Oct-2025 23:57:01 UTC] Controller: DashboardController, Action: landing
+[27-Oct-2025 23:57:01 UTC] Instantiating controller: App\Controllers\DashboardController
+[27-Oct-2025 23:57:01 UTC] Controller instantiated successfully
+[27-Oct-2025 23:57:01 UTC] Calling action: landing
+[27-Oct-2025 23:57:01 UTC] DashboardController::landing called
+[27-Oct-2025 23:57:01 UTC] isAuthenticated check: false
+[27-Oct-2025 23:57:01 UTC] User authenticated: no
+[27-Oct-2025 23:57:01 UTC] Rendering landing.html.twig
+[27-Oct-2025 23:57:01 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[27-Oct-2025 23:57:01 UTC] index.php started
+[27-Oct-2025 23:57:01 UTC] Autoloader loaded
+[27-Oct-2025 23:57:01 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:57:01 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:57:01 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[27-Oct-2025 23:57:01 UTC] index.php started
+[27-Oct-2025 23:57:01 UTC] Autoloader loaded
+[27-Oct-2025 23:57:01 UTC] About to match route for path: /assets/logo.png
+[27-Oct-2025 23:57:01 UTC] Request Path: /assets/logo.png
+[27-Oct-2025 23:57:01 UTC] Route not found: No routes found for "/assets/logo.png".
+[27-Oct-2025 23:57:01 UTC] index.php started
+[27-Oct-2025 23:57:01 UTC] Autoloader loaded
+[27-Oct-2025 23:57:01 UTC] About to match route for path: /assets/wave.svg
+[27-Oct-2025 23:57:01 UTC] Request Path: /assets/wave.svg
+[27-Oct-2025 23:57:02 UTC] Route not found: No routes found for "/assets/wave.svg".
+[27-Oct-2025 23:57:02 UTC] index.php started
+[27-Oct-2025 23:57:02 UTC] Autoloader loaded
+[27-Oct-2025 23:57:02 UTC] About to match route for path: /assets/logo_footer.png
+[27-Oct-2025 23:57:02 UTC] Request Path: /assets/logo_footer.png
+[27-Oct-2025 23:57:02 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[27-Oct-2025 23:57:03 UTC] index.php started
+[27-Oct-2025 23:57:03 UTC] Autoloader loaded
+[27-Oct-2025 23:57:03 UTC] About to match route for path: /login
+[27-Oct-2025 23:57:03 UTC] Request Path: /login
+[27-Oct-2025 23:57:03 UTC] Matched parameters: {"controller":"AuthController","action":"login","_route":"login"}
+[27-Oct-2025 23:57:03 UTC] Controller: AuthController, Action: login
+[27-Oct-2025 23:57:03 UTC] Instantiating controller: App\Controllers\AuthController
+[27-Oct-2025 23:57:03 UTC] Controller instantiated successfully
+[27-Oct-2025 23:57:03 UTC] Calling action: login
+[27-Oct-2025 23:57:03 UTC] isAuthenticated check: false
+[27-Oct-2025 23:57:03 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[27-Oct-2025 23:57:03 UTC] index.php started
+[27-Oct-2025 23:57:03 UTC] Autoloader loaded
+[27-Oct-2025 23:57:03 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:57:03 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:57:03 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[27-Oct-2025 23:57:03 UTC] index.php started
+[27-Oct-2025 23:57:03 UTC] Autoloader loaded
+[27-Oct-2025 23:57:03 UTC] About to match route for path: /assets/logo_footer.png
+[27-Oct-2025 23:57:03 UTC] Request Path: /assets/logo_footer.png
+[27-Oct-2025 23:57:03 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[27-Oct-2025 23:57:03 UTC] index.php started
+[27-Oct-2025 23:57:03 UTC] Autoloader loaded
+[27-Oct-2025 23:57:03 UTC] About to match route for path: /assets/logo.png
+[27-Oct-2025 23:57:03 UTC] Request Path: /assets/logo.png
+[27-Oct-2025 23:57:03 UTC] Route not found: No routes found for "/assets/logo.png".
+[27-Oct-2025 23:57:05 UTC] index.php started
+[27-Oct-2025 23:57:05 UTC] Autoloader loaded
+[27-Oct-2025 23:57:05 UTC] About to match route for path: /login
+[27-Oct-2025 23:57:05 UTC] Request Path: /login
+[27-Oct-2025 23:57:05 UTC] Matched parameters: {"controller":"AuthController","action":"login","_route":"login"}
+[27-Oct-2025 23:57:05 UTC] Controller: AuthController, Action: login
+[27-Oct-2025 23:57:05 UTC] Instantiating controller: App\Controllers\AuthController
+[27-Oct-2025 23:57:05 UTC] Controller instantiated successfully
+[27-Oct-2025 23:57:05 UTC] Calling action: login
+[27-Oct-2025 23:57:05 UTC] isAuthenticated check: false
+[27-Oct-2025 23:57:05 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[27-Oct-2025 23:57:05 UTC] index.php started
+[27-Oct-2025 23:57:05 UTC] Autoloader loaded
+[27-Oct-2025 23:57:05 UTC] About to match route for path: /dashboard
+[27-Oct-2025 23:57:05 UTC] Request Path: /dashboard
+[27-Oct-2025 23:57:05 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[27-Oct-2025 23:57:05 UTC] Controller: DashboardController, Action: index
+[27-Oct-2025 23:57:05 UTC] Instantiating controller: App\Controllers\DashboardController
+[27-Oct-2025 23:57:05 UTC] Controller instantiated successfully
+[27-Oct-2025 23:57:05 UTC] Calling action: index
+[27-Oct-2025 23:57:05 UTC] isAuthenticated check: true
+[27-Oct-2025 23:57:05 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[27-Oct-2025 23:57:05 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[27-Oct-2025 23:57:05 UTC] index.php started
+[27-Oct-2025 23:57:05 UTC] Autoloader loaded
+[27-Oct-2025 23:57:05 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:57:05 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:57:05 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[27-Oct-2025 23:57:05 UTC] index.php started
+[27-Oct-2025 23:57:05 UTC] Autoloader loaded
+[27-Oct-2025 23:57:05 UTC] About to match route for path: /assets/logo.png
+[27-Oct-2025 23:57:05 UTC] Request Path: /assets/logo.png
+[27-Oct-2025 23:57:05 UTC] Route not found: No routes found for "/assets/logo.png".
+[27-Oct-2025 23:57:05 UTC] index.php started
+[27-Oct-2025 23:57:05 UTC] Autoloader loaded
+[27-Oct-2025 23:57:05 UTC] About to match route for path: /assets/logo_footer.png
+[27-Oct-2025 23:57:05 UTC] Request Path: /assets/logo_footer.png
+[27-Oct-2025 23:57:05 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[27-Oct-2025 23:57:11 UTC] index.php started
+[27-Oct-2025 23:57:11 UTC] Autoloader loaded
+[27-Oct-2025 23:57:11 UTC] About to match route for path: /tickets
+[27-Oct-2025 23:57:11 UTC] Request Path: /tickets
+[27-Oct-2025 23:57:11 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[27-Oct-2025 23:57:11 UTC] Controller: TicketController, Action: index
+[27-Oct-2025 23:57:11 UTC] Instantiating controller: App\Controllers\TicketController
+[27-Oct-2025 23:57:11 UTC] Controller instantiated successfully
+[27-Oct-2025 23:57:11 UTC] Calling action: index
+[27-Oct-2025 23:57:11 UTC] TicketController index method called
+[27-Oct-2025 23:57:11 UTC] isAuthenticated check: true
+[27-Oct-2025 23:57:11 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[27-Oct-2025 23:57:11 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[27-Oct-2025 23:57:11 UTC] Status filter: all
+[27-Oct-2025 23:57:11 UTC] Tickets retrieved: 10
+[27-Oct-2025 23:57:11 UTC] Exception caught: A template that extends another one cannot include content outside Twig blocks. Did you forget to put the content inside a {% block %} tag in "tickets/index.html.twig" at line 153?
+[27-Oct-2025 23:57:11 UTC] Exception trace: #0 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Parser.php(562): Twig\Parser->filterBodyNodes()
+#1 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Parser.php(103): Twig\Parser->filterBodyNodes()
+#2 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(558): Twig\Parser->parse()
+#3 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(589): Twig\Environment->parse()
+#4 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(408): Twig\Environment->compileSource()
+#5 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(370): Twig\Environment->loadTemplate()
+#6 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(333): Twig\Environment->load()
+#7 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\app\Controllers\BaseController.php(34): Twig\Environment->render()
+#8 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\app\Controllers\TicketController.php(29): App\Controllers\BaseController->render()
+#9 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\public\index.php(89): App\Controllers\TicketController->index()
+#10 {main}
+[27-Oct-2025 23:57:11 UTC] index.php started
+[27-Oct-2025 23:57:11 UTC] Autoloader loaded
+[27-Oct-2025 23:57:11 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:57:11 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[27-Oct-2025 23:57:11 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[27-Oct-2025 23:58:28 UTC] index.php started
+[27-Oct-2025 23:58:28 UTC] Autoloader loaded
+[27-Oct-2025 23:58:28 UTC] About to match route for path: /tickets
+[27-Oct-2025 23:58:28 UTC] Request Path: /tickets
+[27-Oct-2025 23:58:28 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[27-Oct-2025 23:58:28 UTC] Controller: TicketController, Action: index
+[27-Oct-2025 23:58:28 UTC] Instantiating controller: App\Controllers\TicketController
+[27-Oct-2025 23:58:28 UTC] Controller instantiated successfully
+[27-Oct-2025 23:58:28 UTC] Calling action: index
+[27-Oct-2025 23:58:28 UTC] TicketController index method called
+[27-Oct-2025 23:58:28 UTC] isAuthenticated check: false
+[27-Oct-2025 23:58:28 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 00:00:08 UTC] index.php started
+[28-Oct-2025 00:00:08 UTC] Autoloader loaded
+[28-Oct-2025 00:00:08 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:00:08 UTC] Request Path: /tickets
+[28-Oct-2025 00:00:08 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:00:08 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:00:08 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:00:08 UTC] Controller instantiated successfully
+[28-Oct-2025 00:00:08 UTC] Calling action: index
+[28-Oct-2025 00:00:08 UTC] TicketController index method called
+[28-Oct-2025 00:00:08 UTC] isAuthenticated check: false
+[28-Oct-2025 00:00:08 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 00:00:56 UTC] index.php started
+[28-Oct-2025 00:00:56 UTC] Autoloader loaded
+[28-Oct-2025 00:00:56 UTC] About to match route for path: /login
+[28-Oct-2025 00:00:56 UTC] Request Path: /login
+[28-Oct-2025 00:00:56 UTC] Matched parameters: {"controller":"AuthController","action":"login","_route":"login"}
+[28-Oct-2025 00:00:56 UTC] Controller: AuthController, Action: login
+[28-Oct-2025 00:00:56 UTC] Instantiating controller: App\Controllers\AuthController
+[28-Oct-2025 00:00:56 UTC] Controller instantiated successfully
+[28-Oct-2025 00:00:56 UTC] Calling action: login
+[28-Oct-2025 00:00:56 UTC] isAuthenticated check: true
+[28-Oct-2025 00:00:56 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:00:56 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 00:01:06 UTC] index.php started
+[28-Oct-2025 00:01:06 UTC] Autoloader loaded
+[28-Oct-2025 00:01:06 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:01:06 UTC] Request Path: /tickets
+[28-Oct-2025 00:01:06 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:01:06 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:01:06 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:01:06 UTC] Controller instantiated successfully
+[28-Oct-2025 00:01:06 UTC] Calling action: index
+[28-Oct-2025 00:01:06 UTC] TicketController index method called
+[28-Oct-2025 00:01:06 UTC] isAuthenticated check: true
+[28-Oct-2025 00:01:06 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:01:06 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:01:06 UTC] Status filter: all
+[28-Oct-2025 00:01:06 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:01:06 UTC] Exception caught: Unknown "endblock" tag in "tickets/index.html.twig" at line 152.
+[28-Oct-2025 00:01:06 UTC] Exception trace: #0 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Parser.php(101): Twig\Parser->subparse()
+#1 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(558): Twig\Parser->parse()
+#2 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(589): Twig\Environment->parse()
+#3 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(408): Twig\Environment->compileSource()
+#4 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(370): Twig\Environment->loadTemplate()
+#5 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\vendor\twig\twig\src\Environment.php(333): Twig\Environment->load()
+#6 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\app\Controllers\BaseController.php(34): Twig\Environment->render()
+#7 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\app\Controllers\TicketController.php(29): App\Controllers\BaseController->render()
+#8 C:\Users\emman\OneDrive\Documents\multi-framework-ticket-app\twig-ticket-management-app\public\index.php(89): App\Controllers\TicketController->index()
+#9 {main}
+[28-Oct-2025 00:01:49 UTC] index.php started
+[28-Oct-2025 00:01:49 UTC] Autoloader loaded
+[28-Oct-2025 00:01:49 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:01:49 UTC] Request Path: /tickets
+[28-Oct-2025 00:01:49 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:01:49 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:01:49 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:01:49 UTC] Controller instantiated successfully
+[28-Oct-2025 00:01:49 UTC] Calling action: index
+[28-Oct-2025 00:01:49 UTC] TicketController index method called
+[28-Oct-2025 00:01:49 UTC] isAuthenticated check: true
+[28-Oct-2025 00:01:49 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:01:49 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:01:49 UTC] Status filter: all
+[28-Oct-2025 00:01:49 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:01:49 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:02:43 UTC] index.php started
+[28-Oct-2025 00:02:43 UTC] Autoloader loaded
+[28-Oct-2025 00:02:43 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:02:43 UTC] Request Path: /tickets
+[28-Oct-2025 00:02:43 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:02:43 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:02:43 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:02:43 UTC] Controller instantiated successfully
+[28-Oct-2025 00:02:43 UTC] Calling action: index
+[28-Oct-2025 00:02:43 UTC] TicketController index method called
+[28-Oct-2025 00:02:43 UTC] isAuthenticated check: true
+[28-Oct-2025 00:02:43 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:02:43 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:02:43 UTC] Status filter: all
+[28-Oct-2025 00:02:43 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:02:43 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:02:43 UTC] index.php started
+[28-Oct-2025 00:02:43 UTC] Autoloader loaded
+[28-Oct-2025 00:02:43 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:02:43 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:02:43 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:02:43 UTC] index.php started
+[28-Oct-2025 00:02:43 UTC] Autoloader loaded
+[28-Oct-2025 00:02:43 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:02:43 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:02:43 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:02:43 UTC] index.php started
+[28-Oct-2025 00:02:43 UTC] Autoloader loaded
+[28-Oct-2025 00:02:43 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:02:43 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:02:43 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:02:57 UTC] index.php started
+[28-Oct-2025 00:02:57 UTC] Autoloader loaded
+[28-Oct-2025 00:02:57 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:02:57 UTC] Request Path: /tickets
+[28-Oct-2025 00:02:57 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:02:57 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:02:57 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:02:57 UTC] Controller instantiated successfully
+[28-Oct-2025 00:02:57 UTC] Calling action: index
+[28-Oct-2025 00:02:57 UTC] TicketController index method called
+[28-Oct-2025 00:02:57 UTC] isAuthenticated check: true
+[28-Oct-2025 00:02:57 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:02:57 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:02:57 UTC] Status filter: in_progress
+[28-Oct-2025 00:02:57 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:02:57 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:02:57 UTC] index.php started
+[28-Oct-2025 00:02:57 UTC] Autoloader loaded
+[28-Oct-2025 00:02:57 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:02:57 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:02:57 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:02:57 UTC] index.php started
+[28-Oct-2025 00:02:57 UTC] Autoloader loaded
+[28-Oct-2025 00:02:57 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:02:57 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:02:57 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:02:57 UTC] index.php started
+[28-Oct-2025 00:02:57 UTC] Autoloader loaded
+[28-Oct-2025 00:02:57 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:02:57 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:02:57 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:03:03 UTC] index.php started
+[28-Oct-2025 00:03:03 UTC] Autoloader loaded
+[28-Oct-2025 00:03:03 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:03:03 UTC] Request Path: /tickets
+[28-Oct-2025 00:03:03 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:03:03 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:03:03 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:03:03 UTC] Controller instantiated successfully
+[28-Oct-2025 00:03:03 UTC] Calling action: index
+[28-Oct-2025 00:03:03 UTC] TicketController index method called
+[28-Oct-2025 00:03:03 UTC] isAuthenticated check: true
+[28-Oct-2025 00:03:03 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:03:03 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:03:03 UTC] Status filter: all
+[28-Oct-2025 00:03:03 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:03:03 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:03:03 UTC] index.php started
+[28-Oct-2025 00:03:03 UTC] Autoloader loaded
+[28-Oct-2025 00:03:03 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:03:03 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:03:03 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:03:03 UTC] index.php started
+[28-Oct-2025 00:03:03 UTC] Autoloader loaded
+[28-Oct-2025 00:03:03 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:03:03 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:03:03 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:03:03 UTC] index.php started
+[28-Oct-2025 00:03:03 UTC] Autoloader loaded
+[28-Oct-2025 00:03:03 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:03:03 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:03:03 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:03:53 UTC] index.php started
+[28-Oct-2025 00:03:53 UTC] Autoloader loaded
+[28-Oct-2025 00:03:53 UTC] About to match route for path: /tickets/1/edit
+[28-Oct-2025 00:03:53 UTC] Request Path: /tickets/1/edit
+[28-Oct-2025 00:03:53 UTC] Matched parameters: {"controller":"TicketController","action":"edit","id":"1","_route":"tickets_edit"}
+[28-Oct-2025 00:03:53 UTC] Controller: TicketController, Action: edit
+[28-Oct-2025 00:03:53 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:03:53 UTC] Controller instantiated successfully
+[28-Oct-2025 00:03:53 UTC] Calling action: edit
+[28-Oct-2025 00:03:53 UTC] isAuthenticated check: true
+[28-Oct-2025 00:03:53 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:03:53 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:03:53 UTC] index.php started
+[28-Oct-2025 00:03:53 UTC] Autoloader loaded
+[28-Oct-2025 00:03:53 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:03:53 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:03:53 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:03:53 UTC] index.php started
+[28-Oct-2025 00:03:53 UTC] Autoloader loaded
+[28-Oct-2025 00:03:53 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:03:53 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:03:53 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:03:53 UTC] index.php started
+[28-Oct-2025 00:03:53 UTC] Autoloader loaded
+[28-Oct-2025 00:03:54 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:03:54 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:03:54 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:03:56 UTC] index.php started
+[28-Oct-2025 00:03:56 UTC] Autoloader loaded
+[28-Oct-2025 00:03:56 UTC] About to match route for path: /tickets/1/edit
+[28-Oct-2025 00:03:56 UTC] Request Path: /tickets/1/edit
+[28-Oct-2025 00:03:56 UTC] Matched parameters: {"controller":"TicketController","action":"edit","id":"1","_route":"tickets_edit"}
+[28-Oct-2025 00:03:56 UTC] Controller: TicketController, Action: edit
+[28-Oct-2025 00:03:56 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:03:56 UTC] Controller instantiated successfully
+[28-Oct-2025 00:03:56 UTC] Calling action: edit
+[28-Oct-2025 00:03:56 UTC] isAuthenticated check: true
+[28-Oct-2025 00:03:56 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:03:56 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 00:03:56 UTC] index.php started
+[28-Oct-2025 00:03:56 UTC] Autoloader loaded
+[28-Oct-2025 00:03:56 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:03:56 UTC] Request Path: /tickets
+[28-Oct-2025 00:03:56 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:03:56 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:03:56 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:03:56 UTC] Controller instantiated successfully
+[28-Oct-2025 00:03:56 UTC] Calling action: index
+[28-Oct-2025 00:03:56 UTC] TicketController index method called
+[28-Oct-2025 00:03:56 UTC] isAuthenticated check: true
+[28-Oct-2025 00:03:56 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:03:56 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:03:56 UTC] Status filter: all
+[28-Oct-2025 00:03:56 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:03:56 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:03:56 UTC] index.php started
+[28-Oct-2025 00:03:56 UTC] Autoloader loaded
+[28-Oct-2025 00:03:56 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:03:56 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:03:56 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:03:57 UTC] index.php started
+[28-Oct-2025 00:03:57 UTC] Autoloader loaded
+[28-Oct-2025 00:03:57 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:03:57 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:03:57 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:03:57 UTC] index.php started
+[28-Oct-2025 00:03:57 UTC] Autoloader loaded
+[28-Oct-2025 00:03:57 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:03:57 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:03:57 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:04:32 UTC] index.php started
+[28-Oct-2025 00:04:32 UTC] Autoloader loaded
+[28-Oct-2025 00:04:32 UTC] About to match route for path: /tickets/1/edit
+[28-Oct-2025 00:04:32 UTC] Request Path: /tickets/1/edit
+[28-Oct-2025 00:04:32 UTC] Matched parameters: {"controller":"TicketController","action":"edit","id":"1","_route":"tickets_edit"}
+[28-Oct-2025 00:04:32 UTC] Controller: TicketController, Action: edit
+[28-Oct-2025 00:04:32 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:04:32 UTC] Controller instantiated successfully
+[28-Oct-2025 00:04:32 UTC] Calling action: edit
+[28-Oct-2025 00:04:32 UTC] isAuthenticated check: true
+[28-Oct-2025 00:04:32 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:04:32 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:04:32 UTC] index.php started
+[28-Oct-2025 00:04:32 UTC] Autoloader loaded
+[28-Oct-2025 00:04:32 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:04:32 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:04:32 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:04:32 UTC] index.php started
+[28-Oct-2025 00:04:32 UTC] Autoloader loaded
+[28-Oct-2025 00:04:32 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:04:32 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:04:32 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:04:32 UTC] index.php started
+[28-Oct-2025 00:04:32 UTC] Autoloader loaded
+[28-Oct-2025 00:04:32 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:04:32 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:04:32 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:05:11 UTC] index.php started
+[28-Oct-2025 00:05:11 UTC] Autoloader loaded
+[28-Oct-2025 00:05:11 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:05:11 UTC] Request Path: /tickets
+[28-Oct-2025 00:05:11 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:05:11 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:05:11 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:05:11 UTC] Controller instantiated successfully
+[28-Oct-2025 00:05:11 UTC] Calling action: index
+[28-Oct-2025 00:05:11 UTC] TicketController index method called
+[28-Oct-2025 00:05:11 UTC] isAuthenticated check: true
+[28-Oct-2025 00:05:11 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:05:11 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:05:11 UTC] Status filter: all
+[28-Oct-2025 00:05:11 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:05:11 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:05:11 UTC] index.php started
+[28-Oct-2025 00:05:11 UTC] Autoloader loaded
+[28-Oct-2025 00:05:11 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:05:11 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:05:11 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:05:11 UTC] index.php started
+[28-Oct-2025 00:05:11 UTC] Autoloader loaded
+[28-Oct-2025 00:05:11 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:05:11 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:05:11 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:05:11 UTC] index.php started
+[28-Oct-2025 00:05:11 UTC] Autoloader loaded
+[28-Oct-2025 00:05:11 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:05:11 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:05:11 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:05:13 UTC] index.php started
+[28-Oct-2025 00:05:13 UTC] Autoloader loaded
+[28-Oct-2025 00:05:13 UTC] About to match route for path: /tickets/create
+[28-Oct-2025 00:05:13 UTC] Request Path: /tickets/create
+[28-Oct-2025 00:05:13 UTC] Matched parameters: {"controller":"TicketController","action":"create","_route":"tickets_create"}
+[28-Oct-2025 00:05:13 UTC] Controller: TicketController, Action: create
+[28-Oct-2025 00:05:13 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:05:13 UTC] Controller instantiated successfully
+[28-Oct-2025 00:05:13 UTC] Calling action: create
+[28-Oct-2025 00:05:13 UTC] isAuthenticated check: true
+[28-Oct-2025 00:05:13 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:05:14 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:05:14 UTC] index.php started
+[28-Oct-2025 00:05:14 UTC] Autoloader loaded
+[28-Oct-2025 00:05:14 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:05:14 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:05:14 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:05:14 UTC] index.php started
+[28-Oct-2025 00:05:14 UTC] Autoloader loaded
+[28-Oct-2025 00:05:14 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:05:14 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:05:14 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:05:14 UTC] index.php started
+[28-Oct-2025 00:05:14 UTC] Autoloader loaded
+[28-Oct-2025 00:05:14 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:05:14 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:05:14 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:19:25 UTC] index.php started
+[28-Oct-2025 00:19:25 UTC] Autoloader loaded
+[28-Oct-2025 00:19:25 UTC] About to match route for path: /
+[28-Oct-2025 00:19:25 UTC] Request Path: /
+[28-Oct-2025 00:19:25 UTC] Matched parameters: {"controller":"DashboardController","action":"landing","_route":"home"}
+[28-Oct-2025 00:19:25 UTC] Controller: DashboardController, Action: landing
+[28-Oct-2025 00:19:25 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 00:19:25 UTC] Controller instantiated successfully
+[28-Oct-2025 00:19:25 UTC] Calling action: landing
+[28-Oct-2025 00:19:25 UTC] DashboardController::landing called
+[28-Oct-2025 00:19:25 UTC] isAuthenticated check: true
+[28-Oct-2025 00:19:25 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:19:25 UTC] User authenticated: yes
+[28-Oct-2025 00:19:25 UTC] Redirecting authenticated user to /dashboard
+[28-Oct-2025 00:19:25 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 00:19:25 UTC] index.php started
+[28-Oct-2025 00:19:25 UTC] Autoloader loaded
+[28-Oct-2025 00:19:25 UTC] About to match route for path: /dashboard
+[28-Oct-2025 00:19:25 UTC] Request Path: /dashboard
+[28-Oct-2025 00:19:25 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 00:19:25 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 00:19:25 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 00:19:25 UTC] Controller instantiated successfully
+[28-Oct-2025 00:19:25 UTC] Calling action: index
+[28-Oct-2025 00:19:25 UTC] isAuthenticated check: true
+[28-Oct-2025 00:19:25 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:19:25 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:19:25 UTC] index.php started
+[28-Oct-2025 00:19:25 UTC] Autoloader loaded
+[28-Oct-2025 00:19:25 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:19:25 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:19:25 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:19:25 UTC] index.php started
+[28-Oct-2025 00:19:25 UTC] Autoloader loaded
+[28-Oct-2025 00:19:25 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:19:25 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:19:25 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:19:25 UTC] index.php started
+[28-Oct-2025 00:19:25 UTC] Autoloader loaded
+[28-Oct-2025 00:19:25 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:19:25 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:19:25 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:19:27 UTC] index.php started
+[28-Oct-2025 00:19:27 UTC] Autoloader loaded
+[28-Oct-2025 00:19:27 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:19:27 UTC] Request Path: /tickets
+[28-Oct-2025 00:19:27 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:19:27 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:19:27 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:19:27 UTC] Controller instantiated successfully
+[28-Oct-2025 00:19:27 UTC] Calling action: index
+[28-Oct-2025 00:19:27 UTC] TicketController index method called
+[28-Oct-2025 00:19:27 UTC] isAuthenticated check: true
+[28-Oct-2025 00:19:27 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:19:27 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:19:27 UTC] Status filter: all
+[28-Oct-2025 00:19:27 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:19:27 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:19:27 UTC] index.php started
+[28-Oct-2025 00:19:27 UTC] Autoloader loaded
+[28-Oct-2025 00:19:27 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:19:27 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:19:27 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:19:27 UTC] index.php started
+[28-Oct-2025 00:19:27 UTC] Autoloader loaded
+[28-Oct-2025 00:19:27 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:19:27 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:19:27 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:19:27 UTC] index.php started
+[28-Oct-2025 00:19:27 UTC] Autoloader loaded
+[28-Oct-2025 00:19:27 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:19:27 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:19:27 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:27:44 UTC] index.php started
+[28-Oct-2025 00:27:44 UTC] Autoloader loaded
+[28-Oct-2025 00:27:45 UTC] About to match route for path: /login
+[28-Oct-2025 00:27:45 UTC] Request Path: /login
+[28-Oct-2025 00:27:45 UTC] Matched parameters: {"controller":"AuthController","action":"login","_route":"login"}
+[28-Oct-2025 00:27:45 UTC] Controller: AuthController, Action: login
+[28-Oct-2025 00:27:45 UTC] Instantiating controller: App\Controllers\AuthController
+[28-Oct-2025 00:27:45 UTC] Controller instantiated successfully
+[28-Oct-2025 00:27:45 UTC] Calling action: login
+[28-Oct-2025 00:27:45 UTC] isAuthenticated check: true
+[28-Oct-2025 00:27:45 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:27:45 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 00:28:20 UTC] index.php started
+[28-Oct-2025 00:28:20 UTC] Autoloader loaded
+[28-Oct-2025 00:28:20 UTC] About to match route for path: /tickets/2/edit
+[28-Oct-2025 00:28:20 UTC] Request Path: /tickets/2/edit
+[28-Oct-2025 00:28:20 UTC] Matched parameters: {"controller":"TicketController","action":"edit","id":"2","_route":"tickets_edit"}
+[28-Oct-2025 00:28:20 UTC] Controller: TicketController, Action: edit
+[28-Oct-2025 00:28:20 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:28:20 UTC] Controller instantiated successfully
+[28-Oct-2025 00:28:20 UTC] Calling action: edit
+[28-Oct-2025 00:28:20 UTC] isAuthenticated check: true
+[28-Oct-2025 00:28:20 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:28:20 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:28:20 UTC] index.php started
+[28-Oct-2025 00:28:20 UTC] Autoloader loaded
+[28-Oct-2025 00:28:20 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:28:20 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:28:20 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:28:20 UTC] index.php started
+[28-Oct-2025 00:28:20 UTC] Autoloader loaded
+[28-Oct-2025 00:28:20 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:28:20 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:28:20 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:28:20 UTC] index.php started
+[28-Oct-2025 00:28:20 UTC] Autoloader loaded
+[28-Oct-2025 00:28:20 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:28:20 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:28:20 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:28:23 UTC] index.php started
+[28-Oct-2025 00:28:23 UTC] Autoloader loaded
+[28-Oct-2025 00:28:23 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:28:23 UTC] Request Path: /tickets
+[28-Oct-2025 00:28:23 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:28:23 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:28:23 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:28:23 UTC] Controller instantiated successfully
+[28-Oct-2025 00:28:23 UTC] Calling action: index
+[28-Oct-2025 00:28:23 UTC] TicketController index method called
+[28-Oct-2025 00:28:23 UTC] isAuthenticated check: true
+[28-Oct-2025 00:28:23 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:28:23 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:28:23 UTC] Status filter: all
+[28-Oct-2025 00:28:23 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:28:23 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:28:23 UTC] index.php started
+[28-Oct-2025 00:28:23 UTC] Autoloader loaded
+[28-Oct-2025 00:28:23 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:28:23 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:28:23 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:28:23 UTC] index.php started
+[28-Oct-2025 00:28:23 UTC] Autoloader loaded
+[28-Oct-2025 00:28:23 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:28:23 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:28:23 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:28:23 UTC] index.php started
+[28-Oct-2025 00:28:23 UTC] Autoloader loaded
+[28-Oct-2025 00:28:23 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:28:23 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:28:23 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:29:30 UTC] index.php started
+[28-Oct-2025 00:29:30 UTC] Autoloader loaded
+[28-Oct-2025 00:29:30 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:29:30 UTC] Request Path: /tickets
+[28-Oct-2025 00:29:30 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:29:30 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:29:30 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:29:30 UTC] Controller instantiated successfully
+[28-Oct-2025 00:29:30 UTC] Calling action: index
+[28-Oct-2025 00:29:30 UTC] TicketController index method called
+[28-Oct-2025 00:29:30 UTC] isAuthenticated check: true
+[28-Oct-2025 00:29:30 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:29:30 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:29:30 UTC] Status filter: all
+[28-Oct-2025 00:29:30 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:29:30 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:29:45 UTC] index.php started
+[28-Oct-2025 00:29:45 UTC] Autoloader loaded
+[28-Oct-2025 00:29:46 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:29:46 UTC] Request Path: /tickets
+[28-Oct-2025 00:29:46 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:29:46 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:29:46 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:29:46 UTC] Controller instantiated successfully
+[28-Oct-2025 00:29:46 UTC] Calling action: index
+[28-Oct-2025 00:29:46 UTC] TicketController index method called
+[28-Oct-2025 00:29:46 UTC] isAuthenticated check: true
+[28-Oct-2025 00:29:46 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:29:46 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:29:46 UTC] Status filter: all
+[28-Oct-2025 00:29:46 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:29:46 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:30:15 UTC] index.php started
+[28-Oct-2025 00:30:15 UTC] Autoloader loaded
+[28-Oct-2025 00:30:15 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:30:15 UTC] Request Path: /tickets
+[28-Oct-2025 00:30:15 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:30:15 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:30:15 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:30:15 UTC] Controller instantiated successfully
+[28-Oct-2025 00:30:15 UTC] Calling action: index
+[28-Oct-2025 00:30:15 UTC] TicketController index method called
+[28-Oct-2025 00:30:15 UTC] isAuthenticated check: true
+[28-Oct-2025 00:30:15 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:30:15 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:30:15 UTC] Status filter: all
+[28-Oct-2025 00:30:15 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:30:16 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:36:07 UTC] index.php started
+[28-Oct-2025 00:36:07 UTC] Autoloader loaded
+[28-Oct-2025 00:36:07 UTC] About to match route for path: /tickets/1/edit
+[28-Oct-2025 00:36:07 UTC] Request Path: /tickets/1/edit
+[28-Oct-2025 00:36:07 UTC] Matched parameters: {"controller":"TicketController","action":"edit","id":"1","_route":"tickets_edit"}
+[28-Oct-2025 00:36:07 UTC] Controller: TicketController, Action: edit
+[28-Oct-2025 00:36:07 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:36:07 UTC] Controller instantiated successfully
+[28-Oct-2025 00:36:07 UTC] Calling action: edit
+[28-Oct-2025 00:36:07 UTC] isAuthenticated check: true
+[28-Oct-2025 00:36:07 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:36:08 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:36:08 UTC] index.php started
+[28-Oct-2025 00:36:08 UTC] Autoloader loaded
+[28-Oct-2025 00:36:08 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:36:08 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:36:08 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:36:08 UTC] index.php started
+[28-Oct-2025 00:36:08 UTC] Autoloader loaded
+[28-Oct-2025 00:36:08 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:36:08 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:36:08 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:36:08 UTC] index.php started
+[28-Oct-2025 00:36:08 UTC] Autoloader loaded
+[28-Oct-2025 00:36:08 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:36:08 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:36:08 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:36:11 UTC] index.php started
+[28-Oct-2025 00:36:11 UTC] Autoloader loaded
+[28-Oct-2025 00:36:11 UTC] About to match route for path: /
+[28-Oct-2025 00:36:11 UTC] Request Path: /
+[28-Oct-2025 00:36:11 UTC] Matched parameters: {"controller":"DashboardController","action":"landing","_route":"home"}
+[28-Oct-2025 00:36:11 UTC] Controller: DashboardController, Action: landing
+[28-Oct-2025 00:36:11 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 00:36:11 UTC] Controller instantiated successfully
+[28-Oct-2025 00:36:11 UTC] Calling action: landing
+[28-Oct-2025 00:36:11 UTC] DashboardController::landing called
+[28-Oct-2025 00:36:11 UTC] isAuthenticated check: true
+[28-Oct-2025 00:36:11 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:36:11 UTC] User authenticated: yes
+[28-Oct-2025 00:36:11 UTC] Redirecting authenticated user to /dashboard
+[28-Oct-2025 00:36:11 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 00:36:11 UTC] index.php started
+[28-Oct-2025 00:36:11 UTC] Autoloader loaded
+[28-Oct-2025 00:36:11 UTC] About to match route for path: /dashboard
+[28-Oct-2025 00:36:11 UTC] Request Path: /dashboard
+[28-Oct-2025 00:36:11 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 00:36:11 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 00:36:11 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 00:36:11 UTC] Controller instantiated successfully
+[28-Oct-2025 00:36:11 UTC] Calling action: index
+[28-Oct-2025 00:36:11 UTC] isAuthenticated check: true
+[28-Oct-2025 00:36:11 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:36:11 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:36:11 UTC] index.php started
+[28-Oct-2025 00:36:11 UTC] Autoloader loaded
+[28-Oct-2025 00:36:11 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:36:11 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:36:11 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:36:11 UTC] index.php started
+[28-Oct-2025 00:36:11 UTC] Autoloader loaded
+[28-Oct-2025 00:36:11 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:36:11 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:36:11 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:36:11 UTC] index.php started
+[28-Oct-2025 00:36:11 UTC] Autoloader loaded
+[28-Oct-2025 00:36:11 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:36:11 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:36:11 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:39:15 UTC] index.php started
+[28-Oct-2025 00:39:15 UTC] Autoloader loaded
+[28-Oct-2025 00:39:15 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:39:15 UTC] Request Path: /tickets
+[28-Oct-2025 00:39:15 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:39:15 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:39:15 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:39:15 UTC] Controller instantiated successfully
+[28-Oct-2025 00:39:15 UTC] Calling action: index
+[28-Oct-2025 00:39:15 UTC] TicketController index method called
+[28-Oct-2025 00:39:15 UTC] isAuthenticated check: true
+[28-Oct-2025 00:39:15 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:39:15 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:39:15 UTC] Status filter: all
+[28-Oct-2025 00:39:15 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:39:15 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:39:31 UTC] index.php started
+[28-Oct-2025 00:39:31 UTC] Autoloader loaded
+[28-Oct-2025 00:39:31 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:39:31 UTC] Request Path: /tickets
+[28-Oct-2025 00:39:31 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:39:31 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:39:31 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:39:31 UTC] Controller instantiated successfully
+[28-Oct-2025 00:39:31 UTC] Calling action: index
+[28-Oct-2025 00:39:31 UTC] TicketController index method called
+[28-Oct-2025 00:39:31 UTC] isAuthenticated check: true
+[28-Oct-2025 00:39:31 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:39:31 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:39:31 UTC] Status filter: all
+[28-Oct-2025 00:39:31 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:39:31 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:42:01 UTC] index.php started
+[28-Oct-2025 00:42:01 UTC] Autoloader loaded
+[28-Oct-2025 00:42:01 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:42:01 UTC] Request Path: /tickets
+[28-Oct-2025 00:42:01 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:42:01 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:42:01 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:42:01 UTC] Controller instantiated successfully
+[28-Oct-2025 00:42:01 UTC] Calling action: index
+[28-Oct-2025 00:42:01 UTC] TicketController index method called
+[28-Oct-2025 00:42:01 UTC] isAuthenticated check: true
+[28-Oct-2025 00:42:01 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:42:01 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:42:01 UTC] Status filter: all
+[28-Oct-2025 00:42:01 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:42:01 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:44:30 UTC] index.php started
+[28-Oct-2025 00:44:30 UTC] Autoloader loaded
+[28-Oct-2025 00:44:30 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:44:30 UTC] Request Path: /tickets
+[28-Oct-2025 00:44:30 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:44:30 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:44:30 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:44:30 UTC] Controller instantiated successfully
+[28-Oct-2025 00:44:30 UTC] Calling action: index
+[28-Oct-2025 00:44:30 UTC] TicketController index method called
+[28-Oct-2025 00:44:30 UTC] isAuthenticated check: true
+[28-Oct-2025 00:44:30 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:44:30 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:44:30 UTC] Status filter: all
+[28-Oct-2025 00:44:30 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:44:30 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:44:30 UTC] index.php started
+[28-Oct-2025 00:44:30 UTC] Autoloader loaded
+[28-Oct-2025 00:44:30 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:44:30 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:44:30 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:44:30 UTC] index.php started
+[28-Oct-2025 00:44:30 UTC] Autoloader loaded
+[28-Oct-2025 00:44:30 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:44:30 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:44:30 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:44:30 UTC] index.php started
+[28-Oct-2025 00:44:30 UTC] Autoloader loaded
+[28-Oct-2025 00:44:30 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:44:30 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:44:30 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:44:50 UTC] index.php started
+[28-Oct-2025 00:44:50 UTC] Autoloader loaded
+[28-Oct-2025 00:44:50 UTC] About to match route for path: /tickets/3/edit
+[28-Oct-2025 00:44:50 UTC] Request Path: /tickets/3/edit
+[28-Oct-2025 00:44:50 UTC] Matched parameters: {"controller":"TicketController","action":"edit","id":"3","_route":"tickets_edit"}
+[28-Oct-2025 00:44:50 UTC] Controller: TicketController, Action: edit
+[28-Oct-2025 00:44:50 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:44:50 UTC] Controller instantiated successfully
+[28-Oct-2025 00:44:50 UTC] Calling action: edit
+[28-Oct-2025 00:44:50 UTC] isAuthenticated check: true
+[28-Oct-2025 00:44:50 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:44:50 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 00:44:50 UTC] index.php started
+[28-Oct-2025 00:44:50 UTC] Autoloader loaded
+[28-Oct-2025 00:44:50 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:44:50 UTC] Request Path: /tickets
+[28-Oct-2025 00:44:50 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:44:50 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:44:50 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:44:50 UTC] Controller instantiated successfully
+[28-Oct-2025 00:44:50 UTC] Calling action: index
+[28-Oct-2025 00:44:50 UTC] TicketController index method called
+[28-Oct-2025 00:44:50 UTC] isAuthenticated check: true
+[28-Oct-2025 00:44:50 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:44:50 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:44:50 UTC] Status filter: all
+[28-Oct-2025 00:44:50 UTC] Tickets retrieved: 10
+[28-Oct-2025 00:44:50 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:44:50 UTC] index.php started
+[28-Oct-2025 00:44:50 UTC] Autoloader loaded
+[28-Oct-2025 00:44:50 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:44:50 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:44:50 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:44:50 UTC] index.php started
+[28-Oct-2025 00:44:50 UTC] Autoloader loaded
+[28-Oct-2025 00:44:50 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:44:50 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:44:50 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:44:50 UTC] index.php started
+[28-Oct-2025 00:44:50 UTC] Autoloader loaded
+[28-Oct-2025 00:44:50 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:44:50 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:44:50 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:45:07 UTC] index.php started
+[28-Oct-2025 00:45:07 UTC] Autoloader loaded
+[28-Oct-2025 00:45:07 UTC] About to match route for path: /tickets/create
+[28-Oct-2025 00:45:07 UTC] Request Path: /tickets/create
+[28-Oct-2025 00:45:07 UTC] Matched parameters: {"controller":"TicketController","action":"create","_route":"tickets_create"}
+[28-Oct-2025 00:45:07 UTC] Controller: TicketController, Action: create
+[28-Oct-2025 00:45:07 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:45:07 UTC] Controller instantiated successfully
+[28-Oct-2025 00:45:07 UTC] Calling action: create
+[28-Oct-2025 00:45:07 UTC] isAuthenticated check: true
+[28-Oct-2025 00:45:07 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:45:07 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 00:45:07 UTC] index.php started
+[28-Oct-2025 00:45:07 UTC] Autoloader loaded
+[28-Oct-2025 00:45:07 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:45:07 UTC] Request Path: /tickets
+[28-Oct-2025 00:45:07 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:45:07 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:45:07 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:45:07 UTC] Controller instantiated successfully
+[28-Oct-2025 00:45:07 UTC] Calling action: index
+[28-Oct-2025 00:45:07 UTC] TicketController index method called
+[28-Oct-2025 00:45:07 UTC] isAuthenticated check: true
+[28-Oct-2025 00:45:07 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:45:07 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:45:07 UTC] Status filter: all
+[28-Oct-2025 00:45:07 UTC] Tickets retrieved: 11
+[28-Oct-2025 00:45:07 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:45:07 UTC] index.php started
+[28-Oct-2025 00:45:07 UTC] Autoloader loaded
+[28-Oct-2025 00:45:07 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:45:07 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:45:07 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:45:07 UTC] index.php started
+[28-Oct-2025 00:45:07 UTC] Autoloader loaded
+[28-Oct-2025 00:45:07 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:45:07 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:45:07 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:45:07 UTC] index.php started
+[28-Oct-2025 00:45:07 UTC] Autoloader loaded
+[28-Oct-2025 00:45:07 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:45:07 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:45:07 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:45:16 UTC] index.php started
+[28-Oct-2025 00:45:16 UTC] Autoloader loaded
+[28-Oct-2025 00:45:16 UTC] About to match route for path: /tickets/6900121388c34/edit
+[28-Oct-2025 00:45:16 UTC] Request Path: /tickets/6900121388c34/edit
+[28-Oct-2025 00:45:16 UTC] Matched parameters: {"controller":"TicketController","action":"edit","id":"6900121388c34","_route":"tickets_edit"}
+[28-Oct-2025 00:45:16 UTC] Controller: TicketController, Action: edit
+[28-Oct-2025 00:45:16 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:45:16 UTC] Controller instantiated successfully
+[28-Oct-2025 00:45:16 UTC] Calling action: edit
+[28-Oct-2025 00:45:16 UTC] isAuthenticated check: true
+[28-Oct-2025 00:45:16 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:45:16 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 00:45:16 UTC] index.php started
+[28-Oct-2025 00:45:16 UTC] Autoloader loaded
+[28-Oct-2025 00:45:16 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:45:16 UTC] Request Path: /tickets
+[28-Oct-2025 00:45:16 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:45:16 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:45:16 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:45:16 UTC] Controller instantiated successfully
+[28-Oct-2025 00:45:16 UTC] Calling action: index
+[28-Oct-2025 00:45:16 UTC] TicketController index method called
+[28-Oct-2025 00:45:16 UTC] isAuthenticated check: true
+[28-Oct-2025 00:45:16 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:45:16 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:45:16 UTC] Status filter: all
+[28-Oct-2025 00:45:16 UTC] Tickets retrieved: 11
+[28-Oct-2025 00:45:16 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:45:16 UTC] index.php started
+[28-Oct-2025 00:45:16 UTC] Autoloader loaded
+[28-Oct-2025 00:45:17 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:45:17 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:45:17 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:45:17 UTC] index.php started
+[28-Oct-2025 00:45:17 UTC] Autoloader loaded
+[28-Oct-2025 00:45:17 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:45:17 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:45:17 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:45:17 UTC] index.php started
+[28-Oct-2025 00:45:17 UTC] Autoloader loaded
+[28-Oct-2025 00:45:17 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:45:17 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:45:17 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:48:48 UTC] index.php started
+[28-Oct-2025 00:48:48 UTC] Autoloader loaded
+[28-Oct-2025 00:48:48 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:48:48 UTC] Request Path: /tickets
+[28-Oct-2025 00:48:48 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:48:48 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:48:48 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:48:48 UTC] Controller instantiated successfully
+[28-Oct-2025 00:48:48 UTC] Calling action: index
+[28-Oct-2025 00:48:48 UTC] TicketController index method called
+[28-Oct-2025 00:48:48 UTC] isAuthenticated check: true
+[28-Oct-2025 00:48:48 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:48:48 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:48:48 UTC] Status filter: all
+[28-Oct-2025 00:48:48 UTC] Tickets retrieved: 11
+[28-Oct-2025 00:48:48 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:48:48 UTC] index.php started
+[28-Oct-2025 00:48:48 UTC] Autoloader loaded
+[28-Oct-2025 00:48:48 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:48:48 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:48:48 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:48:48 UTC] index.php started
+[28-Oct-2025 00:48:48 UTC] Autoloader loaded
+[28-Oct-2025 00:48:48 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:48:48 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:48:48 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:48:48 UTC] index.php started
+[28-Oct-2025 00:48:48 UTC] Autoloader loaded
+[28-Oct-2025 00:48:48 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:48:48 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:48:48 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 00:51:42 UTC] index.php started
+[28-Oct-2025 00:51:42 UTC] Autoloader loaded
+[28-Oct-2025 00:51:42 UTC] About to match route for path: /tickets
+[28-Oct-2025 00:51:42 UTC] Request Path: /tickets
+[28-Oct-2025 00:51:42 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 00:51:42 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 00:51:42 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 00:51:42 UTC] Controller instantiated successfully
+[28-Oct-2025 00:51:42 UTC] Calling action: index
+[28-Oct-2025 00:51:42 UTC] TicketController index method called
+[28-Oct-2025 00:51:42 UTC] isAuthenticated check: true
+[28-Oct-2025 00:51:42 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:51:42 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 00:51:42 UTC] Status filter: all
+[28-Oct-2025 00:51:42 UTC] Tickets retrieved: 11
+[28-Oct-2025 00:51:42 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 00:51:42 UTC] index.php started
+[28-Oct-2025 00:51:42 UTC] Autoloader loaded
+[28-Oct-2025 00:51:42 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:51:42 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 00:51:42 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 00:51:42 UTC] index.php started
+[28-Oct-2025 00:51:42 UTC] Autoloader loaded
+[28-Oct-2025 00:51:42 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 00:51:42 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 00:51:42 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 00:51:42 UTC] index.php started
+[28-Oct-2025 00:51:42 UTC] Autoloader loaded
+[28-Oct-2025 00:51:42 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 00:51:42 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 00:51:42 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 01:09:22 UTC] index.php started
+[28-Oct-2025 01:09:22 UTC] Autoloader loaded
+[28-Oct-2025 01:09:22 UTC] About to match route for path: /tickets/3/delete
+[28-Oct-2025 01:09:22 UTC] Request Path: /tickets/3/delete
+[28-Oct-2025 01:09:22 UTC] Route not found: No routes found for "/tickets/3/delete".
+[28-Oct-2025 01:09:22 UTC] index.php started
+[28-Oct-2025 01:09:22 UTC] Autoloader loaded
+[28-Oct-2025 01:09:22 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:09:22 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:09:22 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 01:09:25 UTC] index.php started
+[28-Oct-2025 01:09:25 UTC] Autoloader loaded
+[28-Oct-2025 01:09:25 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:09:25 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:09:25 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 01:33:47 UTC] index.php started
+[28-Oct-2025 01:33:47 UTC] Autoloader loaded
+[28-Oct-2025 01:33:47 UTC] About to match route for path: /dashboard
+[28-Oct-2025 01:33:47 UTC] Request Path: /dashboard
+[28-Oct-2025 01:33:47 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 01:33:47 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 01:33:47 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 01:33:47 UTC] Controller instantiated successfully
+[28-Oct-2025 01:33:47 UTC] Calling action: index
+[28-Oct-2025 01:33:47 UTC] isAuthenticated check: true
+[28-Oct-2025 01:33:47 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 01:33:48 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 01:33:48 UTC] index.php started
+[28-Oct-2025 01:33:48 UTC] Autoloader loaded
+[28-Oct-2025 01:33:48 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 01:33:48 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 01:33:48 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 01:33:48 UTC] index.php started
+[28-Oct-2025 01:33:48 UTC] Autoloader loaded
+[28-Oct-2025 01:33:48 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 01:33:48 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 01:33:48 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 01:36:10 UTC] index.php started
+[28-Oct-2025 01:36:10 UTC] Autoloader loaded
+[28-Oct-2025 01:36:10 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:36:10 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:36:10 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 01:45:58 UTC] index.php started
+[28-Oct-2025 01:45:58 UTC] Autoloader loaded
+[28-Oct-2025 01:45:58 UTC] About to match route for path: /dashboard
+[28-Oct-2025 01:45:58 UTC] Request Path: /dashboard
+[28-Oct-2025 01:45:58 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 01:45:58 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 01:45:58 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 01:45:58 UTC] Controller instantiated successfully
+[28-Oct-2025 01:45:58 UTC] Calling action: index
+[28-Oct-2025 01:45:58 UTC] isAuthenticated check: true
+[28-Oct-2025 01:45:58 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 01:45:58 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 01:45:58 UTC] index.php started
+[28-Oct-2025 01:45:58 UTC] Autoloader loaded
+[28-Oct-2025 01:45:58 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 01:45:58 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 01:45:58 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 01:45:58 UTC] index.php started
+[28-Oct-2025 01:45:58 UTC] Autoloader loaded
+[28-Oct-2025 01:45:58 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 01:45:58 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 01:45:58 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 01:45:58 UTC] index.php started
+[28-Oct-2025 01:45:58 UTC] Autoloader loaded
+[28-Oct-2025 01:45:58 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:45:58 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:45:58 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 01:50:04 UTC] index.php started
+[28-Oct-2025 01:50:04 UTC] Autoloader loaded
+[28-Oct-2025 01:50:04 UTC] About to match route for path: /dashboard
+[28-Oct-2025 01:50:04 UTC] Request Path: /dashboard
+[28-Oct-2025 01:50:04 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 01:50:04 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 01:50:04 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 01:50:04 UTC] Controller instantiated successfully
+[28-Oct-2025 01:50:04 UTC] Calling action: index
+[28-Oct-2025 01:50:04 UTC] isAuthenticated check: true
+[28-Oct-2025 01:50:04 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 01:50:04 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 01:50:04 UTC] index.php started
+[28-Oct-2025 01:50:04 UTC] Autoloader loaded
+[28-Oct-2025 01:50:04 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:50:04 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:50:04 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 01:50:04 UTC] index.php started
+[28-Oct-2025 01:50:04 UTC] Autoloader loaded
+[28-Oct-2025 01:50:04 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 01:50:04 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 01:50:04 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 01:50:04 UTC] index.php started
+[28-Oct-2025 01:50:04 UTC] Autoloader loaded
+[28-Oct-2025 01:50:04 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 01:50:04 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 01:50:04 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 01:50:18 UTC] index.php started
+[28-Oct-2025 01:50:18 UTC] Autoloader loaded
+[28-Oct-2025 01:50:18 UTC] About to match route for path: /dashboard
+[28-Oct-2025 01:50:18 UTC] Request Path: /dashboard
+[28-Oct-2025 01:50:18 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 01:50:18 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 01:50:18 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 01:50:18 UTC] Controller instantiated successfully
+[28-Oct-2025 01:50:18 UTC] Calling action: index
+[28-Oct-2025 01:50:18 UTC] isAuthenticated check: true
+[28-Oct-2025 01:50:18 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 01:50:18 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 01:50:18 UTC] index.php started
+[28-Oct-2025 01:50:18 UTC] Autoloader loaded
+[28-Oct-2025 01:50:18 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:50:18 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:50:18 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 01:50:18 UTC] index.php started
+[28-Oct-2025 01:50:18 UTC] Autoloader loaded
+[28-Oct-2025 01:50:18 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 01:50:18 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 01:50:18 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 01:50:18 UTC] index.php started
+[28-Oct-2025 01:50:18 UTC] Autoloader loaded
+[28-Oct-2025 01:50:18 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 01:50:18 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 01:50:18 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 01:50:33 UTC] index.php started
+[28-Oct-2025 01:50:34 UTC] Autoloader loaded
+[28-Oct-2025 01:50:34 UTC] About to match route for path: /dashboard
+[28-Oct-2025 01:50:34 UTC] Request Path: /dashboard
+[28-Oct-2025 01:50:34 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 01:50:34 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 01:50:34 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 01:50:34 UTC] Controller instantiated successfully
+[28-Oct-2025 01:50:34 UTC] Calling action: index
+[28-Oct-2025 01:50:34 UTC] isAuthenticated check: true
+[28-Oct-2025 01:50:34 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 01:50:34 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 01:50:34 UTC] index.php started
+[28-Oct-2025 01:50:34 UTC] Autoloader loaded
+[28-Oct-2025 01:50:34 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:50:34 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:50:34 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 01:50:34 UTC] index.php started
+[28-Oct-2025 01:50:34 UTC] Autoloader loaded
+[28-Oct-2025 01:50:34 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 01:50:34 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 01:50:34 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 01:50:34 UTC] index.php started
+[28-Oct-2025 01:50:34 UTC] Autoloader loaded
+[28-Oct-2025 01:50:34 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 01:50:34 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 01:50:34 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 01:51:13 UTC] index.php started
+[28-Oct-2025 01:51:13 UTC] Autoloader loaded
+[28-Oct-2025 01:51:13 UTC] About to match route for path: /dashboard
+[28-Oct-2025 01:51:13 UTC] Request Path: /dashboard
+[28-Oct-2025 01:51:13 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 01:51:13 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 01:51:13 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 01:51:13 UTC] Controller instantiated successfully
+[28-Oct-2025 01:51:13 UTC] Calling action: index
+[28-Oct-2025 01:51:13 UTC] isAuthenticated check: true
+[28-Oct-2025 01:51:13 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 01:51:13 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 01:51:13 UTC] index.php started
+[28-Oct-2025 01:51:13 UTC] Autoloader loaded
+[28-Oct-2025 01:51:13 UTC] About to match route for path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:51:13 UTC] Request Path: /.well-known/appspecific/com.chrome.devtools.json
+[28-Oct-2025 01:51:13 UTC] Route not found: No routes found for "/.well-known/appspecific/com.chrome.devtools.json".
+[28-Oct-2025 01:51:13 UTC] index.php started
+[28-Oct-2025 01:51:13 UTC] Autoloader loaded
+[28-Oct-2025 01:51:13 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 01:51:13 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 01:51:13 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 01:51:13 UTC] index.php started
+[28-Oct-2025 01:51:13 UTC] Autoloader loaded
+[28-Oct-2025 01:51:13 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 01:51:13 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 01:51:13 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 01:53:49 UTC] index.php started
+[28-Oct-2025 01:53:49 UTC] Autoloader loaded
+[28-Oct-2025 01:53:49 UTC] About to match route for path: /dashboard
+[28-Oct-2025 01:53:49 UTC] Request Path: /dashboard
+[28-Oct-2025 01:53:49 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 01:53:49 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 01:53:49 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 01:53:49 UTC] Controller instantiated successfully
+[28-Oct-2025 01:53:49 UTC] Calling action: index
+[28-Oct-2025 01:53:49 UTC] isAuthenticated check: true
+[28-Oct-2025 01:53:49 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 01:53:49 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 01:53:49 UTC] index.php started
+[28-Oct-2025 01:53:49 UTC] Autoloader loaded
+[28-Oct-2025 01:53:49 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 01:53:49 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 01:53:49 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 01:53:49 UTC] index.php started
+[28-Oct-2025 01:53:49 UTC] Autoloader loaded
+[28-Oct-2025 01:53:49 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 01:53:49 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 01:53:49 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 01:54:18 UTC] index.php started
+[28-Oct-2025 01:54:18 UTC] Autoloader loaded
+[28-Oct-2025 01:54:18 UTC] About to match route for path: /dashboard
+[28-Oct-2025 01:54:18 UTC] Request Path: /dashboard
+[28-Oct-2025 01:54:18 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 01:54:18 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 01:54:18 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 01:54:18 UTC] Controller instantiated successfully
+[28-Oct-2025 01:54:18 UTC] Calling action: index
+[28-Oct-2025 01:54:18 UTC] isAuthenticated check: true
+[28-Oct-2025 01:54:18 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 01:54:18 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 01:54:18 UTC] index.php started
+[28-Oct-2025 01:54:18 UTC] Autoloader loaded
+[28-Oct-2025 01:54:18 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 01:54:18 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 01:54:18 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 01:54:18 UTC] index.php started
+[28-Oct-2025 01:54:18 UTC] Autoloader loaded
+[28-Oct-2025 01:54:18 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 01:54:18 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 01:54:18 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:03:52 UTC] index.php started
+[28-Oct-2025 02:03:52 UTC] Autoloader loaded
+[28-Oct-2025 02:03:52 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:03:52 UTC] Request Path: /dashboard
+[28-Oct-2025 02:03:52 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:03:52 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:03:52 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:03:52 UTC] Controller instantiated successfully
+[28-Oct-2025 02:03:52 UTC] Calling action: index
+[28-Oct-2025 02:03:52 UTC] isAuthenticated check: true
+[28-Oct-2025 02:03:52 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:03:52 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:03:52 UTC] index.php started
+[28-Oct-2025 02:03:52 UTC] Autoloader loaded
+[28-Oct-2025 02:03:52 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:03:52 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:03:52 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:03:52 UTC] index.php started
+[28-Oct-2025 02:03:52 UTC] Autoloader loaded
+[28-Oct-2025 02:03:52 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:03:52 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:03:52 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:03:52 UTC] index.php started
+[28-Oct-2025 02:03:52 UTC] Autoloader loaded
+[28-Oct-2025 02:03:52 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:03:52 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:03:52 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:05:29 UTC] index.php started
+[28-Oct-2025 02:05:29 UTC] Autoloader loaded
+[28-Oct-2025 02:05:29 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:05:29 UTC] Request Path: /dashboard
+[28-Oct-2025 02:05:29 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:05:29 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:05:29 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:05:29 UTC] Controller instantiated successfully
+[28-Oct-2025 02:05:29 UTC] Calling action: index
+[28-Oct-2025 02:05:29 UTC] isAuthenticated check: true
+[28-Oct-2025 02:05:29 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:05:29 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:05:29 UTC] index.php started
+[28-Oct-2025 02:05:29 UTC] Autoloader loaded
+[28-Oct-2025 02:05:29 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:05:29 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:05:29 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:05:29 UTC] index.php started
+[28-Oct-2025 02:05:29 UTC] Autoloader loaded
+[28-Oct-2025 02:05:29 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:05:29 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:05:29 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:05:29 UTC] index.php started
+[28-Oct-2025 02:05:29 UTC] Autoloader loaded
+[28-Oct-2025 02:05:29 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:05:29 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:05:29 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:05:31 UTC] index.php started
+[28-Oct-2025 02:05:31 UTC] Autoloader loaded
+[28-Oct-2025 02:05:31 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:05:31 UTC] Request Path: /dashboard
+[28-Oct-2025 02:05:31 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:05:31 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:05:31 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:05:31 UTC] Controller instantiated successfully
+[28-Oct-2025 02:05:31 UTC] Calling action: index
+[28-Oct-2025 02:05:31 UTC] isAuthenticated check: true
+[28-Oct-2025 02:05:31 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:05:31 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:05:31 UTC] index.php started
+[28-Oct-2025 02:05:31 UTC] Autoloader loaded
+[28-Oct-2025 02:05:31 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:05:31 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:05:31 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:05:31 UTC] index.php started
+[28-Oct-2025 02:05:31 UTC] Autoloader loaded
+[28-Oct-2025 02:05:31 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:05:31 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:05:31 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:05:31 UTC] index.php started
+[28-Oct-2025 02:05:31 UTC] Autoloader loaded
+[28-Oct-2025 02:05:31 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:05:31 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:05:31 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:06:40 UTC] index.php started
+[28-Oct-2025 02:06:40 UTC] Autoloader loaded
+[28-Oct-2025 02:06:40 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:06:40 UTC] Request Path: /dashboard
+[28-Oct-2025 02:06:40 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:06:40 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:06:40 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:06:40 UTC] Controller instantiated successfully
+[28-Oct-2025 02:06:40 UTC] Calling action: index
+[28-Oct-2025 02:06:40 UTC] isAuthenticated check: true
+[28-Oct-2025 02:06:40 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:06:40 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:06:40 UTC] index.php started
+[28-Oct-2025 02:06:40 UTC] Autoloader loaded
+[28-Oct-2025 02:06:40 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:06:40 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:06:40 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:06:40 UTC] index.php started
+[28-Oct-2025 02:06:40 UTC] Autoloader loaded
+[28-Oct-2025 02:06:41 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:06:41 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:06:41 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:06:41 UTC] index.php started
+[28-Oct-2025 02:06:41 UTC] Autoloader loaded
+[28-Oct-2025 02:06:41 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:06:41 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:06:41 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:06:43 UTC] index.php started
+[28-Oct-2025 02:06:43 UTC] Autoloader loaded
+[28-Oct-2025 02:06:43 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:06:43 UTC] Request Path: /dashboard
+[28-Oct-2025 02:06:43 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:06:43 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:06:43 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:06:43 UTC] Controller instantiated successfully
+[28-Oct-2025 02:06:43 UTC] Calling action: index
+[28-Oct-2025 02:06:43 UTC] isAuthenticated check: true
+[28-Oct-2025 02:06:43 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:06:43 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:06:43 UTC] index.php started
+[28-Oct-2025 02:06:43 UTC] Autoloader loaded
+[28-Oct-2025 02:06:43 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:06:43 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:06:43 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:06:43 UTC] index.php started
+[28-Oct-2025 02:06:43 UTC] Autoloader loaded
+[28-Oct-2025 02:06:43 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:06:43 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:06:43 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:06:43 UTC] index.php started
+[28-Oct-2025 02:06:43 UTC] Autoloader loaded
+[28-Oct-2025 02:06:43 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:06:43 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:06:43 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:06:51 UTC] index.php started
+[28-Oct-2025 02:06:51 UTC] Autoloader loaded
+[28-Oct-2025 02:06:51 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:06:51 UTC] Request Path: /dashboard
+[28-Oct-2025 02:06:51 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:06:51 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:06:51 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:06:51 UTC] Controller instantiated successfully
+[28-Oct-2025 02:06:51 UTC] Calling action: index
+[28-Oct-2025 02:06:51 UTC] isAuthenticated check: true
+[28-Oct-2025 02:06:51 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:06:51 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:06:51 UTC] index.php started
+[28-Oct-2025 02:06:51 UTC] Autoloader loaded
+[28-Oct-2025 02:06:51 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:06:51 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:06:51 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:06:51 UTC] index.php started
+[28-Oct-2025 02:06:51 UTC] Autoloader loaded
+[28-Oct-2025 02:06:51 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:06:51 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:06:51 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:06:51 UTC] index.php started
+[28-Oct-2025 02:06:51 UTC] Autoloader loaded
+[28-Oct-2025 02:06:51 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:06:51 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:06:51 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:06:52 UTC] index.php started
+[28-Oct-2025 02:06:52 UTC] Autoloader loaded
+[28-Oct-2025 02:06:52 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:06:52 UTC] Request Path: /dashboard
+[28-Oct-2025 02:06:52 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:06:52 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:06:52 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:06:52 UTC] Controller instantiated successfully
+[28-Oct-2025 02:06:52 UTC] Calling action: index
+[28-Oct-2025 02:06:52 UTC] isAuthenticated check: true
+[28-Oct-2025 02:06:52 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:06:52 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:06:52 UTC] index.php started
+[28-Oct-2025 02:06:52 UTC] Autoloader loaded
+[28-Oct-2025 02:06:52 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:06:52 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:06:52 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:06:52 UTC] index.php started
+[28-Oct-2025 02:06:52 UTC] Autoloader loaded
+[28-Oct-2025 02:06:52 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:06:52 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:06:52 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:06:52 UTC] index.php started
+[28-Oct-2025 02:06:52 UTC] Autoloader loaded
+[28-Oct-2025 02:06:52 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:06:52 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:06:52 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:06:52 UTC] index.php started
+[28-Oct-2025 02:06:52 UTC] Autoloader loaded
+[28-Oct-2025 02:06:52 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:06:52 UTC] Request Path: /dashboard
+[28-Oct-2025 02:06:52 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:06:52 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:06:52 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:06:52 UTC] Controller instantiated successfully
+[28-Oct-2025 02:06:52 UTC] Calling action: index
+[28-Oct-2025 02:06:52 UTC] isAuthenticated check: true
+[28-Oct-2025 02:06:52 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:06:52 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:06:52 UTC] index.php started
+[28-Oct-2025 02:06:52 UTC] Autoloader loaded
+[28-Oct-2025 02:06:52 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:06:52 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:06:52 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:06:52 UTC] index.php started
+[28-Oct-2025 02:06:52 UTC] Autoloader loaded
+[28-Oct-2025 02:06:52 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:06:52 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:06:52 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:06:52 UTC] index.php started
+[28-Oct-2025 02:06:52 UTC] Autoloader loaded
+[28-Oct-2025 02:06:52 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:06:52 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:06:52 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:06:53 UTC] index.php started
+[28-Oct-2025 02:06:53 UTC] Autoloader loaded
+[28-Oct-2025 02:06:53 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:06:53 UTC] Request Path: /dashboard
+[28-Oct-2025 02:06:53 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:06:53 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:06:53 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:06:53 UTC] Controller instantiated successfully
+[28-Oct-2025 02:06:53 UTC] Calling action: index
+[28-Oct-2025 02:06:53 UTC] isAuthenticated check: true
+[28-Oct-2025 02:06:53 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:06:53 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:06:53 UTC] index.php started
+[28-Oct-2025 02:06:53 UTC] Autoloader loaded
+[28-Oct-2025 02:06:53 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:06:53 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:06:53 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:06:53 UTC] index.php started
+[28-Oct-2025 02:06:53 UTC] Autoloader loaded
+[28-Oct-2025 02:06:53 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:06:53 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:06:53 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:06:53 UTC] index.php started
+[28-Oct-2025 02:06:53 UTC] Autoloader loaded
+[28-Oct-2025 02:06:53 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:06:53 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:06:53 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:07:05 UTC] index.php started
+[28-Oct-2025 02:07:05 UTC] Autoloader loaded
+[28-Oct-2025 02:07:05 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:07:05 UTC] Request Path: /dashboard
+[28-Oct-2025 02:07:05 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:07:05 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:07:05 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:07:05 UTC] Controller instantiated successfully
+[28-Oct-2025 02:07:05 UTC] Calling action: index
+[28-Oct-2025 02:07:05 UTC] isAuthenticated check: true
+[28-Oct-2025 02:07:05 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:07:05 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:07:05 UTC] index.php started
+[28-Oct-2025 02:07:05 UTC] Autoloader loaded
+[28-Oct-2025 02:07:05 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:07:05 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:07:05 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:07:05 UTC] index.php started
+[28-Oct-2025 02:07:05 UTC] Autoloader loaded
+[28-Oct-2025 02:07:05 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:07:05 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:07:05 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:07:05 UTC] index.php started
+[28-Oct-2025 02:07:05 UTC] Autoloader loaded
+[28-Oct-2025 02:07:05 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:07:05 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:07:05 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:08:50 UTC] index.php started
+[28-Oct-2025 02:08:50 UTC] Autoloader loaded
+[28-Oct-2025 02:08:50 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:08:50 UTC] Request Path: /dashboard
+[28-Oct-2025 02:08:50 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:08:50 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:08:50 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:08:50 UTC] Controller instantiated successfully
+[28-Oct-2025 02:08:50 UTC] Calling action: index
+[28-Oct-2025 02:08:50 UTC] isAuthenticated check: true
+[28-Oct-2025 02:08:50 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:08:50 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:08:50 UTC] index.php started
+[28-Oct-2025 02:08:50 UTC] Autoloader loaded
+[28-Oct-2025 02:08:50 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:08:50 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:08:50 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:08:50 UTC] index.php started
+[28-Oct-2025 02:08:50 UTC] Autoloader loaded
+[28-Oct-2025 02:08:50 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:08:50 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:08:50 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:08:50 UTC] index.php started
+[28-Oct-2025 02:08:50 UTC] Autoloader loaded
+[28-Oct-2025 02:08:50 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:08:50 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:08:50 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:09:43 UTC] index.php started
+[28-Oct-2025 02:09:43 UTC] Autoloader loaded
+[28-Oct-2025 02:09:43 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:09:43 UTC] Request Path: /dashboard
+[28-Oct-2025 02:09:43 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:09:43 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:09:43 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:09:43 UTC] Controller instantiated successfully
+[28-Oct-2025 02:09:43 UTC] Calling action: index
+[28-Oct-2025 02:09:43 UTC] isAuthenticated check: true
+[28-Oct-2025 02:09:43 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:09:43 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:09:43 UTC] index.php started
+[28-Oct-2025 02:09:43 UTC] Autoloader loaded
+[28-Oct-2025 02:09:43 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:09:43 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:09:43 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:09:43 UTC] index.php started
+[28-Oct-2025 02:09:43 UTC] Autoloader loaded
+[28-Oct-2025 02:09:43 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:09:43 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:09:43 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:09:43 UTC] index.php started
+[28-Oct-2025 02:09:43 UTC] Autoloader loaded
+[28-Oct-2025 02:09:43 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:09:43 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:09:43 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:09:44 UTC] index.php started
+[28-Oct-2025 02:09:44 UTC] Autoloader loaded
+[28-Oct-2025 02:09:44 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:09:44 UTC] Request Path: /dashboard
+[28-Oct-2025 02:09:44 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:09:44 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:09:44 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:09:44 UTC] Controller instantiated successfully
+[28-Oct-2025 02:09:44 UTC] Calling action: index
+[28-Oct-2025 02:09:44 UTC] isAuthenticated check: true
+[28-Oct-2025 02:09:44 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:09:44 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:09:44 UTC] index.php started
+[28-Oct-2025 02:09:44 UTC] Autoloader loaded
+[28-Oct-2025 02:09:44 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:09:44 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:09:44 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:09:44 UTC] index.php started
+[28-Oct-2025 02:09:44 UTC] Autoloader loaded
+[28-Oct-2025 02:09:44 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:09:44 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:09:44 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:09:44 UTC] index.php started
+[28-Oct-2025 02:09:44 UTC] Autoloader loaded
+[28-Oct-2025 02:09:44 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:09:44 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:09:44 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:09:45 UTC] Request Path: /dashboard
+[28-Oct-2025 02:09:45 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:09:45 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:09:45 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:09:45 UTC] Controller instantiated successfully
+[28-Oct-2025 02:09:45 UTC] Calling action: index
+[28-Oct-2025 02:09:45 UTC] isAuthenticated check: true
+[28-Oct-2025 02:09:45 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:09:45 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:09:45 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:09:45 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:09:45 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:09:45 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:09:45 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:09:45 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:09:45 UTC] Request Path: /dashboard
+[28-Oct-2025 02:09:45 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:09:45 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:09:45 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:09:45 UTC] Controller instantiated successfully
+[28-Oct-2025 02:09:45 UTC] Calling action: index
+[28-Oct-2025 02:09:45 UTC] isAuthenticated check: true
+[28-Oct-2025 02:09:45 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:09:45 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:09:45 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:09:45 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:09:45 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:09:45 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:09:45 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:09:45 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:09:45 UTC] Request Path: /dashboard
+[28-Oct-2025 02:09:45 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:09:45 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:09:45 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:09:45 UTC] Controller instantiated successfully
+[28-Oct-2025 02:09:45 UTC] Calling action: index
+[28-Oct-2025 02:09:45 UTC] isAuthenticated check: true
+[28-Oct-2025 02:09:45 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:09:45 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:09:45 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:09:45 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:09:45 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:09:45 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:09:45 UTC] index.php started
+[28-Oct-2025 02:09:45 UTC] Autoloader loaded
+[28-Oct-2025 02:09:45 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:09:45 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:09:45 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:10:02 UTC] index.php started
+[28-Oct-2025 02:10:02 UTC] Autoloader loaded
+[28-Oct-2025 02:10:02 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:10:02 UTC] Request Path: /dashboard
+[28-Oct-2025 02:10:02 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:10:02 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:10:02 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:10:02 UTC] Controller instantiated successfully
+[28-Oct-2025 02:10:02 UTC] Calling action: index
+[28-Oct-2025 02:10:02 UTC] isAuthenticated check: true
+[28-Oct-2025 02:10:02 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:10:02 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:10:02 UTC] index.php started
+[28-Oct-2025 02:10:02 UTC] Autoloader loaded
+[28-Oct-2025 02:10:02 UTC] About to match route for path: /assets/index.css
+[28-Oct-2025 02:10:02 UTC] Request Path: /assets/index.css
+[28-Oct-2025 02:10:02 UTC] Route not found: No routes found for "/assets/index.css".
+[28-Oct-2025 02:10:02 UTC] index.php started
+[28-Oct-2025 02:10:02 UTC] Autoloader loaded
+[28-Oct-2025 02:10:02 UTC] About to match route for path: /assets/logo.png
+[28-Oct-2025 02:10:02 UTC] Request Path: /assets/logo.png
+[28-Oct-2025 02:10:02 UTC] Route not found: No routes found for "/assets/logo.png".
+[28-Oct-2025 02:10:02 UTC] index.php started
+[28-Oct-2025 02:10:02 UTC] Autoloader loaded
+[28-Oct-2025 02:10:02 UTC] About to match route for path: /assets/logo_footer.png
+[28-Oct-2025 02:10:02 UTC] Request Path: /assets/logo_footer.png
+[28-Oct-2025 02:10:02 UTC] Route not found: No routes found for "/assets/logo_footer.png".
+[28-Oct-2025 02:10:58 UTC] index.php started
+[28-Oct-2025 02:10:58 UTC] Autoloader loaded
+[28-Oct-2025 02:10:58 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:10:58 UTC] Request Path: /dashboard
+[28-Oct-2025 02:10:58 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:10:58 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:10:58 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:10:58 UTC] Controller instantiated successfully
+[28-Oct-2025 02:10:58 UTC] Calling action: index
+[28-Oct-2025 02:10:58 UTC] isAuthenticated check: true
+[28-Oct-2025 02:10:58 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:10:58 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:11:18 UTC] index.php started
+[28-Oct-2025 02:11:18 UTC] Autoloader loaded
+[28-Oct-2025 02:11:18 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:11:18 UTC] Request Path: /dashboard
+[28-Oct-2025 02:11:18 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:11:18 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:11:18 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:11:18 UTC] Controller instantiated successfully
+[28-Oct-2025 02:11:18 UTC] Calling action: index
+[28-Oct-2025 02:11:18 UTC] isAuthenticated check: true
+[28-Oct-2025 02:11:18 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:11:18 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:11:19 UTC] index.php started
+[28-Oct-2025 02:11:19 UTC] Autoloader loaded
+[28-Oct-2025 02:11:19 UTC] About to match route for path: /ico.png
+[28-Oct-2025 02:11:19 UTC] Request Path: /ico.png
+[28-Oct-2025 02:11:19 UTC] Route not found: No routes found for "/ico.png".
+[28-Oct-2025 02:11:22 UTC] index.php started
+[28-Oct-2025 02:11:22 UTC] Autoloader loaded
+[28-Oct-2025 02:11:22 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:11:22 UTC] Request Path: /dashboard
+[28-Oct-2025 02:11:22 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:11:22 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:11:22 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:11:22 UTC] Controller instantiated successfully
+[28-Oct-2025 02:11:22 UTC] Calling action: index
+[28-Oct-2025 02:11:22 UTC] isAuthenticated check: true
+[28-Oct-2025 02:11:22 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:11:22 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:11:23 UTC] index.php started
+[28-Oct-2025 02:11:23 UTC] Autoloader loaded
+[28-Oct-2025 02:11:23 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:11:23 UTC] Request Path: /dashboard
+[28-Oct-2025 02:11:23 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:11:23 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:11:23 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:11:23 UTC] Controller instantiated successfully
+[28-Oct-2025 02:11:23 UTC] Calling action: index
+[28-Oct-2025 02:11:23 UTC] isAuthenticated check: true
+[28-Oct-2025 02:11:23 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:11:23 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:11:23 UTC] index.php started
+[28-Oct-2025 02:11:23 UTC] Autoloader loaded
+[28-Oct-2025 02:11:23 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:11:23 UTC] Request Path: /dashboard
+[28-Oct-2025 02:11:23 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:11:23 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:11:23 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:11:23 UTC] Controller instantiated successfully
+[28-Oct-2025 02:11:23 UTC] Calling action: index
+[28-Oct-2025 02:11:23 UTC] isAuthenticated check: true
+[28-Oct-2025 02:11:23 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:11:23 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:11:23 UTC] index.php started
+[28-Oct-2025 02:11:23 UTC] Autoloader loaded
+[28-Oct-2025 02:11:23 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:11:23 UTC] Request Path: /dashboard
+[28-Oct-2025 02:11:23 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:11:23 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:11:23 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:11:23 UTC] Controller instantiated successfully
+[28-Oct-2025 02:11:23 UTC] Calling action: index
+[28-Oct-2025 02:11:23 UTC] isAuthenticated check: true
+[28-Oct-2025 02:11:23 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:11:23 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:11:23 UTC] index.php started
+[28-Oct-2025 02:11:23 UTC] Autoloader loaded
+[28-Oct-2025 02:11:23 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:11:23 UTC] Request Path: /dashboard
+[28-Oct-2025 02:11:23 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:11:23 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:11:23 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:11:23 UTC] Controller instantiated successfully
+[28-Oct-2025 02:11:23 UTC] Calling action: index
+[28-Oct-2025 02:11:23 UTC] isAuthenticated check: true
+[28-Oct-2025 02:11:23 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:11:23 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:11:24 UTC] index.php started
+[28-Oct-2025 02:11:24 UTC] Autoloader loaded
+[28-Oct-2025 02:11:24 UTC] About to match route for path: /dashboard
+[28-Oct-2025 02:11:24 UTC] Request Path: /dashboard
+[28-Oct-2025 02:11:24 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 02:11:24 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 02:11:24 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:11:24 UTC] Controller instantiated successfully
+[28-Oct-2025 02:11:24 UTC] Calling action: index
+[28-Oct-2025 02:11:24 UTC] isAuthenticated check: true
+[28-Oct-2025 02:11:24 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 02:11:24 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:14:58 UTC] index.php started
+[28-Oct-2025 02:14:58 UTC] Autoloader loaded
+[28-Oct-2025 02:14:58 UTC] About to match route for path: /
+[28-Oct-2025 02:14:58 UTC] Request Path: /
+[28-Oct-2025 02:14:58 UTC] Matched parameters: {"controller":"DashboardController","action":"landing","_route":"home"}
+[28-Oct-2025 02:14:58 UTC] Controller: DashboardController, Action: landing
+[28-Oct-2025 02:14:58 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 02:14:58 UTC] Controller instantiated successfully
+[28-Oct-2025 02:14:58 UTC] Calling action: landing
+[28-Oct-2025 02:14:58 UTC] DashboardController::landing called
+[28-Oct-2025 02:14:58 UTC] isAuthenticated check: false
+[28-Oct-2025 02:14:58 UTC] User authenticated: no
+[28-Oct-2025 02:14:58 UTC] Rendering landing.html.twig
+[28-Oct-2025 02:14:58 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 02:15:00 UTC] index.php started
+[28-Oct-2025 02:15:00 UTC] Autoloader loaded
+[28-Oct-2025 02:15:00 UTC] About to match route for path: /ico.png
+[28-Oct-2025 02:15:00 UTC] Request Path: /ico.png
+[28-Oct-2025 02:15:00 UTC] Route not found: No routes found for "/ico.png".
+[28-Oct-2025 03:07:33 UTC] index.php started
+[28-Oct-2025 03:07:33 UTC] Autoloader loaded
+[28-Oct-2025 03:07:33 UTC] About to match route for path: /dashboard
+[28-Oct-2025 03:07:33 UTC] Request Path: /dashboard
+[28-Oct-2025 03:07:33 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 03:07:33 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 03:07:33 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 03:07:33 UTC] Controller instantiated successfully
+[28-Oct-2025 03:07:33 UTC] Calling action: index
+[28-Oct-2025 03:07:33 UTC] isAuthenticated check: true
+[28-Oct-2025 03:07:33 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:07:33 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:09:33 UTC] index.php started
+[28-Oct-2025 03:09:33 UTC] Autoloader loaded
+[28-Oct-2025 03:09:33 UTC] About to match route for path: /dashboard
+[28-Oct-2025 03:09:33 UTC] Request Path: /dashboard
+[28-Oct-2025 03:09:33 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 03:09:33 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 03:09:33 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 03:09:33 UTC] Controller instantiated successfully
+[28-Oct-2025 03:09:33 UTC] Calling action: index
+[28-Oct-2025 03:09:33 UTC] isAuthenticated check: true
+[28-Oct-2025 03:09:33 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:09:33 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:10:24 UTC] index.php started
+[28-Oct-2025 03:10:24 UTC] Autoloader loaded
+[28-Oct-2025 03:10:24 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:10:24 UTC] Request Path: /tickets
+[28-Oct-2025 03:10:24 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:10:24 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:10:24 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:10:24 UTC] Controller instantiated successfully
+[28-Oct-2025 03:10:24 UTC] Calling action: index
+[28-Oct-2025 03:10:24 UTC] TicketController index method called
+[28-Oct-2025 03:10:24 UTC] isAuthenticated check: true
+[28-Oct-2025 03:10:24 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:10:24 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:10:24 UTC] Status filter: all
+[28-Oct-2025 03:10:24 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:10:24 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:12:34 UTC] index.php started
+[28-Oct-2025 03:12:34 UTC] Autoloader loaded
+[28-Oct-2025 03:12:34 UTC] About to match route for path: /dashboard
+[28-Oct-2025 03:12:34 UTC] Request Path: /dashboard
+[28-Oct-2025 03:12:34 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 03:12:34 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 03:12:34 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 03:12:34 UTC] Controller instantiated successfully
+[28-Oct-2025 03:12:34 UTC] Calling action: index
+[28-Oct-2025 03:12:34 UTC] isAuthenticated check: true
+[28-Oct-2025 03:12:34 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:12:34 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:13:39 UTC] index.php started
+[28-Oct-2025 03:13:39 UTC] Autoloader loaded
+[28-Oct-2025 03:13:39 UTC] About to match route for path: /dashboard
+[28-Oct-2025 03:13:39 UTC] Request Path: /dashboard
+[28-Oct-2025 03:13:39 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 03:13:39 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 03:13:39 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 03:13:39 UTC] Controller instantiated successfully
+[28-Oct-2025 03:13:39 UTC] Calling action: index
+[28-Oct-2025 03:13:39 UTC] isAuthenticated check: true
+[28-Oct-2025 03:13:39 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:13:39 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:14:12 UTC] index.php started
+[28-Oct-2025 03:14:12 UTC] Autoloader loaded
+[28-Oct-2025 03:14:12 UTC] About to match route for path: /dashboard
+[28-Oct-2025 03:14:12 UTC] Request Path: /dashboard
+[28-Oct-2025 03:14:12 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 03:14:12 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 03:14:12 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 03:14:12 UTC] Controller instantiated successfully
+[28-Oct-2025 03:14:12 UTC] Calling action: index
+[28-Oct-2025 03:14:12 UTC] isAuthenticated check: true
+[28-Oct-2025 03:14:12 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:14:12 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:17:13 UTC] index.php started
+[28-Oct-2025 03:17:13 UTC] Autoloader loaded
+[28-Oct-2025 03:17:13 UTC] About to match route for path: /dashboard
+[28-Oct-2025 03:17:13 UTC] Request Path: /dashboard
+[28-Oct-2025 03:17:13 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 03:17:13 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 03:17:13 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 03:17:13 UTC] Controller instantiated successfully
+[28-Oct-2025 03:17:13 UTC] Calling action: index
+[28-Oct-2025 03:17:13 UTC] isAuthenticated check: true
+[28-Oct-2025 03:17:13 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:17:13 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:19:06 UTC] index.php started
+[28-Oct-2025 03:19:06 UTC] Autoloader loaded
+[28-Oct-2025 03:19:06 UTC] About to match route for path: /dashboard
+[28-Oct-2025 03:19:06 UTC] Request Path: /dashboard
+[28-Oct-2025 03:19:06 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 03:19:06 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 03:19:06 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 03:19:06 UTC] Controller instantiated successfully
+[28-Oct-2025 03:19:06 UTC] Calling action: index
+[28-Oct-2025 03:19:06 UTC] isAuthenticated check: true
+[28-Oct-2025 03:19:06 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:19:06 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:23:35 UTC] index.php started
+[28-Oct-2025 03:23:35 UTC] Autoloader loaded
+[28-Oct-2025 03:23:35 UTC] About to match route for path: /dashboard
+[28-Oct-2025 03:23:35 UTC] Request Path: /dashboard
+[28-Oct-2025 03:23:35 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 03:23:35 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 03:23:35 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 03:23:35 UTC] Controller instantiated successfully
+[28-Oct-2025 03:23:35 UTC] Calling action: index
+[28-Oct-2025 03:23:35 UTC] isAuthenticated check: true
+[28-Oct-2025 03:23:35 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:23:35 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:24:40 UTC] index.php started
+[28-Oct-2025 03:24:40 UTC] Autoloader loaded
+[28-Oct-2025 03:24:40 UTC] About to match route for path: /dashboard
+[28-Oct-2025 03:24:40 UTC] Request Path: /dashboard
+[28-Oct-2025 03:24:40 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 03:24:40 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 03:24:40 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 03:24:40 UTC] Controller instantiated successfully
+[28-Oct-2025 03:24:40 UTC] Calling action: index
+[28-Oct-2025 03:24:40 UTC] isAuthenticated check: true
+[28-Oct-2025 03:24:40 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:24:40 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:24:55 UTC] index.php started
+[28-Oct-2025 03:24:55 UTC] Autoloader loaded
+[28-Oct-2025 03:24:55 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:24:55 UTC] Request Path: /tickets
+[28-Oct-2025 03:24:55 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:24:55 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:24:55 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:24:55 UTC] Controller instantiated successfully
+[28-Oct-2025 03:24:55 UTC] Calling action: index
+[28-Oct-2025 03:24:55 UTC] TicketController index method called
+[28-Oct-2025 03:24:55 UTC] isAuthenticated check: true
+[28-Oct-2025 03:24:55 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:24:55 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:24:55 UTC] Status filter: all
+[28-Oct-2025 03:24:55 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:24:55 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:27:22 UTC] index.php started
+[28-Oct-2025 03:27:22 UTC] Autoloader loaded
+[28-Oct-2025 03:27:22 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:27:22 UTC] Request Path: /tickets
+[28-Oct-2025 03:27:22 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:27:22 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:27:22 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:27:22 UTC] Controller instantiated successfully
+[28-Oct-2025 03:27:22 UTC] Calling action: index
+[28-Oct-2025 03:27:22 UTC] TicketController index method called
+[28-Oct-2025 03:27:22 UTC] isAuthenticated check: true
+[28-Oct-2025 03:27:22 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:27:22 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:27:22 UTC] Status filter: all
+[28-Oct-2025 03:27:22 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:27:22 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:27:36 UTC] index.php started
+[28-Oct-2025 03:27:36 UTC] Autoloader loaded
+[28-Oct-2025 03:27:36 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:27:36 UTC] Request Path: /tickets
+[28-Oct-2025 03:27:36 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:27:36 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:27:36 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:27:36 UTC] Controller instantiated successfully
+[28-Oct-2025 03:27:36 UTC] Calling action: index
+[28-Oct-2025 03:27:36 UTC] TicketController index method called
+[28-Oct-2025 03:27:36 UTC] isAuthenticated check: true
+[28-Oct-2025 03:27:36 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:27:36 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:27:36 UTC] Status filter: all
+[28-Oct-2025 03:27:36 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:27:36 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:32:09 UTC] index.php started
+[28-Oct-2025 03:32:09 UTC] Autoloader loaded
+[28-Oct-2025 03:32:09 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:32:09 UTC] Request Path: /tickets
+[28-Oct-2025 03:32:09 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:32:09 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:32:09 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:32:09 UTC] Controller instantiated successfully
+[28-Oct-2025 03:32:09 UTC] Calling action: index
+[28-Oct-2025 03:32:09 UTC] TicketController index method called
+[28-Oct-2025 03:32:09 UTC] isAuthenticated check: true
+[28-Oct-2025 03:32:09 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:32:09 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:32:09 UTC] Status filter: all
+[28-Oct-2025 03:32:09 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:32:09 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:40:49 UTC] index.php started
+[28-Oct-2025 03:40:49 UTC] Autoloader loaded
+[28-Oct-2025 03:40:49 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:40:49 UTC] Request Path: /tickets
+[28-Oct-2025 03:40:49 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:40:49 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:40:49 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:40:49 UTC] Controller instantiated successfully
+[28-Oct-2025 03:40:49 UTC] Calling action: index
+[28-Oct-2025 03:40:49 UTC] TicketController index method called
+[28-Oct-2025 03:40:49 UTC] isAuthenticated check: true
+[28-Oct-2025 03:40:49 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:40:49 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:40:49 UTC] Status filter: all
+[28-Oct-2025 03:40:49 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:40:49 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:41:37 UTC] index.php started
+[28-Oct-2025 03:41:37 UTC] Autoloader loaded
+[28-Oct-2025 03:41:37 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:41:37 UTC] Request Path: /tickets
+[28-Oct-2025 03:41:37 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:41:37 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:41:37 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:41:37 UTC] Controller instantiated successfully
+[28-Oct-2025 03:41:37 UTC] Calling action: index
+[28-Oct-2025 03:41:37 UTC] TicketController index method called
+[28-Oct-2025 03:41:37 UTC] isAuthenticated check: true
+[28-Oct-2025 03:41:37 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:41:37 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:41:37 UTC] Status filter: all
+[28-Oct-2025 03:41:37 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:41:37 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:44:45 UTC] index.php started
+[28-Oct-2025 03:44:45 UTC] Autoloader loaded
+[28-Oct-2025 03:44:45 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:44:45 UTC] Request Path: /tickets
+[28-Oct-2025 03:44:45 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:44:45 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:44:45 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:44:45 UTC] Controller instantiated successfully
+[28-Oct-2025 03:44:45 UTC] Calling action: index
+[28-Oct-2025 03:44:45 UTC] TicketController index method called
+[28-Oct-2025 03:44:45 UTC] isAuthenticated check: true
+[28-Oct-2025 03:44:45 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:44:45 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:44:45 UTC] Status filter: all
+[28-Oct-2025 03:44:45 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:44:45 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:50:17 UTC] index.php started
+[28-Oct-2025 03:50:17 UTC] Autoloader loaded
+[28-Oct-2025 03:50:17 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:50:17 UTC] Request Path: /tickets
+[28-Oct-2025 03:50:17 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:50:17 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:50:17 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:50:17 UTC] Controller instantiated successfully
+[28-Oct-2025 03:50:17 UTC] Calling action: index
+[28-Oct-2025 03:50:17 UTC] TicketController index method called
+[28-Oct-2025 03:50:17 UTC] isAuthenticated check: true
+[28-Oct-2025 03:50:17 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:17 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:17 UTC] Status filter: all
+[28-Oct-2025 03:50:17 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:50:17 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:50:22 UTC] index.php started
+[28-Oct-2025 03:50:22 UTC] Autoloader loaded
+[28-Oct-2025 03:50:22 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:50:22 UTC] Request Path: /tickets
+[28-Oct-2025 03:50:22 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:50:22 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:50:22 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:50:22 UTC] Controller instantiated successfully
+[28-Oct-2025 03:50:22 UTC] Calling action: index
+[28-Oct-2025 03:50:22 UTC] TicketController index method called
+[28-Oct-2025 03:50:22 UTC] isAuthenticated check: true
+[28-Oct-2025 03:50:22 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:22 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:22 UTC] Status filter: all
+[28-Oct-2025 03:50:22 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:50:22 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:50:36 UTC] index.php started
+[28-Oct-2025 03:50:36 UTC] Autoloader loaded
+[28-Oct-2025 03:50:36 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:50:36 UTC] Request Path: /tickets
+[28-Oct-2025 03:50:36 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:50:36 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:50:36 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:50:36 UTC] Controller instantiated successfully
+[28-Oct-2025 03:50:36 UTC] Calling action: index
+[28-Oct-2025 03:50:36 UTC] TicketController index method called
+[28-Oct-2025 03:50:36 UTC] isAuthenticated check: true
+[28-Oct-2025 03:50:36 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:36 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:36 UTC] Status filter: all
+[28-Oct-2025 03:50:36 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:50:36 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:50:40 UTC] index.php started
+[28-Oct-2025 03:50:40 UTC] Autoloader loaded
+[28-Oct-2025 03:50:40 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:50:40 UTC] Request Path: /tickets
+[28-Oct-2025 03:50:40 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:50:40 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:50:40 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:50:40 UTC] Controller instantiated successfully
+[28-Oct-2025 03:50:40 UTC] Calling action: index
+[28-Oct-2025 03:50:40 UTC] TicketController index method called
+[28-Oct-2025 03:50:40 UTC] isAuthenticated check: true
+[28-Oct-2025 03:50:40 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:40 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:40 UTC] Status filter: all
+[28-Oct-2025 03:50:40 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:50:40 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:50:41 UTC] index.php started
+[28-Oct-2025 03:50:41 UTC] Autoloader loaded
+[28-Oct-2025 03:50:41 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:50:41 UTC] Request Path: /tickets
+[28-Oct-2025 03:50:41 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:50:41 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:50:41 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:50:41 UTC] Controller instantiated successfully
+[28-Oct-2025 03:50:41 UTC] Calling action: index
+[28-Oct-2025 03:50:41 UTC] TicketController index method called
+[28-Oct-2025 03:50:41 UTC] isAuthenticated check: true
+[28-Oct-2025 03:50:41 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:41 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:41 UTC] Status filter: all
+[28-Oct-2025 03:50:41 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:50:41 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:50:41 UTC] index.php started
+[28-Oct-2025 03:50:41 UTC] Autoloader loaded
+[28-Oct-2025 03:50:41 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:50:41 UTC] Request Path: /tickets
+[28-Oct-2025 03:50:41 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:50:41 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:50:41 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:50:41 UTC] Controller instantiated successfully
+[28-Oct-2025 03:50:41 UTC] Calling action: index
+[28-Oct-2025 03:50:41 UTC] TicketController index method called
+[28-Oct-2025 03:50:41 UTC] isAuthenticated check: true
+[28-Oct-2025 03:50:41 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:41 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:41 UTC] Status filter: all
+[28-Oct-2025 03:50:41 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:50:41 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:50:41 UTC] index.php started
+[28-Oct-2025 03:50:41 UTC] Autoloader loaded
+[28-Oct-2025 03:50:41 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:50:41 UTC] Request Path: /tickets
+[28-Oct-2025 03:50:41 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:50:41 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:50:41 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:50:41 UTC] Controller instantiated successfully
+[28-Oct-2025 03:50:41 UTC] Calling action: index
+[28-Oct-2025 03:50:41 UTC] TicketController index method called
+[28-Oct-2025 03:50:41 UTC] isAuthenticated check: true
+[28-Oct-2025 03:50:41 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:41 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:41 UTC] Status filter: all
+[28-Oct-2025 03:50:41 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:50:41 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:50:42 UTC] index.php started
+[28-Oct-2025 03:50:42 UTC] Autoloader loaded
+[28-Oct-2025 03:50:42 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:50:42 UTC] Request Path: /tickets
+[28-Oct-2025 03:50:42 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:50:42 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:50:42 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:50:42 UTC] Controller instantiated successfully
+[28-Oct-2025 03:50:42 UTC] Calling action: index
+[28-Oct-2025 03:50:42 UTC] TicketController index method called
+[28-Oct-2025 03:50:42 UTC] isAuthenticated check: true
+[28-Oct-2025 03:50:42 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:42 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:42 UTC] Status filter: all
+[28-Oct-2025 03:50:42 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:50:42 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:50:48 UTC] index.php started
+[28-Oct-2025 03:50:48 UTC] Autoloader loaded
+[28-Oct-2025 03:50:48 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:50:48 UTC] Request Path: /tickets
+[28-Oct-2025 03:50:48 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:50:48 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:50:48 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:50:48 UTC] Controller instantiated successfully
+[28-Oct-2025 03:50:48 UTC] Calling action: index
+[28-Oct-2025 03:50:48 UTC] TicketController index method called
+[28-Oct-2025 03:50:48 UTC] isAuthenticated check: true
+[28-Oct-2025 03:50:48 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:48 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:50:48 UTC] Status filter: all
+[28-Oct-2025 03:50:48 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:50:48 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 03:57:55 UTC] index.php started
+[28-Oct-2025 03:57:55 UTC] Autoloader loaded
+[28-Oct-2025 03:57:55 UTC] About to match route for path: /tickets/1/edit
+[28-Oct-2025 03:57:55 UTC] Request Path: /tickets/1/edit
+[28-Oct-2025 03:57:55 UTC] Matched parameters: {"controller":"TicketController","action":"edit","id":"1","_route":"tickets_edit"}
+[28-Oct-2025 03:57:55 UTC] Controller: TicketController, Action: edit
+[28-Oct-2025 03:57:55 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:57:55 UTC] Controller instantiated successfully
+[28-Oct-2025 03:57:55 UTC] Calling action: edit
+[28-Oct-2025 03:57:55 UTC] isAuthenticated check: true
+[28-Oct-2025 03:57:55 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:57:55 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 03:57:55 UTC] index.php started
+[28-Oct-2025 03:57:55 UTC] Autoloader loaded
+[28-Oct-2025 03:57:55 UTC] About to match route for path: /tickets
+[28-Oct-2025 03:57:55 UTC] Request Path: /tickets
+[28-Oct-2025 03:57:55 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 03:57:55 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 03:57:55 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 03:57:55 UTC] Controller instantiated successfully
+[28-Oct-2025 03:57:55 UTC] Calling action: index
+[28-Oct-2025 03:57:55 UTC] TicketController index method called
+[28-Oct-2025 03:57:55 UTC] isAuthenticated check: true
+[28-Oct-2025 03:57:55 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:57:55 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 03:57:55 UTC] Status filter: all
+[28-Oct-2025 03:57:55 UTC] Tickets retrieved: 11
+[28-Oct-2025 03:57:55 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:00:55 UTC] index.php started
+[28-Oct-2025 04:00:55 UTC] Autoloader loaded
+[28-Oct-2025 04:00:55 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:00:55 UTC] Request Path: /tickets
+[28-Oct-2025 04:00:55 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:00:55 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:00:55 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:00:55 UTC] Controller instantiated successfully
+[28-Oct-2025 04:00:55 UTC] Calling action: index
+[28-Oct-2025 04:00:55 UTC] TicketController index method called
+[28-Oct-2025 04:00:55 UTC] isAuthenticated check: true
+[28-Oct-2025 04:00:55 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:00:55 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:00:55 UTC] Status filter: all
+[28-Oct-2025 04:00:55 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:00:55 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:01:07 UTC] index.php started
+[28-Oct-2025 04:01:07 UTC] Autoloader loaded
+[28-Oct-2025 04:01:07 UTC] About to match route for path: /logout
+[28-Oct-2025 04:01:07 UTC] Request Path: /logout
+[28-Oct-2025 04:01:07 UTC] Matched parameters: {"controller":"AuthController","action":"logout","_route":"logout"}
+[28-Oct-2025 04:01:07 UTC] Controller: AuthController, Action: logout
+[28-Oct-2025 04:01:07 UTC] Instantiating controller: App\Controllers\AuthController
+[28-Oct-2025 04:01:07 UTC] Controller instantiated successfully
+[28-Oct-2025 04:01:07 UTC] Calling action: logout
+[28-Oct-2025 04:01:07 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 04:01:07 UTC] index.php started
+[28-Oct-2025 04:01:07 UTC] Autoloader loaded
+[28-Oct-2025 04:01:07 UTC] About to match route for path: /
+[28-Oct-2025 04:01:07 UTC] Request Path: /
+[28-Oct-2025 04:01:07 UTC] Matched parameters: {"controller":"DashboardController","action":"landing","_route":"home"}
+[28-Oct-2025 04:01:07 UTC] Controller: DashboardController, Action: landing
+[28-Oct-2025 04:01:07 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 04:01:07 UTC] Controller instantiated successfully
+[28-Oct-2025 04:01:07 UTC] Calling action: landing
+[28-Oct-2025 04:01:07 UTC] DashboardController::landing called
+[28-Oct-2025 04:01:07 UTC] isAuthenticated check: false
+[28-Oct-2025 04:01:07 UTC] User authenticated: no
+[28-Oct-2025 04:01:07 UTC] Rendering landing.html.twig
+[28-Oct-2025 04:01:07 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:01:10 UTC] index.php started
+[28-Oct-2025 04:01:10 UTC] Autoloader loaded
+[28-Oct-2025 04:01:10 UTC] About to match route for path: /login
+[28-Oct-2025 04:01:10 UTC] Request Path: /login
+[28-Oct-2025 04:01:10 UTC] Matched parameters: {"controller":"AuthController","action":"login","_route":"login"}
+[28-Oct-2025 04:01:10 UTC] Controller: AuthController, Action: login
+[28-Oct-2025 04:01:10 UTC] Instantiating controller: App\Controllers\AuthController
+[28-Oct-2025 04:01:10 UTC] Controller instantiated successfully
+[28-Oct-2025 04:01:10 UTC] Calling action: login
+[28-Oct-2025 04:01:10 UTC] isAuthenticated check: false
+[28-Oct-2025 04:01:10 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:01:12 UTC] index.php started
+[28-Oct-2025 04:01:12 UTC] Autoloader loaded
+[28-Oct-2025 04:01:12 UTC] About to match route for path: /login
+[28-Oct-2025 04:01:12 UTC] Request Path: /login
+[28-Oct-2025 04:01:12 UTC] Matched parameters: {"controller":"AuthController","action":"login","_route":"login"}
+[28-Oct-2025 04:01:12 UTC] Controller: AuthController, Action: login
+[28-Oct-2025 04:01:12 UTC] Instantiating controller: App\Controllers\AuthController
+[28-Oct-2025 04:01:12 UTC] Controller instantiated successfully
+[28-Oct-2025 04:01:12 UTC] Calling action: login
+[28-Oct-2025 04:01:12 UTC] isAuthenticated check: false
+[28-Oct-2025 04:01:12 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\RedirectResponse
+[28-Oct-2025 04:01:12 UTC] index.php started
+[28-Oct-2025 04:01:12 UTC] Autoloader loaded
+[28-Oct-2025 04:01:12 UTC] About to match route for path: /dashboard
+[28-Oct-2025 04:01:12 UTC] Request Path: /dashboard
+[28-Oct-2025 04:01:12 UTC] Matched parameters: {"controller":"DashboardController","action":"index","_route":"dashboard"}
+[28-Oct-2025 04:01:12 UTC] Controller: DashboardController, Action: index
+[28-Oct-2025 04:01:12 UTC] Instantiating controller: App\Controllers\DashboardController
+[28-Oct-2025 04:01:12 UTC] Controller instantiated successfully
+[28-Oct-2025 04:01:12 UTC] Calling action: index
+[28-Oct-2025 04:01:12 UTC] isAuthenticated check: true
+[28-Oct-2025 04:01:12 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:01:12 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:01:18 UTC] index.php started
+[28-Oct-2025 04:01:18 UTC] Autoloader loaded
+[28-Oct-2025 04:01:18 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:01:18 UTC] Request Path: /tickets
+[28-Oct-2025 04:01:18 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:01:18 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:01:18 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:01:18 UTC] Controller instantiated successfully
+[28-Oct-2025 04:01:18 UTC] Calling action: index
+[28-Oct-2025 04:01:18 UTC] TicketController index method called
+[28-Oct-2025 04:01:18 UTC] isAuthenticated check: true
+[28-Oct-2025 04:01:18 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:01:18 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:01:18 UTC] Status filter: all
+[28-Oct-2025 04:01:18 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:01:18 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:03:20 UTC] index.php started
+[28-Oct-2025 04:03:20 UTC] Autoloader loaded
+[28-Oct-2025 04:03:20 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:03:20 UTC] Request Path: /tickets
+[28-Oct-2025 04:03:21 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:03:21 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:03:21 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:03:21 UTC] Controller instantiated successfully
+[28-Oct-2025 04:03:21 UTC] Calling action: index
+[28-Oct-2025 04:03:21 UTC] TicketController index method called
+[28-Oct-2025 04:03:21 UTC] isAuthenticated check: true
+[28-Oct-2025 04:03:21 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:03:21 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:03:21 UTC] Status filter: all
+[28-Oct-2025 04:03:21 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:03:21 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:05:02 UTC] index.php started
+[28-Oct-2025 04:05:02 UTC] Autoloader loaded
+[28-Oct-2025 04:05:02 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:05:02 UTC] Request Path: /tickets
+[28-Oct-2025 04:05:02 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:05:02 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:05:02 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:05:02 UTC] Controller instantiated successfully
+[28-Oct-2025 04:05:02 UTC] Calling action: index
+[28-Oct-2025 04:05:02 UTC] TicketController index method called
+[28-Oct-2025 04:05:02 UTC] isAuthenticated check: true
+[28-Oct-2025 04:05:02 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:05:02 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:05:02 UTC] Status filter: all
+[28-Oct-2025 04:05:02 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:05:02 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:05:21 UTC] index.php started
+[28-Oct-2025 04:05:21 UTC] Autoloader loaded
+[28-Oct-2025 04:05:21 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:05:21 UTC] Request Path: /tickets
+[28-Oct-2025 04:05:21 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:05:21 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:05:21 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:05:21 UTC] Controller instantiated successfully
+[28-Oct-2025 04:05:21 UTC] Calling action: index
+[28-Oct-2025 04:05:21 UTC] TicketController index method called
+[28-Oct-2025 04:05:21 UTC] isAuthenticated check: true
+[28-Oct-2025 04:05:21 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:05:21 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:05:21 UTC] Status filter: all
+[28-Oct-2025 04:05:21 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:05:21 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:05:41 UTC] index.php started
+[28-Oct-2025 04:05:41 UTC] Autoloader loaded
+[28-Oct-2025 04:05:41 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:05:41 UTC] Request Path: /tickets
+[28-Oct-2025 04:05:41 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:05:41 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:05:41 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:05:41 UTC] Controller instantiated successfully
+[28-Oct-2025 04:05:41 UTC] Calling action: index
+[28-Oct-2025 04:05:41 UTC] TicketController index method called
+[28-Oct-2025 04:05:41 UTC] isAuthenticated check: true
+[28-Oct-2025 04:05:41 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:05:41 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:05:41 UTC] Status filter: all
+[28-Oct-2025 04:05:41 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:05:41 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:06:44 UTC] index.php started
+[28-Oct-2025 04:06:44 UTC] Autoloader loaded
+[28-Oct-2025 04:06:44 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:06:44 UTC] Request Path: /tickets
+[28-Oct-2025 04:06:44 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:06:44 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:06:44 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:06:44 UTC] Controller instantiated successfully
+[28-Oct-2025 04:06:44 UTC] Calling action: index
+[28-Oct-2025 04:06:44 UTC] TicketController index method called
+[28-Oct-2025 04:06:44 UTC] isAuthenticated check: true
+[28-Oct-2025 04:06:44 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:06:44 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:06:44 UTC] Status filter: all
+[28-Oct-2025 04:06:44 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:06:44 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:06:54 UTC] index.php started
+[28-Oct-2025 04:06:54 UTC] Autoloader loaded
+[28-Oct-2025 04:06:54 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:06:54 UTC] Request Path: /tickets
+[28-Oct-2025 04:06:54 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:06:54 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:06:54 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:06:54 UTC] Controller instantiated successfully
+[28-Oct-2025 04:06:54 UTC] Calling action: index
+[28-Oct-2025 04:06:54 UTC] TicketController index method called
+[28-Oct-2025 04:06:54 UTC] isAuthenticated check: true
+[28-Oct-2025 04:06:54 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:06:54 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:06:54 UTC] Status filter: all
+[28-Oct-2025 04:06:54 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:06:54 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:06:55 UTC] index.php started
+[28-Oct-2025 04:06:55 UTC] Autoloader loaded
+[28-Oct-2025 04:06:55 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:06:55 UTC] Request Path: /tickets
+[28-Oct-2025 04:06:55 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:06:55 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:06:55 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:06:55 UTC] Controller instantiated successfully
+[28-Oct-2025 04:06:55 UTC] Calling action: index
+[28-Oct-2025 04:06:55 UTC] TicketController index method called
+[28-Oct-2025 04:06:55 UTC] isAuthenticated check: true
+[28-Oct-2025 04:06:55 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:06:55 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:06:55 UTC] Status filter: all
+[28-Oct-2025 04:06:55 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:06:55 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:07:05 UTC] index.php started
+[28-Oct-2025 04:07:05 UTC] Autoloader loaded
+[28-Oct-2025 04:07:05 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:07:05 UTC] Request Path: /tickets
+[28-Oct-2025 04:07:05 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:07:05 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:07:05 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:07:05 UTC] Controller instantiated successfully
+[28-Oct-2025 04:07:05 UTC] Calling action: index
+[28-Oct-2025 04:07:05 UTC] TicketController index method called
+[28-Oct-2025 04:07:05 UTC] isAuthenticated check: true
+[28-Oct-2025 04:07:05 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:07:05 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:07:05 UTC] Status filter: all
+[28-Oct-2025 04:07:05 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:07:05 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:07:14 UTC] index.php started
+[28-Oct-2025 04:07:14 UTC] Autoloader loaded
+[28-Oct-2025 04:07:14 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:07:14 UTC] Request Path: /tickets
+[28-Oct-2025 04:07:14 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:07:14 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:07:14 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:07:14 UTC] Controller instantiated successfully
+[28-Oct-2025 04:07:14 UTC] Calling action: index
+[28-Oct-2025 04:07:14 UTC] TicketController index method called
+[28-Oct-2025 04:07:14 UTC] isAuthenticated check: true
+[28-Oct-2025 04:07:14 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:07:14 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:07:14 UTC] Status filter: all
+[28-Oct-2025 04:07:14 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:07:14 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:07:45 UTC] index.php started
+[28-Oct-2025 04:07:45 UTC] Autoloader loaded
+[28-Oct-2025 04:07:45 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:07:45 UTC] Request Path: /tickets
+[28-Oct-2025 04:07:45 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:07:45 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:07:45 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:07:45 UTC] Controller instantiated successfully
+[28-Oct-2025 04:07:45 UTC] Calling action: index
+[28-Oct-2025 04:07:45 UTC] TicketController index method called
+[28-Oct-2025 04:07:45 UTC] isAuthenticated check: true
+[28-Oct-2025 04:07:45 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:07:45 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:07:45 UTC] Status filter: all
+[28-Oct-2025 04:07:45 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:07:45 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:09:14 UTC] index.php started
+[28-Oct-2025 04:09:14 UTC] Autoloader loaded
+[28-Oct-2025 04:09:14 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:09:14 UTC] Request Path: /tickets
+[28-Oct-2025 04:09:14 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:09:14 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:09:14 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:09:14 UTC] Controller instantiated successfully
+[28-Oct-2025 04:09:14 UTC] Calling action: index
+[28-Oct-2025 04:09:14 UTC] TicketController index method called
+[28-Oct-2025 04:09:14 UTC] isAuthenticated check: true
+[28-Oct-2025 04:09:14 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:09:14 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:09:14 UTC] Status filter: all
+[28-Oct-2025 04:09:14 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:09:14 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:09:35 UTC] index.php started
+[28-Oct-2025 04:09:35 UTC] Autoloader loaded
+[28-Oct-2025 04:09:35 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:09:35 UTC] Request Path: /tickets
+[28-Oct-2025 04:09:35 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:09:35 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:09:35 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:09:35 UTC] Controller instantiated successfully
+[28-Oct-2025 04:09:35 UTC] Calling action: index
+[28-Oct-2025 04:09:35 UTC] TicketController index method called
+[28-Oct-2025 04:09:35 UTC] isAuthenticated check: true
+[28-Oct-2025 04:09:35 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:09:35 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:09:35 UTC] Status filter: all
+[28-Oct-2025 04:09:35 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:09:35 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:10:12 UTC] index.php started
+[28-Oct-2025 04:10:12 UTC] Autoloader loaded
+[28-Oct-2025 04:10:12 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:10:12 UTC] Request Path: /tickets
+[28-Oct-2025 04:10:12 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:10:12 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:10:12 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:10:12 UTC] Controller instantiated successfully
+[28-Oct-2025 04:10:12 UTC] Calling action: index
+[28-Oct-2025 04:10:12 UTC] TicketController index method called
+[28-Oct-2025 04:10:12 UTC] isAuthenticated check: true
+[28-Oct-2025 04:10:12 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:10:12 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:10:12 UTC] Status filter: all
+[28-Oct-2025 04:10:12 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:10:12 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:11:08 UTC] index.php started
+[28-Oct-2025 04:11:08 UTC] Autoloader loaded
+[28-Oct-2025 04:11:08 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:11:08 UTC] Request Path: /tickets
+[28-Oct-2025 04:11:08 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:11:08 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:11:08 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:11:08 UTC] Controller instantiated successfully
+[28-Oct-2025 04:11:08 UTC] Calling action: index
+[28-Oct-2025 04:11:08 UTC] TicketController index method called
+[28-Oct-2025 04:11:08 UTC] isAuthenticated check: true
+[28-Oct-2025 04:11:08 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:11:08 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:11:08 UTC] Status filter: all
+[28-Oct-2025 04:11:08 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:11:08 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:11:53 UTC] index.php started
+[28-Oct-2025 04:11:53 UTC] Autoloader loaded
+[28-Oct-2025 04:11:53 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:11:53 UTC] Request Path: /tickets
+[28-Oct-2025 04:11:53 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:11:53 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:11:53 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:11:53 UTC] Controller instantiated successfully
+[28-Oct-2025 04:11:53 UTC] Calling action: index
+[28-Oct-2025 04:11:53 UTC] TicketController index method called
+[28-Oct-2025 04:11:53 UTC] isAuthenticated check: true
+[28-Oct-2025 04:11:53 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:11:53 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:11:53 UTC] Status filter: all
+[28-Oct-2025 04:11:53 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:11:54 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:17:09 UTC] index.php started
+[28-Oct-2025 04:17:09 UTC] Autoloader loaded
+[28-Oct-2025 04:17:09 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:17:09 UTC] Request Path: /tickets
+[28-Oct-2025 04:17:09 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:17:09 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:17:09 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:17:09 UTC] Controller instantiated successfully
+[28-Oct-2025 04:17:09 UTC] Calling action: index
+[28-Oct-2025 04:17:09 UTC] TicketController index method called
+[28-Oct-2025 04:17:09 UTC] isAuthenticated check: true
+[28-Oct-2025 04:17:09 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:17:09 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:17:09 UTC] Status filter: all
+[28-Oct-2025 04:17:09 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:17:09 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:18:47 UTC] index.php started
+[28-Oct-2025 04:18:47 UTC] Autoloader loaded
+[28-Oct-2025 04:18:47 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:18:47 UTC] Request Path: /tickets
+[28-Oct-2025 04:18:47 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:18:47 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:18:47 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:18:47 UTC] Controller instantiated successfully
+[28-Oct-2025 04:18:47 UTC] Calling action: index
+[28-Oct-2025 04:18:47 UTC] TicketController index method called
+[28-Oct-2025 04:18:47 UTC] isAuthenticated check: true
+[28-Oct-2025 04:18:47 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:18:47 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:18:47 UTC] Status filter: all
+[28-Oct-2025 04:18:47 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:18:47 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response
+[28-Oct-2025 04:20:38 UTC] index.php started
+[28-Oct-2025 04:20:38 UTC] Autoloader loaded
+[28-Oct-2025 04:20:38 UTC] About to match route for path: /tickets
+[28-Oct-2025 04:20:38 UTC] Request Path: /tickets
+[28-Oct-2025 04:20:38 UTC] Matched parameters: {"controller":"TicketController","action":"index","_route":"tickets"}
+[28-Oct-2025 04:20:38 UTC] Controller: TicketController, Action: index
+[28-Oct-2025 04:20:38 UTC] Instantiating controller: App\Controllers\TicketController
+[28-Oct-2025 04:20:38 UTC] Controller instantiated successfully
+[28-Oct-2025 04:20:38 UTC] Calling action: index
+[28-Oct-2025 04:20:38 UTC] TicketController index method called
+[28-Oct-2025 04:20:38 UTC] isAuthenticated check: true
+[28-Oct-2025 04:20:38 UTC] User session data: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:20:38 UTC] Current user: {"id":"demo","email":"demo@ticketapp.com","name":"Demo User"}
+[28-Oct-2025 04:20:38 UTC] Status filter: all
+[28-Oct-2025 04:20:38 UTC] Tickets retrieved: 11
+[28-Oct-2025 04:20:38 UTC] Response generated successfully, type: Symfony\Component\HttpFoundation\Response

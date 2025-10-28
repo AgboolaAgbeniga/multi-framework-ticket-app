@@ -1,7 +1,8 @@
 <?php
 
+ini_set('error_log', __DIR__ . '/../php_errors.log');
 error_log("index.php started");
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 error_log("Autoloader loaded");
 
 use Symfony\Component\HttpFoundation\Request;
@@ -15,18 +16,18 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
 // Initialize Twig
-$loader = new FilesystemLoader(__DIR__ . '/app/templates');
+$loader = new FilesystemLoader(__DIR__ . '/../app/templates');
 $twig = new Environment($loader, [
     'cache' => false, // Disable cache for development
     'debug' => true,
 ]);
 
 // Include models and controllers
-require_once __DIR__ . '/app/Models/User.php';
-require_once __DIR__ . '/app/Models/Ticket.php';
-require_once __DIR__ . '/app/Controllers/AuthController.php';
-require_once __DIR__ . '/app/Controllers/TicketController.php';
-require_once __DIR__ . '/app/Controllers/DashboardController.php';
+require_once __DIR__ . '/../app/Models/User.php';
+require_once __DIR__ . '/../app/Models/Ticket.php';
+require_once __DIR__ . '/../app/Controllers/AuthController.php';
+require_once __DIR__ . '/../app/Controllers/TicketController.php';
+require_once __DIR__ . '/../app/Controllers/DashboardController.php';
 
 // Initialize request
 $request = Request::createFromGlobals();
@@ -57,6 +58,7 @@ $context->fromRequest($request);
 $matcher = new UrlMatcher($routes, $context);
 
 try {
+    error_log("About to match route for path: " . $request->getPathInfo());
     error_log("Request Path: " . $request->getPathInfo());
     $parameters = $matcher->match($request->getPathInfo());
     error_log("Matched parameters: " . json_encode($parameters));
@@ -76,18 +78,24 @@ try {
         throw new Exception("Controller class not found: $controllerClass");
     }
     $controller = new $controllerClass($twig, $request);
+    error_log("Controller instantiated successfully");
 
     if (!method_exists($controller, $action)) {
         error_log("Action $action does not exist in controller $controllerClass");
         throw new Exception("Action not found: $action");
     }
+    error_log("Calling action: $action");
 
     $response = call_user_func_array([$controller, $action], [$parameters]);
-    error_log("Response generated successfully");
+    error_log("Response generated successfully, type: " . get_class($response));
 
+} catch (Symfony\Component\Routing\Exception\ResourceNotFoundException $e) {
+    error_log("Route not found: " . $e->getMessage());
+    $response = new Response('Not Found', 404);
 } catch (Exception $e) {
     error_log("Exception caught: " . $e->getMessage());
-    $response = new Response('Not Found', 404);
+    error_log("Exception trace: " . $e->getTraceAsString());
+    $response = new Response('Internal Server Error', 500);
 }
 
 // Send response

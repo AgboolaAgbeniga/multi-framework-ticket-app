@@ -6,8 +6,159 @@
     <title>{% block title %}TicketFlex{% endblock %}</title>
     <link rel="icon" type="image/png" href="/ico.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <style>
+/* Micromodal styles exactly matching React Radix UI Dialog */
+.modal {
+    display: none;
+}
+
+.modal.is-open {
+    display: block;
+}
+
+.modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal__container {
+    background: white;
+    max-width: calc(100% - 2rem);
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transform: scale(0.95);
+    transition: transform 0.2s ease-out;
+    margin: 1rem;
+}
+
+.modal.is-open .modal__container {
+    transform: scale(1);
+}
+
+.modal__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+    padding: 1.5rem 1.5rem 0;
+    border-bottom: 1px solid hsl(var(--border));
+    margin-bottom: 1rem;
+}
+
+.modal__title {
+    margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+}
+
+.modal__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: hsl(var(--muted-foreground));
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+}
+
+.modal__close:hover {
+    background-color: hsl(var(--accent));
+}
+
+.modal__content {
+    padding: 0 1.5rem 1.5rem;
+    text-align: ;
+}
+
+.modal__footer {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    border-top: 1px solid hsl(var(--border));
+}
+
+/* Form inputs matching React UI components exactly */
+.modal input[type="text"],
+.modal input[type="email"],
+.modal textarea,
+.modal select {
+    border: none;
+    background: #f3f3f5;
+    color: hsl(var(--foreground));
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.modal input[type="text"]:focus,
+.modal input[type="email"]:focus,
+.modal textarea:focus,
+.modal select:focus {
+    border-color: hsl(var(--ring));
+    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
+}
+
+.modal textarea {
+    resize: none;
+    min-height: 4rem;
+}
+
+.modal select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    appearance: none;
+}
+
+@media (min-width: 640px) {
+    .modal__container {
+        max-width: 28rem;
+    }
+
+    .modal__header {
+        text-align: left;
+    }
+
+    .modal__footer {
+        flex-direction: row;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
     </style>
 </head>
 <body class="bg-slate-50">
@@ -29,7 +180,16 @@
         </div>
     {% endif %}
 
+    {% block scripts %}{% endblock %}
+
     <script>
+        // Initialize Micromodal
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof MicroModal !== 'undefined') {
+                MicroModal.init();
+            }
+        });
+
         // Auto-hide flash messages
         setTimeout(() => {
             const messages = document.querySelectorAll('[class*="bg-green-500"], [class*="bg-red-500"]');

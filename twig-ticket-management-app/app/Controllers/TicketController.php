@@ -8,13 +8,17 @@ class TicketController extends BaseController
 {
     public function index($params = [])
     {
+        error_log("TicketController index method called");
         $authCheck = $this->requireAuth();
         if ($authCheck) return $authCheck;
 
         $user = $this->getCurrentUser();
+        error_log("Current user: " . json_encode($user));
         $status = $this->request->query->get('status', 'all');
+        error_log("Status filter: " . $status);
 
         $tickets = Ticket::getAllForUser($user['id']);
+        error_log("Tickets retrieved: " . count($tickets));
 
         if ($status !== 'all') {
             $tickets = array_filter($tickets, function($ticket) use ($status) {

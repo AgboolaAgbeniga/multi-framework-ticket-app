@@ -41,7 +41,12 @@ abstract class BaseController
 
     protected function isAuthenticated()
     {
-        return $this->session->has('user');
+        $isAuth = $this->session->has('user');
+        error_log("isAuthenticated check: " . ($isAuth ? 'true' : 'false'));
+        if ($isAuth) {
+            error_log("User session data: " . json_encode($this->session->get('user')));
+        }
+        return $isAuth;
     }
 
     protected function requireAuth()
