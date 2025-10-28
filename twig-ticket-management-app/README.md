@@ -12,7 +12,7 @@ A fully functional ticket management system built with PHP, Twig templating, and
 
 ## Tech Stack
 
-- **Backend**: PHP 8.1+
+- **Backend**: PHP 8.4
 - **Templating**: Twig 3.0
 - **Styling**: Tailwind CSS
 - **Routing**: Symfony Routing component
@@ -24,18 +24,50 @@ A fully functional ticket management system built with PHP, Twig templating, and
 1. **Clone or download** the project files
 
 2. **Install dependencies** (if you have Composer):
-   ```bash
-   composer install
-   ```
+    ```bash
+    composer install
+    ```
 
 3. **Set up web server**:
-   - Point your web server to the `public/` directory
-   - Ensure PHP 8.1+ is available
-   - Make sure the `data/` directory is writable
+    - Point your web server to the `public/` directory
+    - Ensure PHP 8.4 is available
+    - Make sure the `data/` directory is writable
 
 4. **Access the application**:
-   - Open your browser and navigate to the application URL
-   - Default demo account: `demo@ticketapp.com` / `demo123`
+    - Open your browser and navigate to the application URL
+    - Default demo account: `demo@ticketapp.com` / `demo123`
+
+## Deployment
+
+### Local Development (PHP Built-in Server)
+
+For quick local development, you can use PHP's built-in web server:
+
+```bash
+cd twig-ticket-management-app
+php -S localhost:8000 -t public/
+```
+
+Access at `http://localhost:8000`
+
+### Docker
+
+Build and run with Docker:
+
+```bash
+docker build -t twig-ticket-app .
+docker run -p 8080:80 twig-ticket-app
+```
+
+Access at `http://localhost:8080`
+
+### Render
+
+The app is configured for Render deployment with `render.yaml`.
+
+### Vercel
+
+The app is configured for Vercel deployment with `vercel.json`.
 
 ## Project Structure
 
@@ -104,3 +136,15 @@ A demo user is pre-configured:
 - Modern browsers (Chrome, Firefox, Safari, Edge)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 - Responsive design works on all screen sizes
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
