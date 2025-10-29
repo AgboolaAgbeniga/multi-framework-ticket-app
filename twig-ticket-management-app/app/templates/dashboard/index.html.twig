@@ -17,7 +17,7 @@
                 Welcome back, {{ session.name }}! Here's an overview of your tickets.
               </p>
             </div>
-            <a href="/tickets/create" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 dark:aria-invalid:ring-[var(--destructive)]/40 aria-invalid:border-[var(--destructive)] bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[color-mix(in oklab,var(--primary) 90%, transparent)] h-9 px-4 py-2 has-[>svg]:px-3">
+            <a href="/tickets/create" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 aria-invalid:border-[var(--destructive)] bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[color-mix(in oklab,var(--primary) 90%, transparent)] h-9 px-4 py-2 has-[>svg]:px-3">
               <i class="fas fa-plus mr-2"></i>
               New Ticket
             </a>
@@ -82,7 +82,7 @@
                 Get started by creating a new ticket or manage your existing ones.
               </p>
               {% if stats.total > 0 %}
-                <a href="/tickets" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 dark:aria-invalid:ring-[var(--destructive)]/40 aria-invalid:border-[var(--destructive)] bg-[var(--secondary)] text-[var(--secondary-foreground)] hover:bg-[color-mix(in oklab,var(--secondary) 80%, transparent)] h-9 px-4 py-2 has-[>svg]:px-3">
+                <a href="/tickets" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 aria-invalid:border-[var(--destructive)] bg-[var(--secondary)] text-[var(--secondary-foreground)] hover:bg-[color-mix(in oklab,var(--secondary) 80%, transparent)] h-9 px-4 py-2 has-[>svg]:px-3">
                   <i class="fas fa-clock mr-2"></i>
                   View All {{ stats.total }} Tickets
                 </a>
@@ -97,7 +97,7 @@
                 <p class="text-slate-600 mb-4 text-sm">You have {{ statusSummary }}.</p>
               {% endif %}
               {% if stats.open > 0 or stats.inProgress > 0 %}
-                <a href="/tickets" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 dark:aria-invalid:ring-[var(--destructive)]/40 aria-invalid:border-[var(--destructive)] border bg-[var(--background)] text-[var(--foreground)] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)] dark:bg-[color-mix(in oklab,var(--input) 30%, transparent)] dark:border-[var(--input)] dark:hover:bg-[color-mix(in oklab,var(--input) 50%, transparent)] h-9 px-4 py-2 has-[>svg]:px-3">
+                <a href="/tickets" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-[var(--ring)] focus-visible:ring-[var(--ring)]/50 focus-visible:ring-[3px] aria-invalid:ring-[var(--destructive)]/20 aria-invalid:border-[var(--destructive)] border bg-[var(--background)] text-[var(--foreground)] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)] h-9 px-4 py-2 has-[>svg]:px-3">
                   <i class="fas fa-arrow-right mr-2"></i>
                   View Details
                 </a>
